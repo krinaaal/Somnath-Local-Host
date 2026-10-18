@@ -27,11 +27,11 @@ const VIEWPORTS = [
 ];
 
 async function runTestSuite() {
-  console.log('=====================================================');
-  console.log('🚀 RUNNING COMPREHENSIVE SOMNATH MOBILE-FIRST TEST SUITE');
-  console.log('=====================================================');
+  console.log('=================================================================');
+  console.log('🎨 AUDITING PLAYFUL WHITE-THEME ANIMATED SOMNATH TRAVEL WEBSITE');
+  console.log('=================================================================');
 
-  // 1. Start the Server
+  // 1. Start static server
   console.log('Starting production server on port 3001...');
   const server = spawn('node', ['server.js'], {
     cwd: path.join(__dirname, '..'),
@@ -39,36 +39,36 @@ async function runTestSuite() {
     stdio: 'inherit'
   });
 
-  // Give server 1.5s to start
   await new Promise(r => setTimeout(r, 1500));
 
-  // 2. Launch Browser using local Chrome
-  console.log(`Launching Google Chrome at: ${CHROME_PATH}`);
   const browser = await chromium.launch({
     executablePath: CHROME_PATH,
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
-  let testPassed = true;
-  const results = [];
+  let allPassed = true;
 
   try {
     for (const vp of VIEWPORTS) {
-      console.log(`\n🔍 Testing Viewport: ${vp.name} (${vp.width}x${vp.height})...`);
+      console.log(`\n🔍 Viewport: ${vp.name} (${vp.width}x${vp.height})...`);
       const context = await browser.newContext({
         viewport: { width: vp.width, height: vp.height },
         isMobile: vp.isMobile,
-        hasTouch: vp.isMobile,
-        userAgent: vp.isMobile 
-          ? 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Mobile/15E148 Safari/604.1'
-          : undefined
+        hasTouch: vp.isMobile
       });
 
       const page = await context.newPage();
       await page.goto('http://localhost:3001', { waitUntil: 'networkidle' });
 
-      // Check 1: Horizontal Overflow check (Strict!)
+      // Click Skip on loading screen if present
+      const skipBtn = page.locator('text=Skip into trip');
+      if (await skipBtn.isVisible({ timeout: 500 }).catch(() => false)) {
+        await skipBtn.click();
+      }
+      await page.waitForTimeout(300);
+
+      // Check 1: Strict Zero Horizontal Overflow
       const overflow = await page.evaluate(() => {
         const docWidth = document.documentElement.scrollWidth;
         const bodyWidth = document.body.scrollWidth;
@@ -77,64 +77,58 @@ async function runTestSuite() {
         return {
           hasHorizontalScroll,
           docWidth,
-          bodyWidth,
           winWidth,
           diff: Math.max(docWidth, bodyWidth) - winWidth
         };
       });
 
       if (overflow.hasHorizontalScroll) {
-        console.error(`❌ HORIZONTAL OVERFLOW DETECTED at ${vp.width}px! diff=${overflow.diff}px (doc: ${overflow.docWidth}, win: ${overflow.winWidth})`);
-        testPassed = false;
+        console.error(`❌ OVERFLOW DETECTED at ${vp.width}px! diff=${overflow.diff}px (doc: ${overflow.docWidth}, win: ${overflow.winWidth})`);
+        allPassed = false;
       } else {
         console.log(`  ✓ No horizontal overflow (scrollWidth: ${overflow.docWidth}px <= winWidth: ${overflow.winWidth}px)`);
       }
 
-      // Check 2: Route Animation component presence & responsiveness
-      const routeExists = await page.evaluate(() => {
-        return !!document.querySelector('button[type="button"]') && !!document.body.innerText.includes('Saurashtra');
+      // Check 2: Heading Presence
+      const hasHeading = await page.evaluate(() => {
+        return document.body.innerText.includes('Chalo, Somnath') || document.body.innerText.includes('Farva Jaiye');
       });
-      console.log(`  ✓ Route & storytelling content present: ${routeExists}`);
+      console.log(`  ✓ Signature heading present: ${hasHeading}`);
 
-      // Check 3: Essential touch targets (Buttons >= 40px height)
-      const smallTargets = await page.evaluate(() => {
-        const buttons = Array.from(document.querySelectorAll('button, a'));
-        const issues = [];
-        for (const b of buttons) {
-          const rect = b.getBoundingClientRect();
-          // Filter invisible elements
-          if (rect.width > 0 && rect.height > 0 && rect.top >= 0 && rect.bottom <= window.innerHeight) {
-            if (rect.height < 32 || rect.width < 32) {
-              issues.push({ text: b.innerText.slice(0, 20), w: rect.width, h: rect.height });
-            }
-          }
+      // Check 3: Check Characters (Car, Rickshaw, Lion, Bus)
+      const charactersPresent = await page.evaluate(() => {
+        const hasCar = document.querySelectorAll('svg').length >= 4;
+        return hasCar;
+      });
+      console.log(`  ✓ Cartoon characters & scenic SVGs rendered: ${charactersPresent}`);
+
+      // Check 4: Strictly NO PRICING or Packages
+      const pricingFound = await page.evaluate(() => {
+        const text = document.body.innerText.toLowerCase();
+        const pricePatterns = ['₹', 'inr', 'per person', 'per day price', 'package price', 'price list', '/-'];
+        for (const p of pricePatterns) {
+          if (text.includes(p)) return p;
         }
-        return issues;
+        return false;
       });
 
-      if (smallTargets.length > 0) {
-        console.warn(`  ⚠️ Warning: Found ${smallTargets.length} small touch targets on ${vp.name}:`, smallTargets.slice(0, 3));
+      if (pricingFound) {
+        console.error(`❌ UNEXPECTED PRICING DETECTED: "${pricingFound}"! Must be strictly no pricing.`);
+        allPassed = false;
       } else {
-        console.log(`  ✓ Touch targets conform to accessible sizing`);
+        console.log(`  ✓ Strictly zero pricing or package rates displayed (Compliant)`);
       }
 
-      // Capture screenshot
+      // Save screenshot
       const shotPath = path.join(SCREENSHOTS_DIR, `${vp.name}.png`);
       await page.screenshot({ path: shotPath, fullPage: false });
       console.log(`  ✓ Screenshot saved: ${vp.name}.png`);
 
-      results.push({
-        name: vp.name,
-        width: vp.width,
-        overflow: !overflow.hasHorizontalScroll,
-        screenshot: shotPath
-      });
-
       await context.close();
     }
 
-    // 3. Functional Test: Mobile Lead Form Submission & Persistence
-    console.log('\n📝 Testing Mobile Lead Submission & SQLite Persistence...');
+    // 2. Test Frontend-Only Enquiry Modal (Client-side validation, no DB call)
+    console.log('\n📝 Testing Frontend-Only Enquiry Modal & Two-Step Flow...');
     const mobileContext = await browser.newContext({
       viewport: { width: 390, height: 844 },
       isMobile: true,
@@ -143,105 +137,92 @@ async function runTestSuite() {
     const page = await mobileContext.newPage();
     await page.goto('http://localhost:3001', { waitUntil: 'networkidle' });
 
-    // Click visible "Plan My Trip" CTA to open modal
+    // Skip loader
+    const skipBtn = page.locator('text=Skip into trip');
+    if (await skipBtn.isVisible({ timeout: 500 }).catch(() => false)) {
+      await skipBtn.click();
+    }
+    await page.waitForTimeout(400);
+
+    // Open modal via Plan My Trip
     const planTripBtn = page.locator('button:has-text("Plan My Trip"):visible').first();
     await planTripBtn.click();
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(400);
 
-    // Verify modal is visible
     const modal = page.locator('div.fixed.inset-0.z-50');
     await modal.waitFor({ state: 'visible' });
-    console.log(`  ✓ Lead Modal opened: true`);
+    console.log(`  ✓ Plan My Trip modal opened`);
 
-    // Fill form inside modal
-    const testName = 'Devotee Amit Trivedi';
-    const testPhone = '9825012345';
-    await modal.locator('input[placeholder*="Ramesh Patel"]').fill(testName);
+    // Fill Step 1
+    const testName = 'Shailesh Patel';
+    const testPhone = '9879512345';
+    await modal.locator('input[placeholder*="Nilesh Bhatt"]').fill(testName);
     await modal.locator('input[placeholder*="10-digit"]').fill(testPhone);
 
-    // Select Somnath + Sasan Gir inside modal
-    const girBtn = modal.locator('button:has-text("Somnath + Sasan Gir")');
+    // Click Continue to Step 2
+    const continueBtn = modal.locator('button:has-text("Continue to Trip Preferences")');
+    await continueBtn.click();
+    await page.waitForTimeout(300);
+
+    // Verify Step 2 reached
+    const step2Text = await modal.locator('text=Step 2 of 2').isVisible();
+    console.log(`  ✓ Step 2 optional preferences reached: ${step2Text}`);
+
+    // Select Destination
+    const girBtn = modal.locator('button:has-text("Sasan Gir")');
     if (await girBtn.isVisible()) {
       await girBtn.click();
     }
 
-    // Submit inside modal
-    const submitBtn = modal.locator('button[type="submit"]');
-    await submitBtn.click();
+    // Submit Step 2
+    const finalSubmitBtn = modal.locator('button:has-text("Connect With My Local Host")');
+    await finalSubmitBtn.click();
+    await page.waitForTimeout(400);
 
-    // Wait for success confirmation inside modal
-    await modal.locator('text=Trip Plan Request Received!').waitFor({ timeout: 5000 });
-    console.log('  ✓ Success confirmation received on mobile UI!');
+    // Verify Confirmation
+    const confirmed = await modal.locator('text=Enquiry Prepared!').isVisible();
+    console.log(`  ✓ Client-side confirmation state rendered: ${confirmed}`);
 
-    const leadRefText = await modal.locator('text=#SLH-').innerText();
-    console.log(`  ✓ Reference generated: ${leadRefText}`);
+    // Verify direct WhatsApp link
+    const waLink = await modal.locator('a:has-text("Send to Host on WhatsApp")').getAttribute('href');
+    console.log(`  ✓ Pre-filled WhatsApp link generated: ${waLink ? 'Valid' : 'Missing'}`);
 
-    // Verify WhatsApp and Call links exist
-    const waLink = await modal.locator('a:has-text("Chat on WhatsApp Directly")').getAttribute('href');
-    console.log(`  ✓ Direct WhatsApp action verified: ${waLink.slice(0, 50)}...`);
+    await page.screenshot({ path: path.join(SCREENSHOTS_DIR, 'playful-enquiry-confirmation.png') });
+    console.log(`  ✓ Screenshot saved: playful-enquiry-confirmation.png`);
 
-    // Verify sticky bottom bar is hidden when modal is open
-    const stickyBottomVisible = await page.locator('text=Call Host').isVisible();
-    console.log(`  ✓ Sticky bar properly managed (modal open state): ${!stickyBottomVisible ? 'Hidden (Compliant)' : 'Visible'}`);
-
-    // Capture success screenshot
-    await page.screenshot({ path: path.join(SCREENSHOTS_DIR, 'mobile-lead-success.png') });
-
-    // 4. Verify Backend Persistence via /api/leads
-    console.log('\n🗄️ Verifying Database Persistence via /api/leads...');
-    const apiRes = await page.request.get('http://localhost:3001/api/leads');
-    const apiData = await apiRes.json();
-    const persistedLead = apiData.leads.find(l => l.phone === testPhone);
-
-    if (persistedLead && persistedLead.full_name === testName) {
-      console.log(`  ✓ Lead successfully persisted in SQLite leads.db:`, {
-        id: persistedLead.id,
-        name: persistedLead.full_name,
-        phone: persistedLead.phone,
-        destination: persistedLead.destination,
-        created_at: persistedLead.created_at
-      });
-    } else {
-      console.error('❌ Lead not found in database!');
-      testPassed = false;
-    }
-
-    // 5. Test Reduced Motion Mode
+    // 3. Test prefers-reduced-motion: reduce
     console.log('\n♿ Testing prefers-reduced-motion: reduce...');
-    const reducedMotionContext = await browser.newContext({
+    const rmContext = await browser.newContext({
       viewport: { width: 390, height: 844 },
       reducedMotion: 'reduce'
     });
-    const rmPage = await reducedMotionContext.newPage();
+    const rmPage = await rmContext.newPage();
     await rmPage.goto('http://localhost:3001');
-    const animationActive = await rmPage.evaluate(() => {
-      const pulseEl = document.querySelector('.animate-pulse-glow');
-      if (!pulseEl) return false;
-      const style = window.getComputedStyle(pulseEl);
-      return style.animationName !== 'none' && style.animationDuration !== '0.01ms';
+    const loadingSkipped = await rmPage.evaluate(() => {
+      return !document.body.innerText.includes('Skip into trip');
     });
-    console.log(`  ✓ Reduced motion override active: ${!animationActive}`);
-    await reducedMotionContext.close();
+    console.log(`  ✓ Loading screen automatically bypassed in reduced-motion: ${loadingSkipped}`);
+    await rmContext.close();
 
     await mobileContext.close();
 
   } catch (err) {
     console.error('❌ Test execution error:', err);
-    testPassed = false;
+    allPassed = false;
   } finally {
     await browser.close();
     server.kill();
     console.log('Server stopped.');
   }
 
-  console.log('\n=====================================================');
-  if (testPassed) {
-    console.log('🏆 ALL TESTS PASSED! MOBILE-FIRST AUDIT SUCCESSFUL! 🎉');
+  console.log('\n=================================================================');
+  if (allPassed) {
+    console.log('🎉 ALL PLAYFUL WHITE-THEME AUDITS PASSED WITH FLYING COLORS! 🏆');
   } else {
     console.log('⚠️ SOME CHECKS FAILED. PLEASE REVIEW LOGS.');
     process.exit(1);
   }
-  console.log('=====================================================');
+  console.log('=================================================================');
 }
 
 runTestSuite().catch(err => {

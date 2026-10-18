@@ -1,111 +1,101 @@
 import React, { useState } from 'react';
+import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
 import MobileDrawer from './components/MobileDrawer';
 import Hero from './components/Hero';
-import RouteAnimation from './components/RouteAnimation';
-import DestinationSlider from './components/DestinationSlider';
+import RoadTripJourney from './components/RoadTripJourney';
 import ServicesGrid from './components/ServicesGrid';
-import PackagesSection from './components/PackagesSection';
-import WhyChooseUs from './components/WhyChooseUs';
-import InlineLeadForm from './components/InlineLeadForm';
-import LeadFormModal from './components/LeadFormModal';
+import ConversionSection from './components/ConversionSection';
+import FrontendLeadModal from './components/FrontendLeadModal';
 import StickyBottomBar from './components/StickyBottomBar';
-import AdminLeadsDrawer from './components/AdminLeadsDrawer';
 import Footer from './components/Footer';
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
-  const [isAdminLeadsOpen, setIsAdminLeadsOpen] = useState(false);
-  const [selectedDestination, setSelectedDestination] = useState('Somnath Circuit');
+  const [selectedDestination, setSelectedDestination] = useState('Somnath');
 
-  // Trigger lead modal with destination pre-selected
-  const handleOpenLeadModal = (destination = 'Somnath Circuit') => {
+  const handleOpenLeadModal = (destination = 'Somnath') => {
     if (typeof destination === 'string') {
       setSelectedDestination(destination);
     }
     setIsLeadModalOpen(true);
   };
 
+  const handleScrollToJourney = () => {
+    const el = document.getElementById('journey');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleExploreAgain = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col relative selection:bg-amber-500 selection:text-slate-950">
-      {/* Top Header */}
+    <div className="min-h-screen bg-white text-slate-800 flex flex-col relative selection:bg-amber-300 selection:text-slate-900">
+      {/* Delightful Branded Loading Animation */}
+      {loading && <LoadingScreen onFinish={() => setLoading(false)} />}
+
+      {/* Header */}
       <Header
         onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
-        onOpenLeadModal={() => handleOpenLeadModal('Somnath Circuit')}
-        onOpenAdminLeads={() => setIsAdminLeadsOpen(true)}
+        onOpenLeadModal={() => handleOpenLeadModal('Somnath')}
+        onScrollToJourney={handleScrollToJourney}
       />
 
-      {/* Mobile Slide-out Drawer */}
+      {/* Mobile Drawer */}
       <MobileDrawer
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
-        onOpenLeadModal={() => handleOpenLeadModal('Somnath Circuit')}
-        onOpenAdminLeads={() => setIsAdminLeadsOpen(true)}
+        onOpenLeadModal={() => handleOpenLeadModal('Somnath')}
+        onScrollToJourney={handleScrollToJourney}
       />
 
-      {/* Main Content Area */}
-      <main className="flex-1 w-full overflow-hidden">
-        {/* Mobile-First Cinematic Hero */}
+      {/* Main Content */}
+      <main className="flex-1 w-full">
+        {/* Signature Hero: "Chalo, Somnath Farva Jaiye!" */}
         <Hero
-          onOpenLeadModal={() => handleOpenLeadModal('Somnath Circuit')}
-          onSelectQuickDestination={(dest) => handleOpenLeadModal(dest)}
+          onOpenLeadModal={() => handleOpenLeadModal('Somnath')}
+          onScrollToJourney={handleScrollToJourney}
         />
 
-        {/* Section: Interactive Route & Vehicle Travel */}
-        <section className="py-6 sm:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RouteAnimation
-            onSelectDestination={(dest) => handleOpenLeadModal(`Cab to ${dest}`)}
-          />
-        </section>
-
-        {/* Section: Swipeable Destination Stories (Somnath, Dwarka, Diu, Sasan Gir) */}
-        <DestinationSlider
-          onSelectDestination={(dest) => handleOpenLeadModal(`${dest} Tour`)}
+        {/* The Continuous Road Trip Journey (Somnath, Dwarka, Diu, Sasan Gir) */}
+        <RoadTripJourney
+          onSelectDestination={(dest) => handleOpenLeadModal(dest)}
         />
 
-        {/* Section: Verified Services (Cabs, Hotels, Food, Darshan) */}
+        {/* Services Section (Hotel & Stay, Car Rental, Sightseeing, Desi Gujarati Food) */}
         <ServicesGrid
           onBookService={(service) => handleOpenLeadModal(service)}
         />
 
-        {/* Section: Tour Packages & Itineraries */}
-        <PackagesSection
-          onSelectPackage={(pkg) => handleOpenLeadModal(pkg)}
-        />
-
-        {/* Section: Why Choose Us (Authentic Trust Values) */}
-        <WhyChooseUs />
-
-        {/* Section: Inline 1-Handed Mobile Lead Capture Form */}
-        <InlineLeadForm
-          selectedDestination={selectedDestination}
+        {/* Minimal Contact-First Conversion Section */}
+        <ConversionSection
+          onOpenContact={() => handleOpenLeadModal('Somnath')}
+          onExploreAgain={handleExploreAgain}
         />
       </main>
 
       {/* Footer */}
       <Footer
-        onOpenLeadModal={() => handleOpenLeadModal('Somnath Circuit')}
-        onOpenAdminLeads={() => setIsAdminLeadsOpen(true)}
+        onOpenLeadModal={() => handleOpenLeadModal('Somnath')}
+        onScrollToJourney={handleScrollToJourney}
       />
 
-      {/* Sticky Bottom Conversion Bar for Mobile (auto hides when modal is open) */}
+      {/* Sticky Bottom Conversion Bar for Mobile (auto-hides when modal is open) */}
       <StickyBottomBar
-        onOpenLeadModal={() => handleOpenLeadModal('Somnath Circuit')}
+        onOpenLeadModal={() => handleOpenLeadModal('Somnath')}
         isModalOpen={isLeadModalOpen}
       />
 
-      {/* One-Handed Lead Form Modal */}
-      <LeadFormModal
+      {/* Frontend-Only Enquiry Form Modal (No DB, client-side validation only) */}
+      <FrontendLeadModal
         isOpen={isLeadModalOpen}
         onClose={() => setIsLeadModalOpen(false)}
         initialDestination={selectedDestination}
-      />
-
-      {/* Admin Leads Database Inspection Drawer */}
-      <AdminLeadsDrawer
-        isOpen={isAdminLeadsOpen}
-        onClose={() => setIsAdminLeadsOpen(false)}
       />
     </div>
   );
