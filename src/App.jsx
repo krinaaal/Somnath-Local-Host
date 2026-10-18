@@ -3,7 +3,7 @@ import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
 import MobileDrawer from './components/MobileDrawer';
 import Hero from './components/Hero';
-import RoadTripJourney from './components/RoadTripJourney';
+import CinematicScrollJourney from './components/cinematic/CinematicScrollJourney';
 import ServicesGrid from './components/ServicesGrid';
 import ConversionSection from './components/ConversionSection';
 import FrontendLeadModal from './components/FrontendLeadModal';
@@ -62,8 +62,8 @@ export default function App() {
           onScrollToJourney={handleScrollToJourney}
         />
 
-        {/* The Continuous Road Trip Journey (Somnath, Dwarka, Diu, Sasan Gir) */}
-        <RoadTripJourney
+        {/* The Real-World Cinematic Scroll Journey (Somnath, Dwarka, Diu, Sasan Gir) */}
+        <CinematicScrollJourney
           onSelectDestination={(dest) => handleOpenLeadModal(dest)}
         />
 

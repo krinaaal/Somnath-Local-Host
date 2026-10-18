@@ -1,6 +1,5 @@
 import React from 'react';
 import { PhoneCall, MessageCircle, MapPin, Heart } from 'lucide-react';
-import TravelCar from './characters/TravelCar';
 
 export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
   return (

@@ -86,7 +86,7 @@ export default function ServicesGrid({ onBookService }) {
                           src={serv.image}
                           alt={serv.title}
                           className="w-full h-full object-cover"
-                          loading="lazy"
+                          loading="eager"
                         />
                       </div>
                     )}

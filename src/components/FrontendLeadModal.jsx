@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { X, User, Phone, CheckCircle2, AlertCircle, MessageCircle, PhoneCall, Sparkles, ArrowRight, ArrowLeft } from 'lucide-react';
-import TravelCar from './characters/TravelCar';
 
 export default function FrontendLeadModal({ isOpen, onClose, initialDestination = 'Somnath' }) {
   const [step, setStep] = useState(1);

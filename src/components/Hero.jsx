@@ -1,44 +1,24 @@
 import React from 'react';
-import TravelCar from './characters/TravelCar';
-import AutoRickshaw from './characters/AutoRickshaw';
-import TouristBus from './characters/TouristBus';
-import { CheerfulSun, CartoonCloud, SwayingPalmTree, OceanWaves, CartoonBird, SomnathIllustration } from './characters/NatureElements';
-import { Sparkles, MapPin, Compass, ArrowDown, PhoneCall } from 'lucide-react';
+import StylizedCar3D from './cinematic/StylizedCar3D';
+import StylizedRickshaw3D from './cinematic/StylizedRickshaw3D';
+import StylizedBus3D from './cinematic/StylizedBus3D';
+import { Sparkles, Compass, ArrowDown, MapPin, ShieldCheck, HeartHandshake } from 'lucide-react';
 
 export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
   return (
-    <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 bg-gradient-to-b from-sky-50/80 via-white to-amber-50/20 overflow-hidden">
-      {/* Floating Sky Elements */}
-      <div className="absolute top-16 left-6 sm:left-12 pointer-events-none opacity-80 animate-cloud-drift-1">
-        <CartoonCloud className="w-24 sm:w-32 h-12" />
-      </div>
-      <div className="absolute top-20 right-8 sm:right-24 pointer-events-none opacity-80 animate-cloud-drift-2">
-        <CartoonCloud className="w-20 sm:w-28 h-10" />
-      </div>
-      <div className="absolute top-12 right-4 sm:right-12 z-0">
-        <CheerfulSun className="w-16 h-16 sm:w-20 sm:h-20" />
-      </div>
-
-      {/* Playful Floating Seagulls */}
-      <div className="absolute top-24 left-1/4 pointer-events-none hidden sm:block">
-        <CartoonBird className="w-7 h-4 text-sky-700" delay="0s" />
-      </div>
-      <div className="absolute top-28 left-[30%] pointer-events-none hidden sm:block">
-        <CartoonBird className="w-5 h-3 text-sky-700" delay="1.5s" />
-      </div>
-
+    <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 bg-gradient-to-b from-sky-50/70 via-white to-amber-50/30 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* TEXT CONTENT (Centered & Friendly) */}
-        <div className="text-center max-w-2xl mx-auto">
-          {/* Welcome Tag */}
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-800 text-xs sm:text-sm font-extrabold mb-3 shadow-xs">
+        {/* TEXT CONTENT (Centered, Cheerful, Predominantly White Aesthetic) */}
+        <div className="text-center max-w-3xl mx-auto">
+          {/* Welcome Pill */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs sm:text-sm font-extrabold mb-3 shadow-2xs">
             <span>👋 Kem Chho!</span>
             <span className="text-amber-500">•</span>
-            <span>Welcome to Saurashtra</span>
+            <span>Welcome to Saurashtra, Gujarat</span>
           </div>
 
-          {/* Main Playful Heading */}
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.18]">
+          {/* Signature Heading */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
             Chalo, Somnath <br className="hidden xs:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-emerald-600">
               Farva Jaiye!
@@ -47,10 +27,10 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
 
           {/* Supporting Text */}
           <p className="mt-3 text-base sm:text-xl font-bold text-slate-700 leading-snug">
-            Somnath, Dwarka, Diu ke Sasan Gir — your friendly local travel buddy is here!
+            Somnath, Dwarka, Diu ke Sasan Gir — your local travel buddy is here!
           </p>
-          <p className="mt-2 text-xs sm:text-sm text-slate-500 font-medium max-w-lg mx-auto">
-            Experience joyful family pilgrimages and road trips with clean AC cabs, handpicked stays, and caring local guidance.
+          <p className="mt-2 text-xs sm:text-sm text-slate-500 font-medium max-w-xl mx-auto leading-relaxed">
+            Experience genuine local hospitality, clean AC cabs, seaside temple darshan, and peaceful family travel across coastal Saurashtra.
           </p>
 
           {/* CTA Buttons */}
@@ -59,7 +39,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
             <button
               type="button"
               onClick={onOpenLeadModal}
-              className="w-full xs:w-auto min-h-[48px] px-6 py-3 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md shadow-orange-500/20 active:scale-95 transition-all tap-bounce border border-orange-300"
+              className="w-full xs:w-auto min-h-[48px] px-7 py-3 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-md shadow-orange-500/25 active:scale-95 transition-all tap-bounce border border-orange-400"
             >
               <Sparkles className="w-4 h-4 text-amber-200" />
               <span>Plan My Trip</span>
@@ -69,98 +49,134 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
             <button
               type="button"
               onClick={onScrollToJourney}
-              className="w-full xs:w-auto min-h-[48px] px-6 py-3 rounded-2xl bg-white hover:bg-sky-50 border-2 border-sky-300 hover:border-sky-400 text-sky-700 font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xs active:scale-95 transition-all tap-bounce"
+              className="w-full xs:w-auto min-h-[48px] px-7 py-3 rounded-2xl bg-white hover:bg-sky-50 border-2 border-sky-300 hover:border-sky-400 text-sky-800 font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-xs active:scale-95 transition-all tap-bounce"
             >
               <Compass className="w-4 h-4 text-sky-600" />
               <span>Explore Places</span>
             </button>
           </div>
+
+          {/* Trust Highlights */}
+          <div className="mt-5 flex items-center justify-center gap-4 text-xs font-bold text-slate-500 flex-wrap">
+            <span className="inline-flex items-center gap-1">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              Verified Local Drivers
+            </span>
+            <span>•</span>
+            <span className="inline-flex items-center gap-1">
+              <HeartHandshake className="w-3.5 h-3.5 text-amber-600" />
+              Direct Local Host Guidance
+            </span>
+            <span>•</span>
+            <span className="inline-flex items-center gap-1">
+              <MapPin className="w-3.5 h-3.5 text-sky-600" />
+              Somnath • Dwarka • Diu • Gir
+            </span>
+          </div>
         </div>
 
-        {/* PROMINENT MOBILE & DESKTOP ILLUSTRATION SCENERY */}
-        <div className="mt-8 sm:mt-12 relative w-full rounded-3xl bg-gradient-to-b from-sky-100/60 via-amber-50/40 to-emerald-50/50 border-2 border-slate-200/80 p-4 sm:p-8 overflow-hidden shadow-sm">
-          {/* Background Palm Trees */}
-          <div className="absolute -left-2 bottom-8 z-10 opacity-90 scale-75 sm:scale-100">
-            <SwayingPalmTree delay="0s" />
-          </div>
-          <div className="absolute right-0 bottom-8 z-10 opacity-80 scale-75 sm:scale-100">
-            <SwayingPalmTree delay="1.2s" />
+        {/* 2. REALISTIC CINEMATIC SHOWCASE WITH 3D VEHICLE ON COASTAL ROAD */}
+        <div className="mt-8 sm:mt-12 relative w-full rounded-3xl sm:rounded-4xl border-2 border-slate-200 bg-white p-2 sm:p-3 shadow-md overflow-hidden">
+          {/* Destination Markers */}
+          <div className="flex items-center justify-between gap-2 px-3 py-2 bg-slate-50 rounded-2xl border border-slate-200/80 mb-2 overflow-x-auto no-scrollbar">
+            <div className="flex items-center gap-2 min-w-max">
+              <span className="text-[11px] font-black uppercase text-slate-500 tracking-wider">
+                Road Route:
+              </span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-orange-100 border border-orange-300 text-orange-900 text-xs font-extrabold">
+                📍 1. Somnath
+              </span>
+              <span className="text-slate-300">→</span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-sky-100 border border-sky-300 text-sky-900 text-xs font-extrabold">
+                📍 2. Dwarka
+              </span>
+              <span className="text-slate-300">→</span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-teal-100 border border-teal-300 text-teal-900 text-xs font-extrabold">
+                📍 3. Diu Island
+              </span>
+              <span className="text-slate-300">→</span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-extrabold">
+                📍 4. Sasan Gir
+              </span>
+            </div>
+            <span className="text-xs font-extrabold text-slate-600 hidden md:block">
+              520 km Saurashtra Circuit
+            </span>
           </div>
 
-          {/* Destination Markers Floating */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-4 z-20 relative">
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 border border-orange-200 text-orange-800 text-[11px] font-bold shadow-xs">
-              📍 1. Somnath
-            </span>
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 border border-sky-200 text-sky-800 text-[11px] font-bold shadow-xs">
-              📍 2. Dwarka
-            </span>
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 border border-teal-200 text-teal-800 text-[11px] font-bold shadow-xs">
-              📍 3. Diu Island
-            </span>
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 border border-emerald-200 text-emerald-800 text-[11px] font-bold shadow-xs">
-              📍 4. Sasan Gir
-            </span>
-          </div>
+          {/* Cinematic Frame: Real Somnath Temple Photo + Overlay Road with 3D Car */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[21/9] w-full bg-slate-900">
+            <picture>
+              <source media="(max-width: 640px)" srcSet="/images/destinations/somnath-mobile.webp" />
+              <source media="(min-width: 641px)" srcSet="/images/destinations/somnath-cinematic.webp" />
+              <img
+                src="/images/destinations/somnath-cinematic.webp"
+                alt="Realistic Shree Somnath Temple beside the Arabian Sea at sunset"
+                className="w-full h-full object-cover object-[center_35%]"
+              />
+            </picture>
 
-          {/* Central Curved Road with Animated Vehicles */}
-          <div className="relative h-44 sm:h-52 w-full flex items-center justify-center">
-            {/* Curved Road SVG */}
-            <svg viewBox="0 0 800 180" className="w-full h-full" preserveAspectRatio="none">
-              {/* Road Asphalt */}
-              <path
-                d="M 10 130 C 200 40, 350 160, 500 80 C 650 10, 720 120, 790 90"
-                fill="none"
-                stroke="#64748b"
-                strokeWidth="48"
-                strokeLinecap="round"
-              />
-              {/* Road White Border Edges */}
-              <path
-                d="M 10 130 C 200 40, 350 160, 500 80 C 650 10, 720 120, 790 90"
-                fill="none"
-                stroke="#cbd5e1"
-                strokeWidth="52"
-                strokeLinecap="round"
-                opacity="0.5"
-              />
-              <path
-                d="M 10 130 C 200 40, 350 160, 500 80 C 650 10, 720 120, 790 90"
-                fill="none"
-                stroke="#64748b"
-                strokeWidth="44"
-                strokeLinecap="round"
-              />
+            {/* Subtle Gradient Vignette */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/10 pointer-events-none" />
+
+            {/* Badge on Photo */}
+            <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-10">
+              <span className="px-3 py-1 rounded-full text-xs font-black bg-white/95 text-slate-900 shadow-sm border border-white/50 backdrop-blur-md">
+                Shree Somnath Jyotirlinga • Arabian Sea Coast
+              </span>
+            </div>
+
+            {/* Realistic Asphalt Road Layer at Base of Photo */}
+            <div className="absolute bottom-0 inset-x-0 h-16 sm:h-22 bg-gradient-to-b from-slate-800/95 to-slate-900 z-10 flex items-center justify-between px-4 sm:px-8 border-t-2 border-slate-600/70 overflow-hidden">
               {/* Yellow Dashed Center Line */}
-              <path
-                d="M 10 130 C 200 40, 350 160, 500 80 C 650 10, 720 120, 790 90"
-                fill="none"
-                stroke="#facc15"
-                strokeWidth="4"
-                strokeDasharray="16 12"
-                strokeLinecap="round"
-              />
-            </svg>
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-around pointer-events-none opacity-85">
+                <div className="w-12 sm:w-16 h-1 sm:h-1.5 bg-amber-400 rounded-full" />
+                <div className="w-12 sm:w-16 h-1 sm:h-1.5 bg-amber-400 rounded-full" />
+                <div className="w-12 sm:w-16 h-1 sm:h-1.5 bg-amber-400 rounded-full" />
+                <div className="w-12 sm:w-16 h-1 sm:h-1.5 bg-amber-400 rounded-full" />
+                <div className="w-12 sm:w-16 h-1 sm:h-1.5 bg-amber-400 rounded-full hidden sm:block" />
+              </div>
 
-            {/* VEHICLE 1: Primary Cartoon Travel Car */}
-            <div className="absolute left-[38%] top-[25%] sm:top-[28%] -translate-x-1/2 z-20">
-              <TravelCar className="w-24 sm:w-32 h-16 sm:h-20" moving={true} />
+              {/* White Road Edge Lines */}
+              <div className="absolute top-1 inset-x-0 h-0.5 bg-white/40" />
+              <div className="absolute bottom-1 inset-x-0 h-0.5 bg-white/40" />
+
+              {/* Moving 3D Stylized Vehicles on the Real Road */}
+              <div className="relative z-20 flex items-center justify-between w-full">
+                {/* 3D Pearl White Car Driving */}
+                <div className="flex items-center gap-3">
+                  <div className="transform -translate-y-1 sm:-translate-y-2">
+                    <StylizedCar3D className="w-28 sm:w-36 h-16 sm:h-20" moving={true} />
+                  </div>
+                  <div className="hidden xs:block text-left text-white/90">
+                    <div className="text-[10px] font-black text-amber-300 uppercase tracking-wider">
+                      Tour Starts Here:
+                    </div>
+                    <div className="text-xs font-bold text-slate-100">
+                      Comfortable AC Cabs & Stays
+                    </div>
+                  </div>
+                </div>
+
+                {/* Supporting 3D Vehicle Cameos */}
+                <div className="flex items-center gap-4">
+                  <div className="hidden md:block transform -translate-y-1">
+                    <StylizedBus3D className="w-28 h-16 opacity-90" moving={true} />
+                  </div>
+                  <div className="hidden sm:block transform -translate-y-1">
+                    <StylizedRickshaw3D className="w-20 h-14 opacity-90" moving={true} />
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={onScrollToJourney}
+                    className="px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-black shadow-xs transition-all tap-bounce"
+                  >
+                    Start Journey ↓
+                  </button>
+                </div>
+              </div>
             </div>
-
-            {/* VEHICLE 2: Supporting Indian Auto-Rickshaw */}
-            <div className="absolute left-[12%] bottom-[15%] z-20 hidden xs:block">
-              <AutoRickshaw className="w-20 sm:w-24 h-16 sm:h-18" moving={true} />
-            </div>
-
-            {/* VEHICLE 3: Supporting Tourist Mini Bus */}
-            <div className="absolute right-[10%] top-[10%] z-20 hidden sm:block">
-              <TouristBus className="w-24 sm:w-28 h-16 sm:h-18" moving={true} />
-            </div>
-          </div>
-
-          {/* Gentle Coastal Blue Waves at bottom */}
-          <div className="mt-2 -mx-4 sm:-mx-8">
-            <OceanWaves className="w-full h-8 sm:h-10" />
           </div>
         </div>
 
@@ -171,7 +187,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
             onClick={onScrollToJourney}
             className="inline-flex flex-col items-center gap-1 text-slate-500 hover:text-orange-500 transition-colors tap-bounce"
           >
-            <span className="text-xs font-bold">Scroll down to start the road trip</span>
+            <span className="text-xs font-bold">Scroll down to explore Somnath, Dwarka, Diu & Sasan Gir</span>
             <div className="w-7 h-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center animate-bounce">
               <ArrowDown className="w-3.5 h-3.5 text-slate-600" />
             </div>

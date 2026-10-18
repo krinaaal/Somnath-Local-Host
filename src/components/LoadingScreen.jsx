@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import TravelCar from './characters/TravelCar';
-import { CheerfulSun, CartoonCloud } from './characters/NatureElements';
+import StylizedCar3D from './cinematic/StylizedCar3D';
 
 export default function LoadingScreen({ onFinish }) {
   const [step, setStep] = useState(0);
@@ -14,11 +13,6 @@ export default function LoadingScreen({ onFinish }) {
       return;
     }
 
-    // Sequence:
-    // 0ms: Car starts moving on curved road
-    // 400ms: Destination tags appear
-    // 800ms: Somnath Local Host brand reveals
-    // 1300ms: Fade out & finish
     const t1 = setTimeout(() => setStep(1), 350);
     const t2 = setTimeout(() => setStep(2), 750);
     const t3 = setTimeout(() => setFadeOut(true), 1300);
@@ -39,15 +33,7 @@ export default function LoadingScreen({ onFinish }) {
       }`}
     >
       <div className="relative w-full max-w-sm flex flex-col items-center text-center">
-        {/* Sky Elements */}
-        <div className="absolute -top-12 right-6">
-          <CheerfulSun className="w-14 h-14" />
-        </div>
-        <div className="absolute -top-8 left-4">
-          <CartoonCloud className="w-16 h-8" />
-        </div>
-
-        {/* Animated Character Vehicle on Curved Road */}
+        {/* Animated 3D Vehicle on Curved Road */}
         <div className="relative w-full h-24 my-2 flex items-center justify-center overflow-hidden">
           {/* Animated Road Track */}
           <svg viewBox="0 0 300 60" className="w-full h-full" fill="none">
@@ -66,13 +52,14 @@ export default function LoadingScreen({ onFinish }) {
             />
           </svg>
 
-          {/* Moving Travel Car */}
-          <div className="absolute top-2 animate-car-bounce transition-transform duration-1000 ease-out"
+          {/* Moving 3D Stylized Car */}
+          <div
+            className="absolute top-1 transition-transform duration-1000 ease-out"
             style={{
               transform: step === 0 ? 'translateX(-80px)' : step === 1 ? 'translateX(0px)' : 'translateX(70px)'
             }}
           >
-            <TravelCar className="w-20 h-14" />
+            <StylizedCar3D className="w-24 h-16" moving={true} />
           </div>
         </div>
 
@@ -83,7 +70,7 @@ export default function LoadingScreen({ onFinish }) {
               key={dest}
               className={`text-[11px] font-bold px-2 py-0.5 rounded-full transition-all duration-300 ${
                 step >= 1
-                  ? 'bg-amber-100 text-amber-800 scale-100 opacity-100'
+                  ? 'bg-amber-100 text-amber-900 scale-100 opacity-100'
                   : 'scale-75 opacity-0'
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -98,21 +85,21 @@ export default function LoadingScreen({ onFinish }) {
           <div className="flex items-center justify-center gap-2 mb-1">
             <img src="/images/logo.webp" alt="Logo" className="w-8 h-8 rounded-full border border-amber-300 shadow-sm" />
             <h2 className="text-xl font-black text-slate-800 tracking-tight">
-              Somnath <span className="text-amber-500">Local Host</span>
+              Somnath Local Host
             </h2>
           </div>
-          <p className="text-xs font-semibold text-emerald-600">
+          <p className="text-xs text-slate-500 font-bold">
             Chalo, Somnath Farva Jaiye! ✨
           </p>
         </div>
 
-        {/* Instant Skip button for accessibility */}
+        {/* Optional quick skip */}
         <button
           type="button"
           onClick={() => onFinish && onFinish()}
-          className="mt-6 text-xs text-slate-400 hover:text-slate-600 underline font-medium"
+          className="mt-4 text-[11px] text-slate-400 hover:text-slate-600 underline transition-colors"
         >
-          Skip into trip →
+          Skip into trip
         </button>
       </div>
     </div>

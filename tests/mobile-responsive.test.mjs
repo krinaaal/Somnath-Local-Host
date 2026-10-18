@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-import { spawn } from 'child_process';
+import { spawn, execSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -28,15 +28,22 @@ const VIEWPORTS = [
 
 async function runTestSuite() {
   console.log('=================================================================');
-  console.log('🎨 AUDITING PLAYFUL WHITE-THEME ANIMATED SOMNATH TRAVEL WEBSITE');
+  console.log('🎬 AUDITING REAL-WORLD CINEMATIC SOMNATH TRAVEL WEBSITE');
   console.log('=================================================================');
+
+  // Ensure port 3001 is clean before starting
+  try {
+    execSync('lsof -ti:3001 | xargs kill -9 2>/dev/null || true');
+  } catch (e) {
+    // ignore
+  }
 
   // 1. Start static server
   console.log('Starting production server on port 3001...');
   const server = spawn('node', ['server.js'], {
     cwd: path.join(__dirname, '..'),
     env: { ...process.env, PORT: '3001', NODE_ENV: 'production' },
-    stdio: 'inherit'
+    stdio: 'ignore'
   });
 
   await new Promise(r => setTimeout(r, 1500));
@@ -61,12 +68,8 @@ async function runTestSuite() {
       const page = await context.newPage();
       await page.goto('http://localhost:3001', { waitUntil: 'networkidle' });
 
-      // Click Skip on loading screen if present
-      const skipBtn = page.locator('text=Skip into trip');
-      if (await skipBtn.isVisible({ timeout: 500 }).catch(() => false)) {
-        await skipBtn.click();
-      }
-      await page.waitForTimeout(300);
+      // Wait for intro loading animation to finish and unmount
+      await page.waitForTimeout(1700);
 
       // Check 1: Strict Zero Horizontal Overflow
       const overflow = await page.evaluate(() => {
@@ -89,18 +92,23 @@ async function runTestSuite() {
         console.log(`  ✓ No horizontal overflow (scrollWidth: ${overflow.docWidth}px <= winWidth: ${overflow.winWidth}px)`);
       }
 
-      // Check 2: Heading Presence
+      // Check 2: Heading Presence & White Theme
       const hasHeading = await page.evaluate(() => {
         return document.body.innerText.includes('Chalo, Somnath') || document.body.innerText.includes('Farva Jaiye');
       });
       console.log(`  ✓ Signature heading present: ${hasHeading}`);
 
-      // Check 3: Check Characters (Car, Rickshaw, Lion, Bus)
-      const charactersPresent = await page.evaluate(() => {
-        const hasCar = document.querySelectorAll('svg').length >= 4;
-        return hasCar;
+      // Check 3: Real Destinations & 3D Vehicles
+      const journeyRendered = await page.evaluate(() => {
+        const text = document.body.innerText;
+        const hasSomnath = text.includes('Somnath');
+        const hasDwarka = text.includes('Dwarka');
+        const hasDiu = text.includes('Diu');
+        const hasGir = text.includes('Sasan Gir') || text.includes('Gir');
+        const imgElements = document.querySelectorAll('img').length >= 4;
+        return hasSomnath && hasDwarka && hasDiu && hasGir && imgElements;
       });
-      console.log(`  ✓ Cartoon characters & scenic SVGs rendered: ${charactersPresent}`);
+      console.log(`  ✓ Real 4 destinations & photography rendered: ${journeyRendered}`);
 
       // Check 4: Strictly NO PRICING or Packages
       const pricingFound = await page.evaluate(() => {
@@ -137,12 +145,8 @@ async function runTestSuite() {
     const page = await mobileContext.newPage();
     await page.goto('http://localhost:3001', { waitUntil: 'networkidle' });
 
-    // Skip loader
-    const skipBtn = page.locator('text=Skip into trip');
-    if (await skipBtn.isVisible({ timeout: 500 }).catch(() => false)) {
-      await skipBtn.click();
-    }
-    await page.waitForTimeout(400);
+    // Wait for intro loading animation to finish and unmount
+    await page.waitForTimeout(1700);
 
     // Open modal via Plan My Trip
     const planTripBtn = page.locator('button:has-text("Plan My Trip"):visible').first();
@@ -187,8 +191,8 @@ async function runTestSuite() {
     const waLink = await modal.locator('a:has-text("Send to Host on WhatsApp")').getAttribute('href');
     console.log(`  ✓ Pre-filled WhatsApp link generated: ${waLink ? 'Valid' : 'Missing'}`);
 
-    await page.screenshot({ path: path.join(SCREENSHOTS_DIR, 'playful-enquiry-confirmation.png') });
-    console.log(`  ✓ Screenshot saved: playful-enquiry-confirmation.png`);
+    await page.screenshot({ path: path.join(SCREENSHOTS_DIR, 'cinematic-enquiry-confirmation.png') });
+    console.log(`  ✓ Screenshot saved: cinematic-enquiry-confirmation.png`);
 
     // 3. Test prefers-reduced-motion: reduce
     console.log('\n♿ Testing prefers-reduced-motion: reduce...');
@@ -217,7 +221,7 @@ async function runTestSuite() {
 
   console.log('\n=================================================================');
   if (allPassed) {
-    console.log('🎉 ALL PLAYFUL WHITE-THEME AUDITS PASSED WITH FLYING COLORS! 🏆');
+    console.log('🎉 ALL REAL-WORLD CINEMATIC AUDITS PASSED WITH FLYING COLORS! 🏆');
   } else {
     console.log('⚠️ SOME CHECKS FAILED. PLEASE REVIEW LOGS.');
     process.exit(1);
