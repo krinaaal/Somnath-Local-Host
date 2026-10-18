@@ -35,7 +35,7 @@ export default function Header({ onOpenMobileMenu, onOpenLeadModal, onScrollToJo
               Somnath <span className="text-orange-500">Local Host</span>
             </span>
             <span className="text-[10px] text-emerald-600 font-extrabold tracking-wide hidden xs:block">
-              Your Local Travel Buddy • 24x7
+              Aapka Local Travel Buddy • Har Har Mahadev
             </span>
           </div>
         </a>
@@ -48,10 +48,10 @@ export default function Header({ onOpenMobileMenu, onOpenLeadModal, onScrollToJo
             onClick={onScrollToJourney}
             className="hover:text-orange-500 transition-colors"
           >
-            The Road Trip
+            यात्रा मार्ग
           </button>
-          <a href="#services" className="hover:text-orange-500 transition-colors">Services</a>
-          <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+          <a href="#services" className="hover:text-orange-500 transition-colors">सुविधाएं</a>
+          <a href="#contact" className="hover:text-orange-500 transition-colors">संपर्क</a>
         </nav>
 
         {/* Action Controls */}
@@ -72,7 +72,7 @@ export default function Header({ onOpenMobileMenu, onOpenLeadModal, onScrollToJo
             className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-xs sm:text-sm shadow-xs transition-transform active:scale-95"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Plan My Trip</span>
+            <span>यात्रा प्लान करें</span>
           </button>
 
           {/* Mobile Hamburger Menu Toggle */}

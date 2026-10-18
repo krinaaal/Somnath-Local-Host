@@ -148,8 +148,8 @@ async function runTestSuite() {
     // Wait for intro loading animation to finish and unmount
     await page.waitForTimeout(1700);
 
-    // Open modal via Plan My Trip
-    const planTripBtn = page.locator('button:has-text("Plan My Trip"):visible').first();
+    // Open modal via Plan My Trip or Yatra Plan Karein (only visible element)
+    const planTripBtn = page.locator('button:has-text("Yatra Plan Karein"):visible, button:has-text("यात्रा प्लान करें"):visible, button:has-text("Plan My Trip"):visible').first();
     await planTripBtn.click();
     await page.waitForTimeout(400);
 
@@ -160,11 +160,11 @@ async function runTestSuite() {
     // Fill Step 1
     const testName = 'Shailesh Patel';
     const testPhone = '9879512345';
-    await modal.locator('input[placeholder*="Nilesh Bhatt"]').fill(testName);
-    await modal.locator('input[placeholder*="10-digit"]').fill(testPhone);
+    await modal.locator('input[type="text"]').fill(testName);
+    await modal.locator('input[type="tel"]').fill(testPhone);
 
     // Click Continue to Step 2
-    const continueBtn = modal.locator('button:has-text("Continue to Trip Preferences")');
+    const continueBtn = modal.locator('button:has-text("आगे बढ़ें"), button:has-text("Continue")');
     await continueBtn.click();
     await page.waitForTimeout(300);
 
@@ -179,16 +179,16 @@ async function runTestSuite() {
     }
 
     // Submit Step 2
-    const finalSubmitBtn = modal.locator('button:has-text("Connect With My Local Host")');
+    const finalSubmitBtn = modal.locator('button:has-text("लोकल होस्ट से कनेक्ट करें"), button:has-text("Connect With")');
     await finalSubmitBtn.click();
     await page.waitForTimeout(400);
 
     // Verify Confirmation
-    const confirmed = await modal.locator('text=Enquiry Prepared!').isVisible();
+    const confirmed = await modal.locator('text=जानकारी तैयार है!, text=Enquiry Prepared!').first().isVisible();
     console.log(`  ✓ Client-side confirmation state rendered: ${confirmed}`);
 
     // Verify direct WhatsApp link
-    const waLink = await modal.locator('a:has-text("Send to Host on WhatsApp")').getAttribute('href');
+    const waLink = await modal.locator('a:has-text("WhatsApp")').first().getAttribute('href');
     console.log(`  ✓ Pre-filled WhatsApp link generated: ${waLink ? 'Valid' : 'Missing'}`);
 
     await page.screenshot({ path: path.join(SCREENSHOTS_DIR, 'cinematic-enquiry-confirmation.png') });

@@ -14,12 +14,12 @@ export default function StickyBottomBar({ onOpenLeadModal, isModalOpen }) {
           aria-label="Call Host directly"
         >
           <PhoneCall className="w-3.5 h-3.5 text-orange-500" />
-          <span>Call Host</span>
+          <span>कॉल करें</span>
         </a>
 
         {/* WhatsApp Direct */}
         <a
-          href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Farva%20Jaiye!"
+          href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Ghoomne%20Chalein!"
           target="_blank"
           rel="noopener noreferrer"
           className="w-11 min-h-[46px] rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center transition-transform active:scale-95 flex-shrink-0 shadow-xs"
@@ -35,7 +35,7 @@ export default function StickyBottomBar({ onOpenLeadModal, isModalOpen }) {
           className="flex-[1.5] min-h-[46px] px-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-xs flex items-center justify-center gap-1.5 shadow-xs transition-transform active:scale-95"
         >
           <Sparkles className="w-3.5 h-3.5 text-amber-200" />
-          <span>Plan My Trip</span>
+          <span>यात्रा प्लान करें</span>
         </button>
       </div>
     </div>

@@ -21,19 +21,19 @@ export default function ConversionSection({ onOpenContact, onExploreAgain }) {
           {/* Heading strictly as specified */}
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-amber-300 text-amber-900 text-xs sm:text-sm font-extrabold mb-3 shadow-2xs">
             <Sparkles className="w-4 h-4 text-amber-500" />
-            <span>Local Buddy Ready To Help</span>
+            <span>लोकल ट्रेवल बडी आपकी सेवा में तत्पर</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Your Local Journey Starts Here!
+            आपकी सौराष्ट्र यात्रा यहीं से शुरू होती है!
           </h2>
 
           <p className="mt-3 text-base sm:text-xl font-bold text-slate-700 max-w-xl mx-auto leading-relaxed">
-            Somnath, Dwarka, Diu ke Sasan Gir — let your local host help you plan your journey.
+            सोमनाथ, द्वारका, दीव या सासन गिर — अपने लोकल होस्ट के साथ बनाएं आसान व यादगार यात्रा।
           </p>
 
           <p className="mt-2 text-xs sm:text-sm text-slate-500 font-medium max-w-md mx-auto leading-relaxed">
-            Direct personal support from Somnath. No confusing booking engines or hidden markups — just caring, honest guidance from your friendly local host.
+            सीधे सोमनाथ से समर्पित व्यक्तिगत सहायता। कोई छिपा हुआ चार्ज नहीं, कोई एजेंट कमीशन नहीं — बस परिवार जैसी सच्ची व विनम्र मदद।
           </p>
 
           {/* Primary & Secondary Action Buttons */}
@@ -44,19 +44,19 @@ export default function ConversionSection({ onOpenContact, onExploreAgain }) {
               onClick={onOpenContact}
               className="w-full xs:w-auto min-h-[50px] px-8 py-3.5 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-md shadow-orange-500/25 active:scale-95 transition-all tap-bounce border border-orange-400"
             >
-              <span>Contact Us</span>
+              <span>संपर्क करें (Contact Us)</span>
               <Sparkles className="w-4 h-4 text-amber-200" />
             </button>
 
             {/* Direct WhatsApp Call */}
             <a
-              href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Farva%20Jaiye!"
+              href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Ghoomne%20Chalein!"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full xs:w-auto min-h-[50px] px-7 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-xs active:scale-95 transition-all tap-bounce border border-emerald-700"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp Us</span>
+              <span>WhatsApp पर बात करें</span>
             </a>
 
             {/* Secondary CTA: Explore Again */}
@@ -66,14 +66,14 @@ export default function ConversionSection({ onOpenContact, onExploreAgain }) {
               className="w-full xs:w-auto min-h-[50px] px-6 py-3.5 rounded-2xl bg-white hover:bg-slate-50 border-2 border-slate-300 text-slate-700 font-black text-sm flex items-center justify-center gap-2 shadow-2xs active:scale-95 transition-all tap-bounce"
             >
               <RotateCcw className="w-4 h-4 text-slate-500" />
-              <span>Explore Again</span>
+              <span>शुरुआत से देखें</span>
             </button>
           </div>
 
           {/* Quick Direct Hotline Call */}
           <div className="mt-6 pt-4 border-t border-amber-200/70 inline-flex items-center gap-2 text-xs font-bold text-slate-600">
             <PhoneCall className="w-4 h-4 text-orange-500" />
-            <span>Prefer calling directly? Dial: </span>
+            <span>सीधे फोन पर बात करने के लिए कॉल करें: </span>
             <a href="tel:6359798896" className="font-mono text-slate-900 font-black underline hover:text-orange-600">
               6359798896
             </a>

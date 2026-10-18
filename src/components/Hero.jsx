@@ -8,29 +8,29 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
   return (
     <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 bg-gradient-to-b from-sky-50/70 via-white to-amber-50/30 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* TEXT CONTENT (Centered, Cheerful, Predominantly White Aesthetic) */}
+        {/* TEXT CONTENT (Centered, Cheerful, Hindi Audience Welcoming) */}
         <div className="text-center max-w-3xl mx-auto">
           {/* Welcome Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs sm:text-sm font-extrabold mb-3 shadow-2xs">
-            <span>👋 Kem Chho!</span>
+            <span>🙏 Har Har Mahadev!</span>
             <span className="text-amber-500">•</span>
-            <span>Welcome to Saurashtra, Gujarat</span>
+            <span>सौराष्ट्र यात्रा में आपका स्वागत है</span>
           </div>
 
-          {/* Signature Heading */}
+          {/* Signature Heading tuned for Hindi Audience */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
             Chalo, Somnath <br className="hidden xs:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-emerald-600">
-              Farva Jaiye!
+              Ghoomne Chalein!
             </span>
           </h1>
 
-          {/* Supporting Text */}
+          {/* Supporting Text in Natural Hindi-Friendly Tone */}
           <p className="mt-3 text-base sm:text-xl font-bold text-slate-700 leading-snug">
-            Somnath, Dwarka, Diu ke Sasan Gir — your local travel buddy is here!
+            Somnath, Dwarka, Diu ya Sasan Gir — aapka friendly local travel buddy yahan hai!
           </p>
           <p className="mt-2 text-xs sm:text-sm text-slate-500 font-medium max-w-xl mx-auto leading-relaxed">
-            Experience genuine local hospitality, clean AC cabs, seaside temple darshan, and peaceful family travel across coastal Saurashtra.
+            साफ-सुथरी AC गाड़ियां, मंदिर के पास बढ़िया होटल्स और परिवार के लिए भरोसेमंद लोकल मार्गदर्शन — बिना किसी परेशानी के आनंदमय दर्शन यात्रा।
           </p>
 
           {/* CTA Buttons */}
@@ -42,7 +42,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
               className="w-full xs:w-auto min-h-[48px] px-7 py-3 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-md shadow-orange-500/25 active:scale-95 transition-all tap-bounce border border-orange-400"
             >
               <Sparkles className="w-4 h-4 text-amber-200" />
-              <span>Plan My Trip</span>
+              <span>Yatra Plan Karein</span>
             </button>
 
             {/* Secondary CTA: Explore Places */}
@@ -52,7 +52,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
               className="w-full xs:w-auto min-h-[48px] px-7 py-3 rounded-2xl bg-white hover:bg-sky-50 border-2 border-sky-300 hover:border-sky-400 text-sky-800 font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-xs active:scale-95 transition-all tap-bounce"
             >
               <Compass className="w-4 h-4 text-sky-600" />
-              <span>Explore Places</span>
+              <span>Yatra Route Dekhein</span>
             </button>
           </div>
 
@@ -60,12 +60,12 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
           <div className="mt-5 flex items-center justify-center gap-4 text-xs font-bold text-slate-500 flex-wrap">
             <span className="inline-flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              Verified Local Drivers
+              भरोसेमंद लोकल ड्राइवर्स
             </span>
             <span>•</span>
             <span className="inline-flex items-center gap-1">
               <HeartHandshake className="w-3.5 h-3.5 text-amber-600" />
-              Direct Local Host Guidance
+              अपनों जैसी लोकल सेवा
             </span>
             <span>•</span>
             <span className="inline-flex items-center gap-1">
@@ -81,7 +81,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
           <div className="flex items-center justify-between gap-2 px-3 py-2 bg-slate-50 rounded-2xl border border-slate-200/80 mb-2 overflow-x-auto no-scrollbar">
             <div className="flex items-center gap-2 min-w-max">
               <span className="text-[11px] font-black uppercase text-slate-500 tracking-wider">
-                Road Route:
+                यात्रा मार्ग:
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-orange-100 border border-orange-300 text-orange-900 text-xs font-extrabold">
                 📍 1. Somnath
@@ -100,7 +100,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
               </span>
             </div>
             <span className="text-xs font-extrabold text-slate-600 hidden md:block">
-              520 km Saurashtra Circuit
+              520 km संपूर्ण सौराष्ट्र सर्किट
             </span>
           </div>
 
@@ -122,7 +122,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
             {/* Badge on Photo */}
             <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-10">
               <span className="px-3 py-1 rounded-full text-xs font-black bg-white/95 text-slate-900 shadow-sm border border-white/50 backdrop-blur-md">
-                Shree Somnath Jyotirlinga • Arabian Sea Coast
+                श्री सोमनाथ प्रथम ज्योतिर्लिंग • अरब सागर तट
               </span>
             </div>
 
@@ -150,10 +150,10 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
                   </div>
                   <div className="hidden xs:block text-left text-white/90">
                     <div className="text-[10px] font-black text-amber-300 uppercase tracking-wider">
-                      Tour Starts Here:
+                      यात्रा यहीं से शुरू:
                     </div>
                     <div className="text-xs font-bold text-slate-100">
-                      Comfortable AC Cabs & Stays
+                      आरामदायक AC गाड़ियां और होटल
                     </div>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
                     onClick={onScrollToJourney}
                     className="px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-black shadow-xs transition-all tap-bounce"
                   >
-                    Start Journey ↓
+                    यात्रा देखें ↓
                   </button>
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
             onClick={onScrollToJourney}
             className="inline-flex flex-col items-center gap-1 text-slate-500 hover:text-orange-500 transition-colors tap-bounce"
           >
-            <span className="text-xs font-bold">Scroll down to explore Somnath, Dwarka, Diu & Sasan Gir</span>
+            <span className="text-xs font-bold">नीचे स्क्रॉल करें: सोमनाथ, द्वारका, दीव और सासन गिर दर्शन</span>
             <div className="w-7 h-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center animate-bounce">
               <ArrowDown className="w-3.5 h-3.5 text-slate-600" />
             </div>

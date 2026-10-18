@@ -20,111 +20,113 @@ const CHAPTERS = [
     id: 'somnath',
     stepNumber: '01',
     name: 'Somnath',
-    tagline: 'The First Jyotirlinga by the Arabian Sea',
-    eyebrow: 'Chapter 01 • The Sacred Seashore',
+    tagline: 'प्रथम ज्योतिर्लिंग • अरब सागर तट की दिव्य संध्या आरती',
+    eyebrow: 'Chapter 01 • पवित्र समुद्र तट',
     badgeClass: 'bg-orange-100 text-orange-900 border-orange-300',
     accentGradient: 'from-orange-500 via-amber-500 to-yellow-500',
     roadType: 'coastal',
-    distanceLabel: 'Starting Point • Coast of Saurashtra',
+    distanceLabel: 'यात्रा का आरंभ • सौराष्ट्र समुद्री तट',
     desktopImg: '/images/destinations/somnath-cinematic.webp',
     mobileImg: '/images/destinations/somnath-mobile.webp',
     imgPosition: 'object-[center_35%]',
     imgAlt: 'Majestic Shree Somnath Temple standing beside the crashing waves of the Arabian Sea at sunset',
     story:
-      'Begin your journey where the sacred waves of the Arabian Sea gently wash the golden sandstone foundation of the first Jyotirlinga. Experience the electric energy of the evening Sandhya Aarti as bells echo over the ocean, walk along the breezy coastal promenade, and discover the ancient Arrow Pillar that points uninterrupted across the ocean all the way to Antarctica.',
+      'अपनी पावन यात्रा की शुरुआत करें प्रथम ज्योतिर्लिंग श्री सोमनाथ महादेव के पावन दर्शन से। संध्या आरती के समय शंख-घंटियों की दिव्य गूंज और अरब सागर की लहरों का संगम मन को असीम शांति से भर देता है। समुद्र तट के किनारे शांत टहलें और प्राचीन बाण स्तंभ देखें, जो समुद्र के रास्ते सीधे अंटार्कटिका तक बिना किसी भूमि के जाने का मार्ग दर्शाता है।',
     highlights: [
-      'Evening Sandhya Aarti & Ocean Waves',
-      'Historic Light & Sound Temple Show',
-      'Triveni Sangam Holy Confluence Dip',
-      'Bāna Stambha Ancient Meridian Pillar'
+      'शाम की दिव्य संध्या आरती व समुद्र दर्शन',
+      'भव्य ऐतिहासिक साउंड एंड लाइट शो',
+      'त्रिवेणी संगम में पवित्र संगम स्नान',
+      'प्राचीन बाण स्तंभ व समुद्र तट प्रोमेनेड'
     ],
     funFact:
-      'Geographical Marvel: The Bāna Stambha on Somnath seashore confirms an unobstructed sea route to Antarctica with zero landmass in between!',
+      'भौगोलिक चमत्कार: सोमनाथ समुद्र तट पर स्थित बाण स्तंभ प्रमाणित करता है कि यहाँ से दक्षिण ध्रुव (अंटार्कटिका) तक एक सीधी रेखा में कोई भी ज़मीन या रुकावट नहीं है!',
     vehicle: 'car',
     vehicleLabel: 'Pearl White Tourer Crossover',
-    ctaText: 'Plan Somnath Darshan with Local Host'
+    ctaText: 'Somnath Darshan Plan Karein'
   },
   {
     id: 'dwarka',
     stepNumber: '02',
     name: 'Dwarka',
-    tagline: 'Lord Krishna’s Golden Coastal Kingdom',
-    eyebrow: 'Chapter 02 • Coastal Mokshapuri',
+    tagline: 'भगवान श्री कृष्ण की पावन मोक्षपुरी',
+    eyebrow: 'Chapter 02 • पावन मोक्षपुरी',
     badgeClass: 'bg-sky-100 text-sky-900 border-sky-300',
     accentGradient: 'from-sky-500 via-blue-500 to-indigo-600',
     roadType: 'highway',
-    distanceLabel: '235 km from Somnath • Scenic Coastal Highway NH-51',
+    distanceLabel: 'सोमनाथ से 235 km • सुंदर तटीय हाईवे NH-51',
     desktopImg: '/images/destinations/dwarka-cinematic.webp',
     mobileImg: '/images/destinations/dwarka-mobile.webp',
+    imgPosition: 'object-center',
     imgAlt: 'Historic Dwarkadhish Jagat Mandir spire rising over the serene Gomti river and coastal Arabian sea',
     story:
-      'Travel north along Gujarat’s breathtaking Madhavpur coastal highway to the ancient pilgrim realm of Dwarka. Gaze up at the magnificent 52-yard flag fluttering atop the 5-story carved limestone Jagat Mandir, cross the sea by traditional ferry to sacred Bet Dwarka, and take a sunset stroll along the pristine, Blue Flag certified Shivrajpur beach.',
+      'गुजरात के सबसे खूबसूरत माधवपुर कोस्टल हाईवे से होते हुए पहुंचें भगवान श्री कृष्ण की पावन नगरी द्वारका। 5 मंजिला जगत मंदिर के शिखर पर लहराती 52 गज की विशाल ध्वजा के दर्शन करें, नाव की सवारी कर पवित्र बेट द्वारका पहुंचे, और ब्लू फ्लैग प्रमाणित शिवराजपुर बीच के शांत सूर्यास्त का आनंद लें।',
     highlights: [
-      'Dwarkadhish Jagat Mandir Darshan',
-      'Bet Dwarka Island Boat Excursion',
-      'Nageshwar Jyotirlinga Shrine',
-      'Blue Flag Shivrajpur Beach Sunset'
+      'द्वारकाधीश जगत मंदिर दिव्य दर्शन',
+      'पवित्र बेट द्वारका द्वीप नाव यात्रा',
+      'नागेश्वर ज्योतिर्लिंग के पावन दर्शन',
+      'शिवराजपुर ब्लू फ्लैग बीच सनसेट'
     ],
     funFact:
-      'Sacred Tradition: The massive 52-yard flag atop Dwarkadhish temple is ceremoniously stitched by local devotee families and changed 5 times every day!',
+      'पावन परंपरा: द्वारकाधीश मंदिर के शिखर पर फहराई जाने वाली 52 गज की विशाल ध्वजा स्थानीय श्रद्धालु परिवारों द्वारा दिन में 5 बार पूरी विधि-विधान से बदली जाती है!',
     vehicle: 'bus',
     vehicleLabel: 'Deluxe AC Tourist Mini-Coach',
-    ctaText: 'Explore Dwarka with Local Host'
+    ctaText: 'Dwarka Yatra Plan Karein'
   },
   {
     id: 'diu',
     stepNumber: '03',
     name: 'Diu Island',
-    tagline: 'Portuguese Coastal Fortress & Cliffs',
-    eyebrow: 'Chapter 03 • Island Solitude',
+    tagline: 'पुर्तगाली समुद्री किला और शांत समुद्री तट',
+    eyebrow: 'Chapter 03 • शांत समुद्र द्वीप',
     badgeClass: 'bg-teal-100 text-teal-900 border-teal-300',
     accentGradient: 'from-teal-500 via-emerald-500 to-cyan-600',
     roadType: 'island',
-    distanceLabel: '85 km from Somnath • Seaside Bridge to Island',
+    distanceLabel: 'सोमनाथ से 85 km • समुद्र पर बना द्वीप पुल',
     desktopImg: '/images/destinations/diu-cinematic.webp',
     mobileImg: '/images/destinations/diu-mobile.webp',
+    imgPosition: 'object-center',
     imgAlt: 'Diu coastal fortress stone ramparts and historic striped lighthouse perched above turquoise sea cliffs',
     story:
-      'Cross the sea bridge into the serene, sun-drenched island of Diu where 16th-century Portuguese maritime history blends effortlessly with coastal breezes. Walk the fortified battlements of Diu Fort surrounded on three sides by ocean waves, step inside the sunlight-dappled labyrinth of Naida limestone caves, and relax beneath Hoka palm trees on golden sandy beaches.',
+      'समुद्र पर बने पुल को पार करके प्रवेश करें खूबसूरत दीव द्वीप में, जहाँ 16वीं सदी का पुर्तगाली समुद्री इतिहास और ताज़ी समुद्री हवाएं मिलती हैं। तीन ओर से नीले सागर से घिरे दीव किले की प्राचीन तोपों पर चलें, धूप-छांव से भरी रहस्यमयी नायडा गुफाओं का दीदार करें, और नागोआ बीच पर परिवार के साथ सुकून के पल बिताएं।',
     highlights: [
-      '16th-Century Diu Fort & Cannons',
-      'Naida Sea-Carved Limestone Caves',
-      'Iconic Diu Lighthouse Ocean View',
-      'Horseshoe-Shaped Nagoa Beach'
+      '16वीं सदी का ऐतिहासिक दीव किला व तोपें',
+      'नायडा प्राकृतिक चूना-पत्थर गुफाएं',
+      'दीव लाइटहाउस से सागर का विहंगम दृश्य',
+      'नागोआ बीच पर वाटर स्पोर्ट्स व विश्राम'
     ],
     funFact:
-      'Architectural Wonder: The Naida Caves feature natural skylights and towering stone tunnels carved during Portuguese quarrying centuries ago.',
+      'प्राकृतिक अजूबा: नायडा गुफाएं सदियों पहले पुर्तगालियों द्वारा किले के निर्माण हेतु पत्थर तराशने से बनी थीं, जहाँ से आज धूप की मनमोहक किरणें छनकर आती हैं।',
     vehicle: 'rickshaw',
     vehicleLabel: 'Classic Island Auto-Rickshaw',
-    ctaText: 'Discover Diu with Local Host'
+    ctaText: 'Diu Yatra Plan Karein'
   },
   {
     id: 'gir',
     stepNumber: '04',
     name: 'Sasan Gir',
-    tagline: 'The Sole Haven of the Asiatic Lion',
-    eyebrow: 'Chapter 04 • The Wild Forest Heartland',
+    tagline: 'एशियाई बब्बर शेर का एकमात्र प्राकृतिक घर',
+    eyebrow: 'Chapter 04 • वन्य हृदय स्थल',
     badgeClass: 'bg-emerald-100 text-emerald-900 border-emerald-300',
     accentGradient: 'from-emerald-500 via-green-600 to-lime-600',
     roadType: 'forest',
-    distanceLabel: '45 km from Somnath • Teak Jungle Trail',
+    distanceLabel: 'सोमनाथ से 45 km • सागवान जंगल सफारी',
     desktopImg: '/images/destinations/gir-cinematic.webp',
     mobileImg: '/images/destinations/gir-mobile.webp',
     imgPosition: 'object-[center_60%]',
     imgAlt: 'Majestic Asiatic Lion resting naturally in the golden morning light of Sasan Gir deciduous teak forest',
     story:
-      'Leave the coastal breeze behind and journey inland into the sun-dappled, golden teak woodlands of Gir National Park. Board an open 4x4 Gypsy in the crisp morning mist as expert Maldhari trackers read fresh pugmarks on dusty forest trails to encounter the majestic Asiatic Lion roaming free in his only natural refuge on planet Earth.',
+      'समुद्र तट को अलविदा कहकर सासन गिर के सुनहरे सागवान जंगलों में प्रवेश करें। सुबह की ताज़ी हवा में खुली 4x4 जिप्सी में बैठकर अनुभवी मालधारी वन रक्षकों के साथ जंगल सफारी पर निकलें और दुनिया में केवल गुजरात में पाए जाने वाले एशियाई बब्बर शेर (Asiatic Lion) को अपनी आँखों से साक्षात देखें।',
     highlights: [
-      'Open 4x4 Gypsy Forest Safari',
-      'Authentic Asiatic Lion Sighting',
-      'Devalia Safari Park Walk',
-      'Traditional Maldhari Farm Hospitality'
+      'खुली 4x4 जिप्सी जंगल सफारी',
+      'एशियाई बब्बर शेर के साक्षात दर्शन',
+      'देवलिया सफारी पार्क दर्शन',
+      'पारंपरिक मालधारी संस्कृति व काठियावाड़ी भोजन'
     ],
     funFact:
-      'Wildlife Miracle: The Asiatic Lion survives exclusively in Saurashtra, thriving thanks to the peaceful cultural bond with local pastoral Maldhari communities!',
+      'अद्भुत वन्य जीवन: एशियाई शेर केवल सौराष्ट्र में ही सुरक्षित बचे हैं, जिसका मुख्य श्रेय स्थानीय मालधारी समुदाय के साथ उनके सदियों पुराने शांतिपूर्ण सह-अस्तित्व को जाता है!',
     vehicle: 'lion',
     vehicleLabel: 'Majestic Asiatic Lion in Sasan Gir',
-    ctaText: 'Plan Gir Safari with Local Host'
+    ctaText: 'Gir Safari Plan Karein'
   }
 ];
 
@@ -197,13 +199,13 @@ export default function CinematicScrollJourney({ onSelectDestination }) {
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs sm:text-sm font-extrabold mb-3 shadow-2xs">
             <Compass className="w-4 h-4 text-amber-700" />
-            <span>Cinematic Saurashtra Road Journey</span>
+            <span>सौराष्ट्र यात्रा मार्ग • Cinematic Road Trip</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            The Real Gujarat Road Trip
+            सौराष्ट्र दर्शन: सोमनाथ से सासन गिर
           </h2>
           <p className="text-sm sm:text-base text-slate-600 font-medium mt-2 leading-relaxed">
-            Scroll down to journey through authentic coastal highways, ancient temple spires, island cliffs, and the teak forests of the Asiatic Lion.
+            पवित्र ज्योतिर्लिंग दर्शन से लेकर नीले समुद्र तट, ऐतिहासिक दीव का किला और सासन गिर के बब्बर शेरों तक — एक संपूर्ण व यादगार परिवार यात्रा।
           </p>
         </div>
 
@@ -350,7 +352,7 @@ export default function CinematicScrollJourney({ onSelectDestination }) {
 
                           <div className="hidden xs:block text-left text-white/90">
                             <div className="text-[11px] font-black text-amber-300 uppercase tracking-wider">
-                              On The Road:
+                              सड़क पर:
                             </div>
                             <div className="text-xs font-bold truncate max-w-[150px] sm:max-w-none text-slate-100">
                               {chapter.vehicleLabel}
@@ -362,7 +364,7 @@ export default function CinematicScrollJourney({ onSelectDestination }) {
                         <div className="text-right">
                           <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-extrabold text-white/90 bg-black/40 px-2.5 py-1 rounded-full border border-white/20">
                             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
-                            <span>Smooth Highway</span>
+                            <span>आरामदायक हाईवे</span>
                           </span>
                         </div>
                       </div>
@@ -381,7 +383,7 @@ export default function CinematicScrollJourney({ onSelectDestination }) {
                           {chapter.stepNumber}
                         </span>
                         <h4 className="text-lg sm:text-xl font-black text-slate-900">
-                          About {chapter.name} Experience
+                          {chapter.name} दर्शन अनुभव
                         </h4>
                       </div>
 
@@ -405,13 +407,13 @@ export default function CinematicScrollJourney({ onSelectDestination }) {
                           </div>
                           <div className="text-center sm:text-left">
                             <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase tracking-wider mb-1">
-                              Gujarat’s Pride
+                              गुजरात का गौरव
                             </span>
                             <h5 className="text-sm sm:text-base font-black text-slate-900">
-                              King of the Saurashtra Jungle
+                              सौराष्ट्र के जंगलों का राजा: एशियाई शेर
                             </h5>
                             <p className="text-xs text-slate-600 font-medium mt-1 leading-snug">
-                              Over 600 wild Asiatic Lions roam freely in Gir. Let your local host coordinate licensed jungle gypsy safari permits and experienced forest trackers.
+                              गिर में 600 से अधिक जंगली शेर स्वच्छंद विचरण करते हैं। आपके लोकल होस्ट सरकारी अधिकृत जिप्सी सफारी परमिट और अनुभवी गाइड का संपूर्ण समन्वय करते हैं।
                             </p>
                           </div>
                         </div>
@@ -423,7 +425,7 @@ export default function CinematicScrollJourney({ onSelectDestination }) {
                       <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
                         <div className="text-xs font-black uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
                           <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                          <span>Iconic Sights & Moments</span>
+                          <span>प्रमुख आकर्षण व दर्शन बिंदु</span>
                         </div>
 
                         <div className="space-y-2">
@@ -451,7 +453,7 @@ export default function CinematicScrollJourney({ onSelectDestination }) {
                             <ChevronRight className="w-4 h-4 text-amber-400" />
                           </button>
                           <p className="text-[11px] text-center text-slate-500 font-semibold mt-1.5">
-                            ⚡ Fast response via WhatsApp or Phone Call
+                            ⚡ WhatsApp या सीधे फोन कॉल द्वारा तुरंत सहायता
                           </p>
                         </div>
                       </div>

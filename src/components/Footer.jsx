@@ -16,41 +16,41 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
               />
               <div>
                 <div className="text-base font-black text-slate-900">Somnath Local Host</div>
-                <div className="text-[10px] text-emerald-600 font-extrabold font-mono">Your Friendly Travel Buddy</div>
+                <div className="text-[10px] text-emerald-600 font-extrabold font-mono">Aapka Local Travel Buddy • Har Har Mahadev</div>
               </div>
             </div>
             <p className="text-xs text-slate-500 leading-relaxed font-medium">
-              Personalized local host for family pilgrimages and road trips across Somnath, Dwarka, Diu and Sasan Gir. Clean AC cabs, verified stays, and caring 24x7 local support.
+              सोमनाथ, द्वारका, दीव और सासन गिर के लिए आपका अपना विश्वसनीय लोकल होस्ट। साफ AC गाड़ियां, मंदिर के पास बढ़िया होटल्स और 24 घंटे पारिवारिक मार्गदर्शन।
             </p>
             <div className="pt-1 flex items-center gap-1.5 text-xs text-amber-700 font-black">
-              <span>🙏 Chalo, Somnath Farva Jaiye!</span>
+              <span>🙏 Chalo, Somnath Ghoomne Chalein!</span>
             </div>
           </div>
 
           {/* Road Trip Chapters */}
           <div>
             <h4 className="font-black text-slate-900 uppercase tracking-wider text-xs mb-3">
-              The Road Trip Sights
+              सौराष्ट्र यात्रा दर्शन
             </h4>
             <ul className="space-y-2 text-xs font-semibold text-slate-600">
               <li>
                 <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left">
-                  📍 Somnath 1st Jyotirlinga & Sea Aarti
+                  📍 श्री सोमनाथ प्रथम ज्योतिर्लिंग व आरती
                 </button>
               </li>
               <li>
                 <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left">
-                  📍 Dwarka Jagat Mandir & Bet Dwarka
+                  📍 द्वारकाधीश जगत मंदिर व बेट द्वारका
                 </button>
               </li>
               <li>
                 <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left">
-                  📍 Diu Portuguese Fort & Nagoa Beach
+                  📍 दीव पुर्तगाली किला व नागोआ बीच
                 </button>
               </li>
               <li>
                 <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left">
-                  📍 Sasan Gir Asiatic Lion Jungle Safari
+                  📍 सासन गिर एशियाई बब्बर शेर सफारी
                 </button>
               </li>
             </ul>
@@ -59,27 +59,27 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
           {/* Services */}
           <div>
             <h4 className="font-black text-slate-900 uppercase tracking-wider text-xs mb-3">
-              Local Assistance
+              लोकल सुविधाएं
             </h4>
             <ul className="space-y-2 text-xs font-semibold text-slate-600">
               <li>
                 <a href="#services" className="hover:text-orange-500 transition-colors">
-                  Cozy Verified Hotel Stays
+                  मंदिर के पास आरामदायक होटल
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-orange-500 transition-colors">
-                  Private AC Cabs (Innova / Ertiga / Sedans)
+                  प्राइवेट AC टैक्सी (Innova, Ertiga, Dzire)
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-orange-500 transition-colors">
-                  Authentic Kathiyawadi & Satvik Bhojan
+                  शुद्ध काठियावाड़ी व सात्विक भोजन
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-orange-500 transition-colors">
-                  VIP Darshan Slots & Local Guidance
+                  VIP दर्शन व स्थानीय मार्गदर्शन
                 </a>
               </li>
             </ul>
@@ -88,7 +88,7 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
           {/* Contact Details */}
           <div className="space-y-3">
             <h4 className="font-black text-slate-900 uppercase tracking-wider text-xs mb-3">
-              Contact Your Host
+              लोकल होस्ट संपर्क
             </h4>
             <div className="flex items-start gap-2 text-xs font-medium">
               <PhoneCall className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
@@ -96,15 +96,15 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
                 <a href="tel:6359798896" className="text-slate-900 hover:text-orange-600 font-mono font-black block text-sm">
                   +91 6359798896
                 </a>
-                <span className="text-[11px] text-slate-500 font-bold">Available 24x7 on Call & WhatsApp</span>
+                <span className="text-[11px] text-slate-500 font-bold">कॉल और WhatsApp पर 24 घंटे उपलब्ध</span>
               </div>
             </div>
 
             <div className="flex items-start gap-2 text-xs font-medium">
               <MapPin className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
               <div>
-                <span className="text-slate-700 block">Somnath - Veraval Coastal Belt</span>
-                <span className="text-slate-500 text-[11px]">Gir Somnath District, Gujarat - 362268</span>
+                <span className="text-slate-700 block">सोमनाथ - वेरावल कोस्टल बेल्ट</span>
+                <span className="text-slate-500 text-[11px]">गिर सोमनाथ जिला, गुजरात - 362268</span>
               </div>
             </div>
 
@@ -113,7 +113,7 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
               onClick={onOpenLeadModal}
               className="w-full py-2.5 px-3 rounded-2xl bg-amber-400 hover:bg-amber-500 text-slate-950 font-black text-xs transition-colors shadow-2xs tap-bounce"
             >
-              Plan My Journey With Host
+              होस्ट के साथ यात्रा प्लान करें
             </button>
           </div>
         </div>
@@ -124,9 +124,9 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
             © {new Date().getFullYear()} Shree Somnath Local Host. All rights reserved.
           </div>
           <div className="flex items-center gap-2">
-            <span>Playful White Theme Travel Journey</span>
+            <span>Chalo, Somnath Ghoomne Chalein!</span>
             <span>•</span>
-            <span className="text-slate-700">Jay Somnath 🙏</span>
+            <span className="text-slate-700">हर हर महादेव 🙏 जय सोमनाथ</span>
           </div>
         </div>
       </div>

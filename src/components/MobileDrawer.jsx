@@ -21,7 +21,7 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
               <img src="/images/logo.webp" alt="Logo" className="w-8 h-8 rounded-full border border-amber-300" />
               <div>
                 <div className="font-black text-sm text-slate-900">Somnath Local Host</div>
-                <div className="text-[10px] text-emerald-600 font-extrabold">Your Friendly Travel Buddy</div>
+                <div className="text-[10px] text-emerald-600 font-extrabold">Aapka Local Travel Buddy • Har Har Mahadev</div>
               </div>
             </div>
             <button
@@ -58,7 +58,7 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
             >
               <div className="flex items-center gap-3">
                 <Compass className="w-4 h-4 text-sky-500" />
-                <span>The Road Trip</span>
+                <span>सौराष्ट्र यात्रा मार्ग (The Road Trip)</span>
               </div>
               <ChevronRight className="w-4 h-4 text-slate-300" />
             </button>
@@ -70,7 +70,7 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
             >
               <div className="flex items-center gap-3">
                 <Briefcase className="w-4 h-4 text-emerald-500" />
-                <span>Services</span>
+                <span>यात्रा सुविधाएं (Services)</span>
               </div>
               <ChevronRight className="w-4 h-4 text-slate-300" />
             </a>
@@ -82,7 +82,7 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
             >
               <div className="flex items-center gap-3">
                 <PhoneCall className="w-4 h-4 text-amber-500" />
-                <span>Contact Host</span>
+                <span>लोकल होस्ट संपर्क (Contact)</span>
               </div>
               <ChevronRight className="w-4 h-4 text-slate-300" />
             </a>
@@ -99,8 +99,8 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
             }}
             className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-black text-sm flex items-center justify-center gap-2 shadow-xs tap-bounce"
           >
-            <Sparkles className="w-4 h-4" />
-            <span>Plan My Trip</span>
+            <Sparkles className="w-4 h-4 text-amber-200" />
+            <span>यात्रा प्लान करें (Plan Trip)</span>
           </button>
 
           <a
@@ -108,17 +108,17 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
             className="w-full py-3 px-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-800 font-extrabold text-xs flex items-center justify-center gap-2 tap-bounce"
           >
             <PhoneCall className="w-3.5 h-3.5 text-orange-500" />
-            <span>Call: 6359798896</span>
+            <span>कॉल करें: 6359798896</span>
           </a>
 
           <a
-            href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!"
+            href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Ghoomne%20Chalein!"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-2.5 px-4 rounded-2xl bg-emerald-50 text-emerald-800 font-extrabold text-xs flex items-center justify-center gap-2 tap-bounce"
           >
             <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Chat on WhatsApp</span>
+            <span>WhatsApp पर बात करें</span>
           </a>
         </div>
       </div>
