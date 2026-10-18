@@ -97,8 +97,8 @@ const CHAPTERS = [
       en: '3 km from Somnath Temple Coast',
       mr: 'सोमनाथ मंदिरापासून 3 किमी'
     },
-    desktopImg: '/images/destinations/somnath-mobile.webp',
-    mobileImg: '/images/destinations/somnath-mobile.webp',
+    desktopImg: '/images/destinations/ban-ganga.jpg',
+    mobileImg: '/images/destinations/ban-ganga.jpg',
     imgPosition: 'object-center',
     imgAlt: 'Ancient Shiva linga resting amidst the blue ocean waves near Somnath',
     story: {
@@ -150,8 +150,8 @@ const CHAPTERS = [
       en: '1.5 km from Somnath Ghat',
       mr: 'सोमनाथपासून 1.5 किमी'
     },
-    desktopImg: '/images/destinations/somnath.webp',
-    mobileImg: '/images/destinations/somnath.webp',
+    desktopImg: '/images/destinations/triveni-sangam.jpg',
+    mobileImg: '/images/destinations/triveni-sangam.jpg',
     imgPosition: 'object-center',
     imgAlt: 'Triveni Sangam confluence where three sacred rivers meet the Arabian Sea',
     story: {
@@ -203,8 +203,8 @@ const CHAPTERS = [
       en: '4 km from Somnath on Veraval Road',
       mr: 'सोमनाथपासून 4 किमी'
     },
-    desktopImg: '/images/destinations/somnath-cinematic.webp',
-    mobileImg: '/images/destinations/somnath-cinematic.webp',
+    desktopImg: '/images/destinations/bhalka-tirth.jpg',
+    mobileImg: '/images/destinations/bhalka-tirth.jpg',
     imgPosition: 'object-[center_40%]',
     imgAlt: 'Sacred Peepal tree and divine sleeping idol at Bhalka Tirth',
     story: {
@@ -256,8 +256,8 @@ const CHAPTERS = [
       en: '75 km along Coastal Highway NH-51',
       mr: 'सोमनाथपासून 75 किमी कोस्टल हायवे'
     },
-    desktopImg: '/images/destinations/somnath-cinematic.webp',
-    mobileImg: '/images/destinations/somnath-cinematic.webp',
+    desktopImg: '/images/destinations/madhavpur.jpg',
+    mobileImg: '/images/destinations/madhavpur.jpg',
     imgPosition: 'object-center',
     imgAlt: 'Scenic Madhavpur coastal highway lined with coconut trees and golden sands',
     story: {
@@ -309,8 +309,8 @@ const CHAPTERS = [
       en: '130 km Midpoint to Dwarka',
       mr: 'सोमनाथपासून 130 किमी'
     },
-    desktopImg: '/images/destinations/dwarka-mobile.webp',
-    mobileImg: '/images/destinations/dwarka-mobile.webp',
+    desktopImg: '/images/destinations/porbandar.jpg',
+    mobileImg: '/images/destinations/porbandar.jpg',
     imgPosition: 'object-center',
     imgAlt: 'Historic Sudama temple in the port city of Porbandar',
     story: {
@@ -415,8 +415,8 @@ const CHAPTERS = [
       en: '12 km North of Dwarka',
       mr: 'द्वारकेपासून 12 किमी'
     },
-    desktopImg: '/images/destinations/diu-cinematic.webp',
-    mobileImg: '/images/destinations/diu-cinematic.webp',
+    desktopImg: '/images/destinations/shivrajpur.jpg',
+    mobileImg: '/images/destinations/shivrajpur.jpg',
     imgPosition: 'object-center',
     imgAlt: 'Crystal-clear turquoise waters of Shivrajpur Blue Flag Beach near Dwarka',
     story: {
@@ -468,8 +468,8 @@ const CHAPTERS = [
       en: '16 km from Dwarka en route to Bet Dwarka',
       mr: 'द्वारकेपासून 16 किमी'
     },
-    desktopImg: '/images/destinations/dwarka.webp',
-    mobileImg: '/images/destinations/dwarka.webp',
+    desktopImg: '/images/destinations/nageshwar.jpg',
+    mobileImg: '/images/destinations/nageshwar.jpg',
     imgPosition: 'object-center',
     imgAlt: 'Gigantic 80-foot meditating Lord Shiva statue at Nageshwar Jyotirlinga',
     story: {
@@ -521,8 +521,8 @@ const CHAPTERS = [
       en: '30 km to Okha Port / Setu',
       mr: 'द्वारकेपासून 30 किमी'
     },
-    desktopImg: '/images/destinations/dwarka-mobile.webp',
-    mobileImg: '/images/destinations/dwarka-mobile.webp',
+    desktopImg: '/images/destinations/bet-dwarka.jpg',
+    mobileImg: '/images/destinations/bet-dwarka.jpg',
     imgPosition: 'object-center',
     imgAlt: 'Magnificent Sudarshan Setu cable bridge leading to Bet Dwarka island',
     story: {

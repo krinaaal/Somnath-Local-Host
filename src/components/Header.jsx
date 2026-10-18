@@ -54,7 +54,7 @@ export default function Header({ onOpenMobileMenu, onOpenLeadModal, onScrollToJo
             {t('navRoute')}
           </button>
           <a href="#stations" className="hover:text-orange-500 transition-colors">
-            {t('navStations') || (t('language') === 'gu' ? 'મુખ્ય તીર્થો' : 'प्रमुख तीर्थ')}
+            {t('navStations')}
           </a>
           <a href="#services" className="hover:text-orange-500 transition-colors">{t('navServices')}</a>
           <a href="#reviews" className="hover:text-orange-500 transition-colors">{t('navReviews')}</a>

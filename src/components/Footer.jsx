@@ -33,27 +33,31 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
           {/* Road Trip Chapters */}
           <div>
             <h4 className="font-black text-slate-900 uppercase tracking-wider text-xs mb-3">
-              सौराष्ट्र यात्रा दर्शन
+              {language === 'gu'
+                ? 'સૌરાષ્ટ્ર યાત્રા દર્શન'
+                : language === 'en'
+                ? 'Saurashtra Circuit'
+                : 'सौराष्ट्र यात्रा दर्शन'}
             </h4>
             <ul className="space-y-2 text-xs font-semibold text-slate-600">
               <li>
-                <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left">
-                  📍 श्री सोमनाथ प्रथम ज्योतिर्लिंग व आरती
+                <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left cursor-pointer">
+                  📍 {language === 'gu' ? 'શ્રી સોમનાથ મહાદેવ' : language === 'en' ? 'Shree Somnath Temple' : 'श्री सोमनाथ प्रथम ज्योतिर्लिंग'}
                 </button>
               </li>
               <li>
-                <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left">
-                  📍 द्वारकाधीश जगत मंदिर व बेट द्वारका
+                <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left cursor-pointer">
+                  📍 {language === 'gu' ? 'દ્વારકાધીશ જગત મંદિર' : language === 'en' ? 'Dwarkadhish Temple' : 'द्वारकाधीश जगत मंदिर'}
                 </button>
               </li>
               <li>
-                <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left">
-                  📍 दीव पुर्तगाली किला व नागोआ बीच
+                <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left cursor-pointer">
+                  📍 {language === 'gu' ? 'દીવ ટાપુ અને બીચ' : language === 'en' ? 'Diu Island & Beaches' : 'दीव द्वीप व नागोआ बीच'}
                 </button>
               </li>
               <li>
-                <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left">
-                  📍 सासन गिर एशियाई बब्बर शेर सफारी
+                <button type="button" onClick={onScrollToJourney} className="hover:text-orange-500 transition-colors text-left cursor-pointer">
+                  📍 {language === 'gu' ? 'સાસણ ગીર એશિયાટિક સિંહ' : language === 'en' ? 'Sasan Gir Asiatic Lion Safari' : 'सासन गिर एशियाई शेर सफारी'}
                 </button>
               </li>
             </ul>
@@ -62,27 +66,31 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
           {/* Services */}
           <div>
             <h4 className="font-black text-slate-900 uppercase tracking-wider text-xs mb-3">
-              लोकल सुविधाएं
+              {language === 'gu'
+                ? 'સ્થાનિક સેવાઓ'
+                : language === 'en'
+                ? 'Local Services'
+                : 'लोकल सुविधाएं'}
             </h4>
             <ul className="space-y-2 text-xs font-semibold text-slate-600">
               <li>
                 <a href="#services" className="hover:text-orange-500 transition-colors">
-                  मंदिर के पास आरामदायक होटल
+                  {language === 'gu' ? 'મંદિર નજીક ઉત્તમ હોટેલ્સ' : language === 'en' ? 'Comfortable Stays Near Temple' : 'मंदिर के पास आरामदायक होटल'}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-orange-500 transition-colors">
-                  प्राइवेट AC टैक्सी (Innova, Ertiga, Dzire)
+                  {language === 'gu' ? 'પ્રાઇવેટ AC ટેક્સી (Innova, Ertiga)' : language === 'en' ? 'Private AC Cabs (Innova, Ertiga)' : 'प्राइवेट AC टैक्सी (Innova, Ertiga)'}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-orange-500 transition-colors">
-                  शुद्ध काठियावाड़ी व सात्विक भोजन
+                  {language === 'gu' ? 'શુદ્ધ કાઠિયાવાડી ભોજન' : language === 'en' ? 'Pure Satvik & Gujarati Dining' : 'शुद्ध काठियावाड़ी व सात्विक भोजन'}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-orange-500 transition-colors">
-                  VIP दर्शन व स्थानीय मार्गदर्शन
+                  {language === 'gu' ? 'VIP દર્શન અને માર્ગદર્શન' : language === 'en' ? 'VIP Darshan & Local Guidance' : 'VIP दर्शन व स्थानीय मार्गदर्शन'}
                 </a>
               </li>
             </ul>
@@ -91,7 +99,11 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
           {/* Contact Details */}
           <div className="space-y-3">
             <h4 className="font-black text-slate-900 uppercase tracking-wider text-xs mb-3">
-              लोकल होस्ट संपर्क
+              {language === 'gu'
+                ? 'લોકલ હોસ્ટ સંપર્ક'
+                : language === 'en'
+                ? 'Local Host Contact'
+                : 'लोकल होस्ट संपर्क'}
             </h4>
             <div className="flex items-start gap-2 text-xs font-medium">
               <PhoneCall className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
@@ -99,7 +111,13 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
                 <a href="tel:6359798896" className="text-slate-900 hover:text-orange-600 font-mono font-black block text-sm">
                   +91 6359798896
                 </a>
-                <span className="text-[11px] text-slate-500 font-bold">कॉल और WhatsApp पर 24 घंटे उपलब्ध</span>
+                <span className="text-[11px] text-slate-500 font-bold">
+                  {language === 'gu'
+                    ? 'કૉલ અને WhatsApp પર ૨૪ કલાક ઉપલબ્ધ'
+                    : language === 'en'
+                    ? '24/7 Available on Call & WhatsApp'
+                    : 'कॉल और WhatsApp पर 24 घंटे उपलब्ध'}
+                </span>
               </div>
             </div>
 

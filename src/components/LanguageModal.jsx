@@ -69,6 +69,21 @@ export default function LanguageModal() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
             {languages.map((lang) => {
               const isSelected = language === lang.id;
+              // Clean typography badges instead of confusing emojis
+              const badgeMap = {
+                gu: 'ગુ',
+                hi: 'हिं',
+                mr: 'म',
+                raj: 'रा',
+                en: 'EN',
+                bn: 'বা',
+                te: 'తె',
+                ta: 'த',
+                kn: 'ಕ',
+                pa: 'ਪੰ',
+              };
+              const scriptBadge = badgeMap[lang.id] || lang.id.toUpperCase();
+
               return (
                 <button
                   key={lang.id}
@@ -81,7 +96,15 @@ export default function LanguageModal() {
                   }`}
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <span className="text-2xl flex-shrink-0">{lang.flag}</span>
+                    <span
+                      className={`w-9 h-9 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center flex-shrink-0 transition-colors ${
+                        isSelected
+                          ? 'bg-orange-500 text-white shadow-xs'
+                          : 'bg-amber-100/70 border border-amber-300/80 text-amber-900 group-hover:bg-amber-200'
+                      }`}
+                    >
+                      {scriptBadge}
+                    </span>
                     <div className="min-w-0">
                       <div className="flex items-center gap-1.5 flex-wrap">
                         <span className="text-sm font-black text-slate-900 group-hover:text-orange-600 transition-colors">
@@ -114,7 +137,15 @@ export default function LanguageModal() {
         <div className="px-4 py-3 bg-slate-50/80 border-t border-slate-100 text-center flex-shrink-0">
           <p className="text-[11px] text-slate-500 font-medium flex items-center justify-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>તમે વેબસાઈટમાં ઉપર આપેલા બટનથી ગમે ત્યારે ભાષા બદલી શકો છો.</span>
+            <span>
+              {language === 'gu'
+                ? 'તમે ઉપર આપેલા બટન (ભાષા / Language) પરથી ગમે ત્યારે ભાષા બદલી શકો છો.'
+                : language === 'hi'
+                ? 'आप ऊपर दिए गए बटन (भाषा / Language) से किसी भी समय भाषा बदल सकते हैं।'
+                : language === 'mr'
+                ? 'तुम्ही वरील बटणावरून (भाषा / Language) कधीही भाषा बदलू शकता.'
+                : 'You can change the language anytime via the top bar button (Language / ભાષા).'}
+            </span>
           </p>
         </div>
       </div>

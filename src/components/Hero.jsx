@@ -63,12 +63,24 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
           <div className="mt-5 flex items-center justify-center gap-4 text-xs font-bold text-slate-500 flex-wrap">
             <span className="inline-flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              भरोसेमंद लोकल ड्राइवर्स
+              {language === 'gu'
+                ? 'ભરોસાપાત્ર લોકલ ડ્રાઇવર્સ'
+                : language === 'mr'
+                ? 'विश्वासू स्थानिक चालक'
+                : language === 'en'
+                ? 'Verified Local Chauffeurs'
+                : 'भरोसेमंद लोकल ड्राइवर्स'}
             </span>
             <span>•</span>
             <span className="inline-flex items-center gap-1">
               <HeartHandshake className="w-3.5 h-3.5 text-amber-600" />
-              अपनों जैसी लोकल सेवा
+              {language === 'gu'
+                ? 'પરિવાર જેવી લોકલ સેવા'
+                : language === 'mr'
+                ? 'कुटुंबासारखी काळजी व सेवा'
+                : language === 'en'
+                ? 'Family-Like Hospitality'
+                : 'अपनों जैसी लोकल सेवा'}
             </span>
             <span>•</span>
             <span className="inline-flex items-center gap-1">
@@ -84,7 +96,11 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
           <div className="flex items-center justify-between gap-2 px-3 py-2 bg-slate-50 rounded-2xl border border-slate-200/80 mb-2 overflow-x-auto no-scrollbar">
             <div className="flex items-center gap-2 min-w-max">
               <span className="text-[11px] font-black uppercase text-slate-500 tracking-wider">
-                यात्रा मार्ग:
+                {language === 'gu'
+                  ? 'યાત્રા માર્ગ:'
+                  : language === 'en'
+                  ? 'Tour Circuit:'
+                  : 'यात्रा मार्ग:'}
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-orange-100 border border-orange-300 text-orange-900 text-xs font-extrabold">
                 📍 1. Somnath
@@ -103,7 +119,11 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
               </span>
             </div>
             <span className="text-xs font-extrabold text-slate-600 hidden md:block">
-              520 km संपूर्ण सौराष्ट्र सर्किट
+              {language === 'gu'
+                ? '520 km સંપૂર્ણ સૌરાષ્ટ્ર સર્કિટ'
+                : language === 'en'
+                ? '520 km Complete Saurashtra Circuit'
+                : '520 km संपूर्ण सौराष्ट्र सर्किट'}
             </span>
           </div>
 
@@ -125,7 +145,13 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
             {/* Badge on Photo */}
             <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-10">
               <span className="px-3 py-1 rounded-full text-xs font-black bg-white/95 text-slate-900 shadow-sm border border-white/50 backdrop-blur-md">
-                श्री सोमनाथ प्रथम ज्योतिर्लिंग • अरब सागर तट
+                {language === 'gu'
+                  ? 'શ્રી સોમનાથ પ્રથમ જ્યોતિર્લિંગ • અરબ સાગર તટ'
+                  : language === 'en'
+                  ? 'Shree Somnath 1st Jyotirlinga • Arabian Coast'
+                  : language === 'mr'
+                  ? 'श्री सोमनाथ प्रथम ज्योतिर्लिंग • अरबी समुद्र किनारा'
+                  : 'श्री सोमनाथ प्रथम ज्योतिर्लिंग • अरब सागर तट'}
               </span>
             </div>
 
@@ -153,10 +179,18 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
                   </div>
                   <div className="hidden xs:block text-left text-white/90">
                     <div className="text-[10px] font-black text-amber-300 uppercase tracking-wider">
-                      यात्रा यहीं से शुरू:
+                      {language === 'gu'
+                        ? 'યાત્રા અહીંથી શરૂ:'
+                        : language === 'en'
+                        ? 'Your Journey Starts:'
+                        : 'यात्रा यहीं से शुरू:'}
                     </div>
                     <div className="text-xs font-bold text-slate-100">
-                      आरामदायक AC गाड़ियां और होटल
+                      {language === 'gu'
+                        ? 'ચોખ્ખી AC ગાડીઓ અને હોટેલ્સ'
+                        : language === 'en'
+                        ? 'Sanitized AC Cabs & Verified Stays'
+                        : 'आरामदायक AC गाड़ियां और होटल'}
                     </div>
                   </div>
                 </div>
@@ -173,9 +207,13 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
                   <button
                     type="button"
                     onClick={onScrollToJourney}
-                    className="px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-black shadow-xs transition-all tap-bounce"
+                    className="px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-black shadow-xs transition-all tap-bounce cursor-pointer"
                   >
-                    यात्रा देखें ↓
+                    {language === 'gu'
+                      ? 'યાત્રા જુઓ ↓'
+                      : language === 'en'
+                      ? 'Explore Route ↓'
+                      : 'यात्रा देखें ↓'}
                   </button>
                 </div>
               </div>
@@ -188,9 +226,17 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
           <button
             type="button"
             onClick={onScrollToJourney}
-            className="inline-flex flex-col items-center gap-1 text-slate-500 hover:text-orange-500 transition-colors tap-bounce"
+            className="inline-flex flex-col items-center gap-1 text-slate-500 hover:text-orange-500 transition-colors tap-bounce cursor-pointer"
           >
-            <span className="text-xs font-bold">नीचे स्क्रॉल करें: सोमनाथ, द्वारका, दीव और सासन गिर दर्शन</span>
+            <span className="text-xs font-bold">
+              {language === 'gu'
+                ? 'નીચે સ્ક્રોલ કરો: સોમનાથ, દ્વારકા, દીવ અને સાસણ ગીર દર્શન'
+                : language === 'en'
+                ? 'Scroll Down: Somnath, Dwarka, Diu & Sasan Gir Pilgrimage'
+                : language === 'mr'
+                ? 'खाली स्क्रोल करा: सोमनाथ, द्वारका, दीव आणि सासन गिर दर्शन'
+                : 'नीचे स्क्रॉल करें: सोमनाथ, द्वारका, दीव और सासन गिर दर्शन'}
+            </span>
             <div className="w-7 h-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center animate-bounce">
               <ArrowDown className="w-3.5 h-3.5 text-slate-600" />
             </div>

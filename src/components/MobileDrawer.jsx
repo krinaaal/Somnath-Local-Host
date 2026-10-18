@@ -79,7 +79,7 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
             >
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-amber-500" />
-                <span>મુખ્ય તીર્થ સ્થળો (Stations)</span>
+                <span>{t('navStations')}</span>
               </div>
               <ChevronRight className="w-4 h-4 text-slate-300" />
             </a>

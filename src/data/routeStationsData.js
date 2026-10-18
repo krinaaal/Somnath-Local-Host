@@ -28,7 +28,7 @@ export const ROUTE_STATIONS = [
       raj: 'श्रीकृष्ण धाम गमन'
     },
     icon: '🛕',
-    image: '/images/destinations/somnath.webp',
+    image: '/images/destinations/bhalka-tirth.jpg',
     timing: '6:00 AM - 9:00 PM',
     distance: '4 km from Somnath Temple',
     description: {
@@ -70,7 +70,7 @@ export const ROUTE_STATIONS = [
       raj: 'समंदर में शिवजी'
     },
     icon: '🌊',
-    image: '/images/destinations/somnath-cinematic.webp',
+    image: '/images/destinations/ban-ganga.jpg',
     timing: 'ઓટ (Low Tide) સમયે વિશેષ દર્શન',
     distance: '3 km from Somnath Temple',
     description: {
@@ -112,7 +112,7 @@ export const ROUTE_STATIONS = [
       raj: '३ नदियां रो संगम'
     },
     icon: '🚩',
-    image: '/images/destinations/somnath-mobile.webp',
+    image: '/images/destinations/triveni-sangam.jpg',
     timing: '6:00 AM - 8:30 PM',
     distance: '1.5 km from Somnath Temple',
     description: {
@@ -154,7 +154,7 @@ export const ROUTE_STATIONS = [
       raj: 'कृष्ण-रुक्मिणी ब्याव स्थळ'
     },
     icon: '🌴',
-    image: '/images/destinations/somnath-cinematic.webp',
+    image: '/images/destinations/madhavpur.jpg',
     timing: 'દિવસભર સુંદર ડ્રાઇવિંગ માર્ગ',
     distance: '75 km from Somnath on NH-51',
     description: {
@@ -196,7 +196,7 @@ export const ROUTE_STATIONS = [
       raj: 'संसार रो एकलो सुदामा मंदर'
     },
     icon: '🤝',
-    image: '/images/destinations/dwarka.webp',
+    image: '/images/destinations/porbandar.jpg',
     timing: '7:00 AM - 8:00 PM',
     distance: '130 km from Somnath / 105 km to Dwarka',
     description: {
@@ -238,7 +238,7 @@ export const ROUTE_STATIONS = [
       raj: 'कृष्ण रो राजमहल'
     },
     icon: '⛵',
-    image: '/images/destinations/dwarka-cinematic.webp',
+    image: '/images/destinations/bet-dwarka.jpg',
     timing: '6:30 AM - 1:00 PM & 5:00 PM - 9:00 PM',
     distance: '30 km from Dwarkadhish Temple to Okha',
     description: {
@@ -280,7 +280,7 @@ export const ROUTE_STATIONS = [
       raj: 'शिवजी रो ८वो ज्योतिर्लिंग'
     },
     icon: '🕉️',
-    image: '/images/destinations/dwarka.webp',
+    image: '/images/destinations/nageshwar.jpg',
     timing: '6:00 AM - 12:30 PM & 5:00 PM - 9:30 PM',
     distance: '16 km from Dwarka Jagat Mandir',
     description: {
@@ -322,7 +322,7 @@ export const ROUTE_STATIONS = [
       raj: 'साफ-सुथरो बीच'
     },
     icon: '🏖️',
-    image: '/images/destinations/diu-cinematic.webp',
+    image: '/images/destinations/shivrajpur.jpg',
     timing: '8:00 AM - 7:00 PM (Sunset Best)',
     distance: '12 km from Dwarka Jagat Mandir',
     description: {

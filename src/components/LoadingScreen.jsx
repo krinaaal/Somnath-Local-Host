@@ -229,7 +229,7 @@ export default function LoadingScreen({ onFinish }) {
             </h2>
           </div>
           <p className="text-xs text-amber-700 font-bold">
-            Har Har Mahadev • સૌરાષ્ટ્ર દર્શન યાત્રા ✨
+            Har Har Mahadev • Saurashtra Darshan Yatra ✨
           </p>
         </div>
 

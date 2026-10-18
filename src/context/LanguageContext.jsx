@@ -101,7 +101,10 @@ export function LanguageProvider({ children }) {
   };
 
   const t = (key) => {
-    return TRANSLATIONS[language]?.[key] || TRANSLATIONS['gu']?.[key] || TRANSLATIONS['hi']?.[key] || key;
+    if (language === 'gu') {
+      return TRANSLATIONS['gu']?.[key] || key;
+    }
+    return TRANSLATIONS[language]?.[key] || TRANSLATIONS['hi']?.[key] || TRANSLATIONS['en']?.[key] || key;
   };
 
   const currentLangObj = LANGUAGES.find((l) => l.id === language) || LANGUAGES[0];

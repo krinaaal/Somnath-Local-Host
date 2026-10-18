@@ -59,7 +59,7 @@ export const SERVICES = [
     title: 'Local & Outstation Cabs',
     subtitle: 'AC Innova Crysta, Ertiga & Sedans',
     icon: 'Car',
-    image: '/images/services/cab.webp',
+    image: '/images/services/cab-luxury.jpg',
     desc: 'Chauffeur-driven sanitized vehicles with experienced local drivers who know every scenic shortcut and temple route in Saurashtra.',
     features: ['Pick & Drop from Veraval / Rajkot / Ahmedabad', 'Fixed fair pricing, 0 hidden tolls', 'Spacious AC boot space for family luggage']
   },
@@ -68,7 +68,7 @@ export const SERVICES = [
     title: 'Handpicked Hotels & Stays',
     subtitle: 'Walking distance to Somnath Temple',
     icon: 'Hotel',
-    image: '/images/services/hotel.webp',
+    image: '/images/services/hotel-luxury.jpg',
     desc: 'Carefully vetted sea-facing hotels and heritage dharamshalas with clean linen, hot water, AC rooms, and high family safety standards.',
     features: ['Sea-view & Temple-adjacent properties', 'Early check-in assistance for morning trains', 'Safe, couple & elderly-friendly']
   },
