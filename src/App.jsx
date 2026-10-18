@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import LiveTrustStats from './components/LiveTrustStats';
 import CinematicScrollJourney from './components/cinematic/CinematicScrollJourney';
 import ServicesGrid from './components/ServicesGrid';
+import RouteStations from './components/RouteStations';
 import CustomerReviews from './components/CustomerReviews';
 import ConversionSection from './components/ConversionSection';
 import FrontendLeadModal from './components/FrontendLeadModal';
@@ -82,6 +83,11 @@ export default function App() {
         {/* The Real-World Cinematic Scroll Journey (Somnath, Dwarka, Diu, Sasan Gir) */}
         <CinematicScrollJourney
           onSelectDestination={(dest) => handleOpenLeadModal(dest)}
+        />
+
+        {/* Sacred Route Stations: Bhalka Tirth, Ban Ganga, Gita Mandir, Bet Dwarka, Nageshwar, Shivrajpur Beach, Madhavpur, Porbandar */}
+        <RouteStations
+          onSelectStation={(station) => handleOpenLeadModal(station)}
         />
 
         {/* Services Section (Hotel & Stay, Car Rental, Sightseeing, Desi Gujarati Food) */}

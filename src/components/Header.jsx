@@ -44,7 +44,7 @@ export default function Header({ onOpenMobileMenu, onOpenLeadModal, onScrollToJo
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-6 text-sm font-extrabold text-slate-700">
+        <nav className="hidden lg:flex items-center gap-5 text-sm font-extrabold text-slate-700">
           <a href="#" className="hover:text-orange-500 transition-colors">{t('navHome')}</a>
           <button
             type="button"
@@ -53,6 +53,9 @@ export default function Header({ onOpenMobileMenu, onOpenLeadModal, onScrollToJo
           >
             {t('navRoute')}
           </button>
+          <a href="#stations" className="hover:text-orange-500 transition-colors">
+            {t('navStations') || (t('language') === 'gu' ? 'મુખ્ય તીર્થો' : 'प्रमुख तीर्थ')}
+          </a>
           <a href="#services" className="hover:text-orange-500 transition-colors">{t('navServices')}</a>
           <a href="#reviews" className="hover:text-orange-500 transition-colors">{t('navReviews')}</a>
           <a href="#contact" className="hover:text-orange-500 transition-colors">{t('navContact')}</a>

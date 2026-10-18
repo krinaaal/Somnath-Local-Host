@@ -73,6 +73,18 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
             </button>
 
             <a
+              href="#stations"
+              onClick={onClose}
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-extrabold text-slate-800 hover:bg-amber-50 hover:text-amber-700 transition-colors tap-bounce"
+            >
+              <div className="flex items-center gap-3">
+                <MapPin className="w-4 h-4 text-amber-500" />
+                <span>મુખ્ય તીર્થ સ્થળો (Stations)</span>
+              </div>
+              <ChevronRight className="w-4 h-4 text-slate-300" />
+            </a>
+
+            <a
               href="#services"
               onClick={onClose}
               className="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-extrabold text-slate-800 hover:bg-emerald-50 hover:text-emerald-600 transition-colors tap-bounce"

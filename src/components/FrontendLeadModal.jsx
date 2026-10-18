@@ -251,15 +251,25 @@ export default function FrontendLeadModal({ isOpen, onClose, initialDestination 
                 <label className="block text-xs font-black text-slate-700 mb-1.5">
                   आप मुख्य रूप से कहाँ दर्शन करना चाहते हैं?
                 </label>
-                <div className="grid grid-cols-2 gap-2">
-                  {['Somnath', 'Dwarka', 'Diu Island', 'Sasan Gir', 'Complete Circuit'].map((dest) => (
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {Array.from(new Set([
+                    destination,
+                    'Somnath',
+                    'Dwarka',
+                    'Bhalka Tirth',
+                    'Bet Dwarka',
+                    'Nageshwar Jyotirlinga',
+                    'Shivrajpur Beach',
+                    'Ban Ganga & Gita Mandir',
+                    'Complete Circuit (Somnath - Dwarka)'
+                  ])).filter(Boolean).map((dest) => (
                     <button
                       key={dest}
                       type="button"
                       onClick={() => setDestination(dest)}
                       className={`p-2 rounded-xl text-xs font-bold border transition-all text-left ${
                         destination === dest
-                          ? 'bg-amber-100 border-amber-400 text-amber-900 shadow-2xs'
+                          ? 'bg-amber-100 border-amber-400 text-amber-900 shadow-2xs font-black'
                           : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
                       }`}
                     >

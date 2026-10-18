@@ -124,6 +124,19 @@ async function runTestSuite() {
       });
       console.log(`  ✓ 3 Live Trust Stats verified (Live Enquiries, 1250+ Pilgrims, Weekly Bookings): ${liveStatsPresent}`);
 
+      // Check 3.6: Verify Route Stations (Bhalka Tirth, Bet Dwarka, Nageshwar, Shivrajpur Beach, Ban Ganga, Gita Mandir)
+      const stationsPresent = await page.evaluate(() => {
+        const text = document.body.innerText;
+        const hasBhalka = text.includes('ભાલકા') || text.includes('Bhalka');
+        const hasBetDwarka = text.includes('બેટ દ્વારકા') || text.includes('Bet Dwarka');
+        const hasNageshwar = text.includes('નાગેશ્વર') || text.includes('Nageshwar');
+        const hasShivrajpur = text.includes('શિવરાજપુર') || text.includes('Shivrajpur');
+        const hasBanGanga = text.includes('બાણગંગા') || text.includes('Ban Ganga');
+        const hasGitaMandir = text.includes('ગીતા') || text.includes('Gita Mandir');
+        return hasBhalka && hasBetDwarka && hasNageshwar && hasShivrajpur && hasBanGanga && hasGitaMandir;
+      });
+      console.log(`  ✓ Route Stations verified (Bhalka, Bet Dwarka, Nageshwar, Shivrajpur, Ban Ganga, Gita Mandir): ${stationsPresent}`);
+
       // Check 4: Strictly NO PRICING or Packages
       const pricingFound = await page.evaluate(() => {
         const text = document.body.innerText.toLowerCase();
