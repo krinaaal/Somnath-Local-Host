@@ -94,7 +94,7 @@ async function runTestSuite() {
 
       // Check 2: Heading Presence & White Theme
       const hasHeading = await page.evaluate(() => {
-        return document.body.innerText.includes('Chalo, Somnath') || document.body.innerText.includes('Farva Jaiye');
+        return document.body.innerText.includes('Chalo, Somnath') || document.body.innerText.includes('Darshan karne Chalein');
       });
       console.log(`  ✓ Signature heading present: ${hasHeading}`);
 

@@ -89,7 +89,7 @@ export default function LoadingScreen({ onFinish }) {
             </h2>
           </div>
           <p className="text-xs text-slate-500 font-bold">
-            Chalo, Somnath Ghoomne Chalein! ✨
+            Chalo, Somnath Darshan karne Chalein! ✨
           </p>
         </div>
 

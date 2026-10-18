@@ -23,7 +23,7 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
               सोमनाथ, द्वारका, दीव और सासन गिर के लिए आपका अपना विश्वसनीय लोकल होस्ट। साफ AC गाड़ियां, मंदिर के पास बढ़िया होटल्स और 24 घंटे पारिवारिक मार्गदर्शन।
             </p>
             <div className="pt-1 flex items-center gap-1.5 text-xs text-amber-700 font-black">
-              <span>🙏 Chalo, Somnath Ghoomne Chalein!</span>
+              <span>🙏 Chalo, Somnath Darshan karne Chalein!</span>
             </div>
           </div>
 
@@ -124,7 +124,7 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
             © {new Date().getFullYear()} Shree Somnath Local Host. All rights reserved.
           </div>
           <div className="flex items-center gap-2">
-            <span>Chalo, Somnath Ghoomne Chalein!</span>
+            <span>Chalo, Somnath Darshan karne Chalein!</span>
             <span>•</span>
             <span className="text-slate-700">हर हर महादेव 🙏 जय सोमनाथ</span>
           </div>

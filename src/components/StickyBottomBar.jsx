@@ -19,7 +19,7 @@ export default function StickyBottomBar({ onOpenLeadModal, isModalOpen }) {
 
         {/* WhatsApp Direct */}
         <a
-          href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Ghoomne%20Chalein!"
+          href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Darshan%20karne%20Chalein!"
           target="_blank"
           rel="noopener noreferrer"
           className="w-11 min-h-[46px] rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center transition-transform active:scale-95 flex-shrink-0 shadow-xs"

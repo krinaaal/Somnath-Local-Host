@@ -112,7 +112,7 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
           </a>
 
           <a
-            href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Ghoomne%20Chalein!"
+            href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Darshan%20karne%20Chalein!"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-2.5 px-4 rounded-2xl bg-emerald-50 text-emerald-800 font-extrabold text-xs flex items-center justify-center gap-2 tap-bounce"

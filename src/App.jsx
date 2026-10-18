@@ -56,7 +56,7 @@ export default function App() {
 
       {/* Main Content */}
       <main className="flex-1 w-full">
-        {/* Signature Hero: "Chalo, Somnath Farva Jaiye!" */}
+        {/* Signature Hero: "Chalo, Somnath Darshan karne Chalein!" */}
         <Hero
           onOpenLeadModal={() => handleOpenLeadModal('Somnath')}
           onScrollToJourney={handleScrollToJourney}

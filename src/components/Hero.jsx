@@ -21,7 +21,7 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
             Chalo, Somnath <br className="hidden xs:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-emerald-600">
-              Ghoomne Chalein!
+              Darshan karne Chalein!
             </span>
           </h1>
 
