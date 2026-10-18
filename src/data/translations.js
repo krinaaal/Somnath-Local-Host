@@ -1,121 +1,31 @@
 // Multi-language translations for Somnath Local Host
-// Supported languages:
-// 'hi' - हिंदी (Hindi)
-// 'gu' - ગુજરાતી (Gujarati)
-// 'en' - English
-// 'mr' - मराठी (Marathi)
+// Supporting 10 major Indian pilgrimage languages:
+// 1. Gujarati (ગુજરાતી)
+// 2. Hindi (हिंदी)
+// 3. Marathi (मराठी)
+// 4. Rajasthani (राजस्थानी)
+// 5. English
+// 6. Bengali (বাংলা)
+// 7. Telugu (తెలుగు)
+// 8. Tamil (தமிழ்)
+// 9. Kannada (ಕನ್ನಡ)
+// 10. Punjabi (ਪੰਜਾਬੀ)
 
 export const LANGUAGES = [
-  { id: 'hi', label: 'हिंदी', englishName: 'Hindi', flag: '🇮🇳', subtitle: 'तीर्थ यात्रा और दर्शन' },
-  { id: 'gu', label: 'ગુજરાતી', englishName: 'Gujarati', flag: '🚩', subtitle: 'સૌરાષ્ટ્ર દર્શન યાત્રા' },
-  { id: 'en', label: 'English', englishName: 'English', flag: '🌐', subtitle: 'Somnath & Saurashtra' },
-  { id: 'mr', label: 'मराठी', englishName: 'Marathi', flag: '🕉️', subtitle: 'सोमनाथ व द्वारका यात्रा' },
+  { id: 'gu', label: 'ગુજરાતી', englishName: 'Gujarati', flag: '🚩', state: 'ગુજરાત • Saurashtra', subtitle: 'સૌરાષ્ટ્ર દર્શન યાત્રા' },
+  { id: 'hi', label: 'हिंदी', englishName: 'Hindi', flag: '🇮🇳', state: 'उत्तर व मध्य भारत', subtitle: 'तीर्थ यात्रा और दर्शन' },
+  { id: 'mr', label: 'मराठी', englishName: 'Marathi', flag: '🕉️', state: 'महाराष्ट्र', subtitle: 'सोमनाथ व द्वारका यात्रा' },
+  { id: 'raj', label: 'राजस्थानी', englishName: 'Rajasthani', flag: '🐪', state: 'राजस्थान', subtitle: 'सोमनाथ री पावन यात्रा' },
+  { id: 'en', label: 'English', englishName: 'English', flag: '🌐', state: 'All India & NRI', subtitle: 'Somnath & Saurashtra' },
+  { id: 'bn', label: 'বাংলা', englishName: 'Bengali', flag: '🌸', state: 'পশ্চিমবঙ্গ', subtitle: 'সোমনাথ ও দ্বারকা তীর্থ' },
+  { id: 'te', label: 'తెలుగు', englishName: 'Telugu', flag: '🪔', state: 'ఆంధ్ర & తెలంగాణ', subtitle: 'సోమనాథ్ దివ్య దర్శనం' },
+  { id: 'ta', label: 'தமிழ்', englishName: 'Tamil', flag: '🛕', state: 'தமிழ்நாடு', subtitle: 'சோம்நாத் புனித யாத்திரை' },
+  { id: 'kn', label: 'ಕನ್ನಡ', englishName: 'Kannada', flag: '🐘', state: 'ಕರ್ನಾಟಕ', subtitle: 'ಸೋಮನಾಥ ಪವಿತ್ರ ದರ್ಶನ' },
+  { id: 'pa', label: 'ਪੰਜਾਬੀ', englishName: 'Punjabi', flag: '🌾', state: 'ਪੰਜਾਬ', subtitle: 'ਸੋਮਨਾਥ ਦਰਸ਼ਨ ਯਾਤਰਾ' },
 ];
 
 export const TRANSLATIONS = {
-  hi: {
-    // Header & Navigation
-    navHome: 'होम',
-    navRoute: 'यात्रा मार्ग',
-    navServices: 'सुविधाएं',
-    navReviews: 'यात्री समीक्षा',
-    navContact: 'संपर्क',
-    callNow: 'कॉल करें',
-    planTrip: 'यात्रा प्लान करें',
-    changeLang: 'भाषा बदलें',
-    tagline: 'आपका लोकल ट्रैवल बडी • हर हर महादेव',
-
-    // Hero
-    heroBadgeGreeting: '🙏 हर हर महादेव!',
-    heroBadgeWelcome: 'सौराष्ट्र यात्रा में आपका स्वागत है',
-    heroMainTitle1: 'Chalo, Somnath',
-    heroMainTitle2: 'Darshan karne Chalein!',
-    heroSubtitle: 'Somnath, Dwarka, Diu ya Sasan Gir — aapka friendly local travel buddy yahan hai!',
-    heroDescription: 'साफ-सुथरी AC गाड़ियां, मंदिर के पास बढ़िया होटल्स और परिवार के लिए भरोसेमंद लोकल मार्गदर्शन — बिना किसी परेशानी के आनंदमय दर्शन यात्रा।',
-    heroCtaPlan: 'यात्रा प्लान करें',
-    heroCtaExplore: 'स्थान देखें (Explore)',
-    heroTrustVerified: 'वेरिफाइड लोकल ड्राइवर व होटल्स',
-    heroTrustRating: '4.9★ (1,250+ श्रद्धालु)',
-
-    // Live Trust Stats
-    statsLiveEnquiries: 'अभी लाइव पूछताछ जारी है',
-    statsLiveEnquiriesSub: 'आज यात्री अपनी यात्रा प्लान कर रहे हैं',
-    statsLivePulse: 'LIVE',
-    statsHappyPilgrims: '1,250+ संतुष्ट श्रद्धालु',
-    statsHappyPilgrimsSub: 'परिवार और वरिष्ठ नागरिकों की पहली पसंद',
-    statsWeeklyBookings: 'इस सप्ताह के कन्फर्म बुकिंग',
-    statsWeeklyBookingsSub: 'सीमित AC गाड़ियां व मंदिर पास स्टे',
-    statsBadgeTrust: '१००% स्थानीय व विश्वसनीय सेवा',
-
-    // Journey Chapter Titles
-    journeyBadge: 'सौराष्ट्र दर्शन यात्रा',
-    journeyTitle: '४ प्रमुख पवित्र व सुंदर धाम',
-    journeySubtitle: 'नीचे स्क्रॉल करके अपनी यात्रा का अनुभव करें',
-    destSomnath: 'श्री सोमनाथ ज्योतिर्लिंग',
-    destDwarka: 'द्वारकाधीश जगत मंदिर',
-    destDiu: 'दीव द्वीप व समुद्र तट',
-    destGir: 'सासन गिर राष्ट्रीय उद्यान',
-    viewDetails: 'विस्तार से देखें',
-    planForThis: 'इसके लिए प्लान करें',
-
-    // Services
-    servicesTitle: 'हमारी स्थानीय सेवाएं',
-    servicesSubtitle: 'तीर्थयात्रियों और परिवारों के लिए विशेष रूप से व्यवस्थित',
-    serviceCabsTitle: 'लोकल व आउटस्टेशन AC कैब',
-    serviceCabsDesc: 'राजकोट/अहमदाबाद/वेरावल से पिक-अप। साफ-सुथरी Innova Crysta, Ertiga और सेडान गाड़ियां।',
-    serviceHotelTitle: 'मंदिर के पास होटल व स्टे',
-    serviceHotelDesc: 'सोमनाथ मंदिर के पैदल दूरी पर साफ कमरे, गर्म पानी, समुद्र दर्शन और फैमिली माहौल।',
-    serviceFoodTitle: 'शुद्ध काठियावाड़ी व सात्विक भोजन',
-    serviceFoodDesc: 'गर्मा-गर्म बाजरा रोटला, रिंगणा ओलो, शुद्ध गुजराती थाली व सात्विक भोजन की उत्तम व्यवस्था।',
-    serviceDarshanTitle: 'आरती दर्शन व लोकल मार्गदर्शन',
-    serviceDarshanDesc: 'आरती का सही समय, बुजुर्गों के लिए व्हीलचेयर सहायता और बिना भीड़ के सुलभ दर्शन।',
-    bookServiceBtn: 'इसकी जानकारी लें',
-
-    // Reviews
-    reviewsBadge: 'यात्रियों के अनुभव',
-    reviewsTitle: 'श्रद्धालुओं का विश्वास',
-    reviewsSubtitle: 'कार रेंटल और होटल बुकिंग का वास्तविक अनुभव साझा करते हमारे सम्मानित अतिथि',
-    filterAll: 'सभी समीक्षाएं (All)',
-    filterCabs: '🚗 कार रेंटल (Cabs)',
-    filterHotels: '🏨 होटल बुकिंग (Hotels)',
-    verifiedTraveler: 'सत्यापित यात्री (Verified)',
-
-    // Conversion
-    conversionBadge: 'स्थानीय सहायता',
-    conversionTitle: 'आपकी यात्रा की तैयारी शुरू करें',
-    conversionSubtitle: 'कॉल या WhatsApp पर सीधे बात करें — कोई छिपा शुल्क नहीं, केवल सच्चा मार्गदर्शन।',
-    contactBtn: 'संपर्क करें (Contact Us)',
-    whatsappBtn: 'WhatsApp पर बात करें',
-    exploreAgain: 'ऊपर से फिर देखें',
-
-    // Modal
-    modalTitle: 'यात्रा पूछताछ (Plan Your Yatra)',
-    modalStep1: 'यात्रा की बुनियादी जानकारी',
-    modalStep2: 'पसंदीदा सेवाएं व तारीख',
-    nameLabel: 'आपका नाम (Full Name)',
-    phoneLabel: 'मोबाइल नंबर (WhatsApp No.)',
-    destinationLabel: 'प्रमुख गंतव्य (Destination)',
-    dateLabel: 'यात्रा की संभावित तारीख',
-    passengersLabel: 'यात्रियों की संख्या',
-    notesLabel: 'कोई विशेष आवश्यकता (होटल/कार/वरिष्ठ नागरिक)?',
-    submitBtn: 'मुफ्त कोटेशन व मार्गदर्शन प्राप्त करें',
-    nextBtn: 'आगे बढ़ें',
-    backBtn: 'पीछे जाएं',
-    modalSuccessTitle: 'धन्यवाद! आपकी पूछताछ दर्ज हो गई है',
-    modalSuccessDesc: 'हमारा लोकल को-ऑर्डिनेटर 15 मिनट के अंदर आपसे संपर्क करेगा।',
-
-    // Language modal
-    langModalTitle: 'अपनी पसंदीदा भाषा चुनें',
-    langModalSub: 'Choose your preferred language for a personalized experience',
-    langConfirmBtn: 'इस भाषा में जारी रखें',
-
-    // Footer
-    footerAbout: 'सोमनाथ, द्वारका, दीव और सासन गिर के लिए आपका अपना विश्वसनीय लोकल होस्ट। साफ AC गाड़ियां, मंदिर के पास बढ़िया होटल्स और 24 घंटे पारिवारिक मार्गदर्शन।',
-    footerRights: 'सर्वाधिकार सुरक्षित • श्री सोमनाथ लोकल होस्ट',
-  },
-
   gu: {
-    // Header & Navigation
     navHome: 'હોમ',
     navRoute: 'યાત્રા માર્ગ',
     navServices: 'સુવિધાઓ',
@@ -126,7 +36,6 @@ export const TRANSLATIONS = {
     changeLang: 'ભાષા બદલો',
     tagline: 'તમારો લોકલ ટ્રાવેલ બડી • હર હર મહાદેવ',
 
-    // Hero
     heroBadgeGreeting: '🙏 જય સોમનાથ • હર હર મહાદેવ!',
     heroBadgeWelcome: 'સૌરાષ્ટ્ર દર્શન યાત્રામાં આપનું સ્વાગત છે',
     heroMainTitle1: 'ચાલો, સોમનાથ',
@@ -138,7 +47,6 @@ export const TRANSLATIONS = {
     heroTrustVerified: 'વેરિફાઇડ લોકલ ડ્રાઇવર અને હોટેલ્સ',
     heroTrustRating: '4.9★ (1,250+ ખુશ શ્રદ્ધાળુઓ)',
 
-    // Live Trust Stats
     statsLiveEnquiries: 'હાલ લાઇવ ઇન્ક્વાયરી ચાલુ છે',
     statsLiveEnquiriesSub: 'આજે યાત્રાળુઓ પોતાની યાત્રા પ્લાન કરી રહ્યા છે',
     statsLivePulse: 'LIVE',
@@ -148,7 +56,6 @@ export const TRANSLATIONS = {
     statsWeeklyBookingsSub: 'મર્યાદિત AC ગાડીઓ અને મંદિર નજીક રૂમ',
     statsBadgeTrust: '૧૦૦% સ્થાનિક અને ભરોસાપાત્ર સેવા',
 
-    // Journey Chapter Titles
     journeyBadge: 'સૌરાષ્ટ્ર દર્શન યાત્રા',
     journeyTitle: '૪ મુખ્ય પવિત્ર અને સુંદર સ્થળો',
     journeySubtitle: 'નીચે સ્ક્રોલ કરીને તમારી યાત્રાનો આનંદ માણો',
@@ -159,20 +66,10 @@ export const TRANSLATIONS = {
     viewDetails: 'વિગતવાર જુઓ',
     planForThis: 'આના માટે પ્લાન કરો',
 
-    // Services
     servicesTitle: 'અમારી સ્થાનિક સેવાઓ',
     servicesSubtitle: 'યાત્રાળુઓ અને પરિવારો માટે ખાસ તૈયાર કરાયેલ વ્યવસ્થા',
-    serviceCabsTitle: 'લોકલ અને આઉટસ્ટેશન AC કેબ',
-    serviceCabsDesc: 'રાજકોટ/અમદાવાદ/વેરાવળથી પિક-અપ. ચોખ્ખી Innova Crysta, Ertiga અને સેડાન ગાડીઓ.',
-    serviceHotelTitle: 'મંદિર નજીક હોટેલ અને રોકાણ',
-    serviceHotelDesc: 'સોમનાથ મંદિરથી ચાલીને જવાય તેવા સ્વચ્છ રૂમ, ગરમ પાણી, દરિયા દર્શન અને ફેમિલી વાતાવરણ.',
-    serviceFoodTitle: 'શુદ્ધ કાઠિયાવાડી અને સાત્વિક ભોજન',
-    serviceFoodDesc: 'ગરમા-ગરમ બાજરાનો રોટલો, રીંગણાનો ઓળો, શુદ્ધ ગુજરાતી થાળી અને સાત્વિક જમવાની ઉત્તમ સગવડ.',
-    serviceDarshanTitle: 'આરતી દર્શન અને લોકલ માર્ગદર્શન',
-    serviceDarshanDesc: 'આરતીનો યોગ્ય સમય, વડીલો માટે વ્હીલચેર સહાય અને ભીડ વગર સુગમ દર્શનની માહિતી.',
     bookServiceBtn: 'માહિતી મેળવો',
 
-    // Reviews
     reviewsBadge: 'યાત્રીઓના અનુભવ',
     reviewsTitle: 'શ્રદ્ધાળુઓનો અતૂટ વિશ્વાસ',
     reviewsSubtitle: 'કાર રેન્ટલ અને હોટેલ બુકિંગના સાચા અનુભવો જણાવતા અમારા સન્માનિત મહેમાનો',
@@ -181,7 +78,6 @@ export const TRANSLATIONS = {
     filterHotels: '🏨 હોટેલ બુકિંગ (Hotels)',
     verifiedTraveler: 'વેરિફાઇડ યાત્રી (Verified)',
 
-    // Conversion
     conversionBadge: 'સ્થાનિક સહાય',
     conversionTitle: 'તમારી યાત્રાનું આયોજન શરૂ કરો',
     conversionSubtitle: 'કૉલ અથવા WhatsApp પર સીધી વાત કરો — કોઈ છુપો ચાર્જ નહીં, માત્ર સાચું માર્ગદર્શન.',
@@ -189,135 +85,89 @@ export const TRANSLATIONS = {
     whatsappBtn: 'WhatsApp પર વાત કરો',
     exploreAgain: 'ફરીથી ઉપર જુઓ',
 
-    // Modal
     modalTitle: 'યાત્રા પૂછપરછ (Plan Your Yatra)',
-    modalStep1: 'યાત્રાની પ્રાથમિક વિગત',
-    modalStep2: 'પસંદગીની સેવાઓ અને તારીખ',
-    nameLabel: 'તમારું નામ (Full Name)',
-    phoneLabel: 'મોબાઇલ નંબર (WhatsApp No.)',
-    destinationLabel: 'મુખ્ય સ્થળ (Destination)',
-    dateLabel: 'યાત્રાની સંભવિત તારીખ',
-    passengersLabel: 'યાત્રીઓની સંખ્યા',
-    notesLabel: 'કોઈ ખાસ જરૂરિયાત (હોટેલ/કાર/વડીલો માટે)?',
     submitBtn: 'મફત માર્ગદર્શન મેળવો',
-    nextBtn: 'આગળ વધો',
-    backBtn: 'પાછા જાઓ',
-    modalSuccessTitle: 'ધન્યવાદ! તમારી પૂછપરછ મળી ગઈ છે',
-    modalSuccessDesc: 'અમારો લોકલ કો-ઓર્ડિનેટર ૧૫ મિનિટમાં તમારો સંપર્ક કરશે.',
 
-    // Language modal
-    langModalTitle: 'તમારી પસંદગીની ભાષા પસંદ કરો',
-    langModalSub: 'Choose your preferred language for a personalized experience',
+    langModalTitle: 'આપની ભાષા પસંદ કરો',
+    langModalSub: 'તમારી સ્થાનિક ભાષામાં સોમનાથ યાત્રાની સરળ માહિતી મેળવો',
     langConfirmBtn: 'આ ભાષામાં આગળ વધો',
 
-    // Footer
     footerAbout: 'સોમનાથ, દ્વારકા, દીવ અને સાસણ ગીર માટે તમારો પોતાનો વિશ્વાસુ લોકલ હોસ્ટ. ચોખ્ખી AC ગાડીઓ, મંદિર નજીક ઉત્તમ હોટેલ્સ અને ૨૪ કલાક પારિવારિક માર્ગદર્શન.',
     footerRights: 'સર્વાધિકાર સુરક્ષિત • શ્રી સોમનાથ લોકલ હોસ્ટ',
   },
 
-  en: {
-    // Header & Navigation
-    navHome: 'Home',
-    navRoute: 'Route Map',
-    navServices: 'Services',
-    navReviews: 'Reviews',
-    navContact: 'Contact',
-    callNow: 'Call Now',
-    planTrip: 'Plan My Yatra',
-    changeLang: 'Change Language',
-    tagline: 'Your Local Travel Buddy • Har Har Mahadev',
+  hi: {
+    navHome: 'होम',
+    navRoute: 'यात्रा मार्ग',
+    navServices: 'सुविधाएं',
+    navReviews: 'यात्री समीक्षा',
+    navContact: 'संपर्क',
+    callNow: 'कॉल करें',
+    planTrip: 'यात्रा प्लान करें',
+    changeLang: 'भाषा बदलें',
+    tagline: 'आपका लोकल ट्रैवल बडी • हर हर महादेव',
 
-    // Hero
-    heroBadgeGreeting: '🙏 Har Har Mahadev!',
-    heroBadgeWelcome: 'Welcome to Saurashtra Pilgrimage',
+    heroBadgeGreeting: '🙏 हर हर महादेव!',
+    heroBadgeWelcome: 'सौराष्ट्र यात्रा में आपका स्वागत है',
     heroMainTitle1: 'Chalo, Somnath',
     heroMainTitle2: 'Darshan karne Chalein!',
-    heroSubtitle: 'Somnath, Dwarka, Diu or Sasan Gir — your friendly local travel buddy is right here!',
-    heroDescription: 'Spotless AC cabs, comfortable stays walking distance to the temple, and trusted local guidance for your family — zero hassle, pure divine peace.',
-    heroCtaPlan: 'Plan My Yatra',
-    heroCtaExplore: 'Explore Places',
-    heroTrustVerified: 'Verified Local Cabs & Hotels',
-    heroTrustRating: '4.9★ (1,250+ Happy Pilgrims)',
+    heroSubtitle: 'Somnath, Dwarka, Diu ya Sasan Gir — aapka friendly local travel buddy yahan hai!',
+    heroDescription: 'साफ-सुथरी AC गाड़ियां, मंदिर के पास बढ़िया होटल्स और परिवार के लिए भरोसेमंद लोकल मार्गदर्शन — बिना किसी परेशानी के आनंदमय दर्शन यात्रा।',
+    heroCtaPlan: 'यात्रा प्लान करें',
+    heroCtaExplore: 'स्थान देखें (Explore)',
+    heroTrustVerified: 'वेरिफाइड लोकल ड्राइवर व होटल्स',
+    heroTrustRating: '4.9★ (1,250+ श्रद्धालु)',
 
-    // Live Trust Stats
-    statsLiveEnquiries: 'Active Enquiries Right Now',
-    statsLiveEnquiriesSub: 'Devotees actively planning their Saurashtra trip today',
+    statsLiveEnquiries: 'अभी लाइव पूछताछ जारी है',
+    statsLiveEnquiriesSub: 'आज यात्री अपनी यात्रा प्लान कर रहे हैं',
     statsLivePulse: 'LIVE',
-    statsHappyPilgrims: '1,250+ Happy Pilgrims',
-    statsHappyPilgrimsSub: 'Trusted by families & senior citizens across India',
-    statsWeeklyBookings: 'Confirmed Bookings This Week',
-    statsWeeklyBookingsSub: 'Limited AC cabs & temple-adjacent stays',
-    statsBadgeTrust: '100% Verified Local Saurashtra Host',
+    statsHappyPilgrims: '1,250+ संतुष्ट श्रद्धालु',
+    statsHappyPilgrimsSub: 'परिवार और वरिष्ठ नागरिकों की पहली पसंद',
+    statsWeeklyBookings: 'इस सप्ताह के कन्फर्म बुकिंग',
+    statsWeeklyBookingsSub: 'सीमित AC गाड़ियां व मंदिर पास स्टे',
+    statsBadgeTrust: '१००% स्थानीय व विश्वसनीय सेवा',
 
-    // Journey Chapter Titles
-    journeyBadge: 'Saurashtra Sacred Circuit',
-    journeyTitle: '4 Iconic Destinations',
-    journeySubtitle: 'Scroll down to experience the scenic road journey',
-    destSomnath: 'Shree Somnath Jyotirlinga',
-    destDwarka: 'Dwarkadhish Jagat Mandir',
-    destDiu: 'Diu Coastal Fortress & Beaches',
-    destGir: 'Sasan Gir Asiatic Lion Sanctuary',
-    viewDetails: 'View Details',
-    planForThis: 'Plan For This',
+    journeyBadge: 'सौराष्ट्र दर्शन यात्रा',
+    journeyTitle: '४ प्रमुख पवित्र व सुंदर धाम',
+    journeySubtitle: 'नीचे स्क्रॉल करके अपनी यात्रा का अनुभव करें',
+    destSomnath: 'श्री सोमनाथ ज्योतिर्लिंग',
+    destDwarka: 'द्वारकाधीश जगत मंदिर',
+    destDiu: 'दीव द्वीप व समुद्र तट',
+    destGir: 'सासन गिर राष्ट्रीय उद्यान',
+    viewDetails: 'विस्तार से देखें',
+    planForThis: 'इसके लिए प्लान करें',
 
-    // Services
-    servicesTitle: 'Our Local Services',
-    servicesSubtitle: 'Specially arranged for pilgrims, families and spiritual seekers',
-    serviceCabsTitle: 'Local & Outstation AC Cabs',
-    serviceCabsDesc: 'Pick & drop from Rajkot / Ahmedabad / Veraval. Clean Innova Crysta, Ertiga & Sedans.',
-    serviceHotelTitle: 'Handpicked Temple-Adjacent Stays',
-    serviceHotelDesc: 'Walking distance to Somnath temple, clean linen, hot water, sea-views and family safety.',
-    serviceFoodTitle: 'Pure Gujarati & Kathiyawadi Meals',
-    serviceFoodDesc: 'Piping hot Bajra Rotla, Ringna no Olo, authentic Gujarati Thali and 100% pure Satvik food.',
-    serviceDarshanTitle: 'Aarti Darshan & Local Guidance',
-    serviceDarshanDesc: 'Aarti schedules, wheelchair assistance for seniors, and queue-free local coordination.',
-    bookServiceBtn: 'Enquire for This',
+    servicesTitle: 'हमारी स्थानीय सेवाएं',
+    servicesSubtitle: 'तीर्थयात्रियों और परिवारों के लिए विशेष रूप से व्यवस्थित',
+    bookServiceBtn: 'इसकी जानकारी लें',
 
-    // Reviews
-    reviewsBadge: 'Guest Testimonials',
-    reviewsTitle: 'Trusted by Pilgrims Across India',
-    reviewsSubtitle: 'Authentic experiences shared by our valued guests for cab rentals and temple hotel stays',
-    filterAll: 'All Reviews',
-    filterCabs: '🚗 Car Rentals (Cabs)',
-    filterHotels: '🏨 Hotel Bookings (Stays)',
-    verifiedTraveler: 'Verified Traveler',
+    reviewsBadge: 'यात्रियों के अनुभव',
+    reviewsTitle: 'श्रद्धालुओं का विश्वास',
+    reviewsSubtitle: 'कार रेंटल और होटल बुकिंग का वास्तविक अनुभव साझा करते हमारे सम्मानित अतिथि',
+    filterAll: 'सभी समीक्षाएं (All)',
+    filterCabs: '🚗 कार रेंटल (Cabs)',
+    filterHotels: '🏨 होटल बुकिंग (Hotels)',
+    verifiedTraveler: 'सत्यापित यात्री (Verified)',
 
-    // Conversion
-    conversionBadge: 'Local Assistance',
-    conversionTitle: 'Start Planning Your Divine Journey',
-    conversionSubtitle: 'Direct call or WhatsApp chat — zero hidden charges, genuine local care.',
-    contactBtn: 'Contact Us Directly',
-    whatsappBtn: 'Chat on WhatsApp',
-    exploreAgain: 'Explore from Top',
+    conversionBadge: 'स्थानीय सहायता',
+    conversionTitle: 'आपकी यात्रा की तैयारी शुरू करें',
+    conversionSubtitle: 'कॉल या WhatsApp पर सीधे बात करें — कोई छिपा शुल्क नहीं, केवल सच्चा मार्गदर्शन।',
+    contactBtn: 'संपर्क करें (Contact Us)',
+    whatsappBtn: 'WhatsApp पर बात करें',
+    exploreAgain: 'ऊपर से फिर देखें',
 
-    // Modal
-    modalTitle: 'Yatra Enquiry (Plan Your Trip)',
-    modalStep1: 'Basic Travel Details',
-    modalStep2: 'Services & Preferred Dates',
-    nameLabel: 'Full Name',
-    phoneLabel: 'Mobile Number (WhatsApp No.)',
-    destinationLabel: 'Primary Destination',
-    dateLabel: 'Tentative Travel Date',
-    passengersLabel: 'Number of Travelers',
-    notesLabel: 'Special Requirements (Elderly / Hotel / Cab)?',
-    submitBtn: 'Get Free Yatra Guidance',
-    nextBtn: 'Next Step',
-    backBtn: 'Back',
-    modalSuccessTitle: 'Thank You! Enquiry Received',
-    modalSuccessDesc: 'Our local coordinator will connect with you within 15 minutes.',
+    modalTitle: 'यात्रा पूछताछ (Plan Your Yatra)',
+    submitBtn: 'मुफ्त कोटेशन व मार्गदर्शन प्राप्त करें',
 
-    // Language modal
-    langModalTitle: 'Choose Your Preferred Language',
-    langModalSub: 'આપની ભાષા પસંદ કરો • अपनी भाषा चुनें',
-    langConfirmBtn: 'Continue with this Language',
+    langModalTitle: 'अपनी पसंदीदा भाषा चुनें',
+    langModalSub: 'अपनी मातृभाषा में सोमनाथ यात्रा की जानकारी प्राप्त करें',
+    langConfirmBtn: 'इस भाषा में जारी रखें',
 
-    // Footer
-    footerAbout: 'Your trusted local companion for Somnath, Dwarka, Diu and Sasan Gir. Clean AC cabs, premium stays near temple, and 24/7 caring family guidance.',
-    footerRights: 'All rights reserved • Shree Somnath Local Host',
+    footerAbout: 'सोमनाथ, द्वारका, दीव और सासन गिर के लिए आपका अपना विश्वसनीय लोकल होस्ट। साफ AC गाड़ियां, मंदिर के पास बढ़िया होटल्स और 24 घंटे पारिवारिक मार्गदर्शन।',
+    footerRights: 'सर्वाधिकार सुरक्षित • श्री सोमनाथ लोकल होस्ट',
   },
 
   mr: {
-    // Header & Navigation
     navHome: 'मुख्यपृष्ठ',
     navRoute: 'यात्रा मार्ग',
     navServices: 'सुविधा',
@@ -328,7 +178,6 @@ export const TRANSLATIONS = {
     changeLang: 'भाषा बदला',
     tagline: 'आपला स्थानिक ट्रॅव्हल मित्र • हर हर महादेव',
 
-    // Hero
     heroBadgeGreeting: '🙏 हर हर महादेव!',
     heroBadgeWelcome: 'सौराष्ट्र दर्शन यात्रेत आपले स्वागत आहे',
     heroMainTitle1: 'Chalo, Somnath',
@@ -340,7 +189,6 @@ export const TRANSLATIONS = {
     heroTrustVerified: 'व्हेरिफाईड ड्रायव्हर्स व हॉटेल्स',
     heroTrustRating: '4.9★ (1,250+ भाविक)',
 
-    // Live Trust Stats
     statsLiveEnquiries: 'सध्या थेट चौकशी सुरू आहे',
     statsLiveEnquiriesSub: 'आज भाविक आपली सौराष्ट्र यात्रा प्लॅन करत आहेत',
     statsLivePulse: 'LIVE',
@@ -350,7 +198,6 @@ export const TRANSLATIONS = {
     statsWeeklyBookingsSub: 'मर्यादित AC गाड्या व मंदिरासमोरील स्टे',
     statsBadgeTrust: '१००% स्थानिक व विश्वसनीय सेवा',
 
-    // Journey Chapter Titles
     journeyBadge: 'सौराष्ट्र तीर्थ यात्रा',
     journeyTitle: '४ प्रमुख पवित्र व प्रेक्षणीय स्थळे',
     journeySubtitle: 'खाली स्क्रोल करून आपल्या प्रवासाचा आनंद घ्या',
@@ -361,20 +208,10 @@ export const TRANSLATIONS = {
     viewDetails: 'सविस्तर पहा',
     planForThis: 'यासाठी प्लॅन करा',
 
-    // Services
     servicesTitle: 'आमच्या स्थानिक सेवा',
     servicesSubtitle: 'भाविक आणि कुटुंबासाठी विशेषतः आयोजित',
-    serviceCabsTitle: 'लोकल व आउटस्टेशन AC कॅब',
-    serviceCabsDesc: 'राजकोट/अहमदाबाद/वेरावळ येथून पिकअप. स्वच्छ Innova Crysta, Ertiga आणि सेडान गाड्या.',
-    serviceHotelTitle: 'मंदिराजवळ उत्तम हॉटेल्स',
-    serviceHotelDesc: 'सोमनाथ मंदिरापासून चालण्याच्या अंतरावर स्वच्छ खोल्या, गरम पाणी, समुद्र दर्शन व कौटुंबिक वातावरण.',
-    serviceFoodTitle: 'शुद्ध काठियावाडी व सात्विक भोजन',
-    serviceFoodDesc: 'गरमागरम बाजरीचा भाकरी/रोटला, वांग्याचे भरीत, शुद्ध गुजराती थाळी व सात्विक जेवण.',
-    serviceDarshanTitle: 'आरती दर्शन व स्थानिक मार्गदर्शन',
-    serviceDarshanDesc: 'आरतीची योग्य वेळ, वृद्धांसाठी व्हीलचेअर सहाय्य आणि विना गर्दीचे सुलभ दर्शन.',
     bookServiceBtn: 'माहिती मिळवा',
 
-    // Reviews
     reviewsBadge: 'प्रवाशांचे अनुभव',
     reviewsTitle: 'भाविकांचा विश्वास',
     reviewsSubtitle: 'कार रेंटल आणि हॉटेल बुकिंगचे प्रत्यक्ष अनुभव सांगणारे आमचे सन्माननीय भाविक',
@@ -383,7 +220,6 @@ export const TRANSLATIONS = {
     filterHotels: '🏨 हॉटेल बुकिंग (Hotels)',
     verifiedTraveler: 'सत्यापित भाविक (Verified)',
 
-    // Conversion
     conversionBadge: 'स्थानिक मदत',
     conversionTitle: 'तुमच्या यात्रेचे नियोजन सुरू करा',
     conversionSubtitle: 'कॉल किंवा WhatsApp वर थेट बोला — कोणतेही लपलेले शुल्क नाही, फक्त खरे मार्गदर्शन.',
@@ -391,29 +227,511 @@ export const TRANSLATIONS = {
     whatsappBtn: 'WhatsApp वर बोला',
     exploreAgain: 'पुन्हा वरून पहा',
 
-    // Modal
     modalTitle: 'यात्रा चौकशी (Plan Your Yatra)',
-    modalStep1: 'प्रवासाची मूलभूत माहिती',
-    modalStep2: 'आवडीच्या सेवा व तारीख',
-    nameLabel: 'आपले पूर्ण नाव',
-    phoneLabel: 'मोबाईल नंबर (WhatsApp No.)',
-    destinationLabel: 'प्रमुख ठिकाण',
-    dateLabel: 'प्रवासाची संभाव्य तारीख',
-    passengersLabel: 'प्रवाशांची संख्या',
-    notesLabel: 'काही विशेष गरज (हॉटेल/कार/ज्येष्ठ नागरिक)?',
     submitBtn: 'मोफत मार्गदर्शन मिळवा',
-    nextBtn: 'पुढे जा',
-    backBtn: 'मागे या',
-    modalSuccessTitle: 'धन्यवाद! आपली चौकशी नोंदवली गेली आहे',
-    modalSuccessDesc: 'आमचे स्थानिक समन्वयक १५ मिनिटांत आपल्याशी संपर्क साधतील.',
 
-    // Language modal
     langModalTitle: 'आपली पसंतीची भाषा निवडा',
-    langModalSub: 'Choose your preferred language for a personalized experience',
+    langModalSub: 'आपल्या मातृभाषेत सोमनाथ यात्रेची सुलभ माहिती मिळवा',
     langConfirmBtn: 'या भाषेत सुरू ठेवा',
 
-    // Footer
-    footerAbout: 'सोमनाथ, द्वारका, दीव आणि सासन गीरसाठी आपला स्वतःचा विश्वासू स्थानिक यजमान. स्वच्छ AC गाड्या, मंदिराच्या जवळ उत्तम हॉटेल्स आणि २४ तास कौटुंबिक मार्गदर्शन.',
+    footerAbout: 'सोमनाथ, द्वारका, दीव आणि सासन गीરसाठी आपला स्वतःचा विश्वासू स्थानिक यजमान. स्वच्छ AC गाड्या, मंदिराच्या जवळ उत्तम हॉटेल्स आणि २४ तास कौटुंबिक मार्गदर्शन.',
     footerRights: 'सर्व हक्क राखीव • श्री सोमनाथ लोकल होस्ट',
+  },
+
+  raj: {
+    navHome: 'होम',
+    navRoute: 'यात्रा मार्ग',
+    navServices: 'सुविधावां',
+    navReviews: 'यात्री री राय',
+    navContact: 'सम्पर्क',
+    callNow: 'कॉल करो',
+    planTrip: 'यात्रा री तैयारी',
+    changeLang: 'भाषा बदलो',
+    tagline: 'आपरो अपणो लोकल साथी • हर हर महादेव',
+
+    heroBadgeGreeting: '🙏 खम्मा घणी • हर हर महादेव!',
+    heroBadgeWelcome: 'सौराष्ट्र री पावन धरा पर आपरो स्वागत है सा',
+    heroMainTitle1: 'चालां, सोमनाथ',
+    heroMainTitle2: 'दरसण करण चालां!',
+    heroSubtitle: 'सोमनाथ, द्वारका, दीव या सासन गिर — आपरो भलो लोकल साथी अठै हाजिर है!',
+    heroDescription: 'चोखी AC गाड़ियां, मंदर री साम्ही बढ़िया होटलां अर परिवार खातर भलो सांचो मार्गदर्शन — बिना कोई झंझट आनंद सूं दरसण करो।',
+    heroCtaPlan: 'यात्रा री तैयारी करो',
+    heroCtaExplore: 'तीर्थ देखौ (Explore)',
+    heroTrustVerified: 'सत्यापित लोकल ड्राइवर अर होटलां',
+    heroTrustRating: '4.9★ (1,250+ राजी भगत)',
+
+    statsLiveEnquiries: 'इब लाइव पूछताछ चाल रही है',
+    statsLiveEnquiriesSub: 'आज घणा भगत यात्रा रो प्लान बणा रिया है',
+    statsLivePulse: 'LIVE',
+    statsHappyPilgrims: '१,२५०+ राजी यात्री',
+    statsHappyPilgrimsSub: 'परिवार अर बडे-बुजुर्गों री पहली पसंद',
+    statsWeeklyBookings: 'इण हफ्ता री पक्की बुकिंग',
+    statsWeeklyBookingsSub: 'मर्यादित AC गाड़ियां अर मंदर कनै स्टे',
+    statsBadgeTrust: '१००% सांची अर लोकल सेवा',
+
+    journeyBadge: 'सौराष्ट्र दरसण यात्रा',
+    journeyTitle: '४ प्रमुख पावन धाम',
+    journeySubtitle: 'नीचै स्क्रोल करो अर पूरी यात्रा रो आनंद लेवो',
+    destSomnath: 'श्री सोमनाथ ज्योतिर्लिंग',
+    destDwarka: 'द्वारकाधीश जगत मंदिर',
+    destDiu: 'दीव द्वीप अर समंदर किनारो',
+    destGir: 'सासन गिर बब्बर शेर जंगल',
+    viewDetails: 'विस्तार सूं देखौ',
+    planForThis: 'इण खातर प्लान करो',
+
+    servicesTitle: 'म्हारी लोकल सुविधावां',
+    servicesSubtitle: 'तीर्थयात्रियों अर परिवारां खातर खास व्यवस्था',
+    bookServiceBtn: 'जानकारी लेवो',
+
+    reviewsBadge: 'भगतों रो अनुभव',
+    reviewsTitle: 'यात्रियों रो भरोसो',
+    reviewsSubtitle: 'कार रेंटल अर होटल बुकिंग रो सांचो अनुभव बतावता म्हारा पाहुणा',
+    filterAll: 'सगळी राय (All)',
+    filterCabs: '🚗 कार रेंटल (Cabs)',
+    filterHotels: '🏨 होटल बुकिंग (Hotels)',
+    verifiedTraveler: 'सत्यापित यात्री (Verified)',
+
+    conversionBadge: 'लोकल मदद',
+    conversionTitle: 'आपरी यात्रा री शुरुआत करो',
+    conversionSubtitle: 'फोन या WhatsApp पर सीधी बात करो — कोई छिप्यो खर्च कोनी, सांचो साथ।',
+    contactBtn: 'सम्पर्क करो (Contact Us)',
+    whatsappBtn: 'WhatsApp पर बात करो',
+    exploreAgain: 'पाछो ऊपर देखौ',
+
+    modalTitle: 'यात्रा पूछताछ (Plan Your Yatra)',
+    submitBtn: 'मुफ्त मार्गदर्शन लेवो',
+
+    langModalTitle: 'आपरी मनपसंद भाषा चुणौ',
+    langModalSub: 'आपरी बोली में सोमनाथ यात्रा री पूरी जानकारी पावौ',
+    langConfirmBtn: 'इण भाषा में आगे बढ़ो',
+
+    footerAbout: 'सोमनाथ, द्वारका, दीव अर सासन गिर खातर आपरो अपणो भरोसमंद लोकल साथी।',
+    footerRights: 'सर्वाधिकार सुरक्षित • श्री सोमनाथ लोकल होस्ट',
+  },
+
+  en: {
+    navHome: 'Home',
+    navRoute: 'Route Map',
+    navServices: 'Services',
+    navReviews: 'Reviews',
+    navContact: 'Contact',
+    callNow: 'Call Now',
+    planTrip: 'Plan My Yatra',
+    changeLang: 'Change Language',
+    tagline: 'Your Local Travel Buddy • Har Har Mahadev',
+
+    heroBadgeGreeting: '🙏 Har Har Mahadev!',
+    heroBadgeWelcome: 'Welcome to Saurashtra Pilgrimage',
+    heroMainTitle1: 'Chalo, Somnath',
+    heroMainTitle2: 'Darshan karne Chalein!',
+    heroSubtitle: 'Somnath, Dwarka, Diu or Sasan Gir — your friendly local travel buddy is right here!',
+    heroDescription: 'Spotless AC cabs, comfortable stays walking distance to the temple, and trusted local guidance for your family — zero hassle, pure divine peace.',
+    heroCtaPlan: 'Plan My Yatra',
+    heroCtaExplore: 'Explore Places',
+    heroTrustVerified: 'Verified Local Cabs & Hotels',
+    heroTrustRating: '4.9★ (1,250+ Happy Pilgrims)',
+
+    statsLiveEnquiries: 'Active Enquiries Right Now',
+    statsLiveEnquiriesSub: 'Devotees actively planning their Saurashtra trip today',
+    statsLivePulse: 'LIVE',
+    statsHappyPilgrims: '1,250+ Happy Pilgrims',
+    statsHappyPilgrimsSub: 'Trusted by families & senior citizens across India',
+    statsWeeklyBookings: 'Confirmed Bookings This Week',
+    statsWeeklyBookingsSub: 'Limited AC cabs & temple-adjacent stays',
+    statsBadgeTrust: '100% Verified Local Saurashtra Host',
+
+    journeyBadge: 'Saurashtra Sacred Circuit',
+    journeyTitle: '4 Iconic Destinations',
+    journeySubtitle: 'Scroll down to experience the scenic road journey',
+    destSomnath: 'Shree Somnath Jyotirlinga',
+    destDwarka: 'Dwarkadhish Jagat Mandir',
+    destDiu: 'Diu Coastal Fortress & Beaches',
+    destGir: 'Sasan Gir Asiatic Lion Sanctuary',
+    viewDetails: 'View Details',
+    planForThis: 'Plan For This',
+
+    servicesTitle: 'Our Local Services',
+    servicesSubtitle: 'Specially arranged for pilgrims, families and spiritual seekers',
+    bookServiceBtn: 'Enquire for This',
+
+    reviewsBadge: 'Guest Testimonials',
+    reviewsTitle: 'Trusted by Pilgrims Across India',
+    reviewsSubtitle: 'Authentic experiences shared by our valued guests for cab rentals and temple hotel stays',
+    filterAll: 'All Reviews',
+    filterCabs: '🚗 Car Rentals (Cabs)',
+    filterHotels: '🏨 Hotel Bookings (Stays)',
+    verifiedTraveler: 'Verified Traveler',
+
+    conversionBadge: 'Local Assistance',
+    conversionTitle: 'Start Planning Your Divine Journey',
+    conversionSubtitle: 'Direct call or WhatsApp chat — zero hidden charges, genuine local care.',
+    contactBtn: 'Contact Us Directly',
+    whatsappBtn: 'Chat on WhatsApp',
+    exploreAgain: 'Explore from Top',
+
+    modalTitle: 'Yatra Enquiry (Plan Your Trip)',
+    submitBtn: 'Get Free Yatra Guidance',
+
+    langModalTitle: 'Choose Your Preferred Language',
+    langModalSub: 'Select your language for personalized assistance & local care',
+    langConfirmBtn: 'Continue with this Language',
+
+    footerAbout: 'Your trusted local companion for Somnath, Dwarka, Diu and Sasan Gir. Clean AC cabs, premium stays near temple, and 24/7 caring family guidance.',
+    footerRights: 'All rights reserved • Shree Somnath Local Host',
+  },
+
+  bn: {
+    navHome: 'হোম',
+    navRoute: 'যাত্রা পথ',
+    navServices: 'পরিষেবা',
+    navReviews: 'যাত্রীদের রিভিউ',
+    navContact: 'যোগাযোগ',
+    callNow: 'কল করুন',
+    planTrip: 'যাত্রা প্ল্যান করুন',
+    changeLang: 'ভাষা পরিবর্তন',
+    tagline: 'আপনার স্থানীয় ট্রাভেল সাথী • হর হর মহাদেব',
+
+    heroBadgeGreeting: '🙏 হর হর মহাদেব!',
+    heroBadgeWelcome: 'সৌরাষ্ট্র তীর্থযাত্রায় আপনাকে স্বাগতম',
+    heroMainTitle1: 'Chalo, Somnath',
+    heroMainTitle2: 'Darshan karne Chalein!',
+    heroSubtitle: 'সোমনাথ, দ্বারকা, দিউ বা সাসন গির — আপনার বিশ্বস্ত স্থানীয় সাথী এখানে হাজির!',
+    heroDescription: 'পরিষ্কার AC গাড়ি, মন্দিরের কাছে আরামদায়ক হোটেল এবং পরিবারের জন্য নির্ভরযোগ্য স্থানীয় সহায়তা — কোনো ঝামেলা ছাড়াই শান্তিময় দর্শন।',
+    heroCtaPlan: 'যাত্রা প্ল্যান করুন',
+    heroCtaExplore: 'স্থান দেখুন (Explore)',
+    heroTrustVerified: 'যাচাইকৃত স্থানীয় ড্রাইভার ও হোটেল',
+    heroTrustRating: '4.9★ (১,২৫০+ সন্তুষ্ট ভক্ত)',
+
+    statsLiveEnquiries: 'এই মুহূর্তে লাইভ অনুসন্ধান চলছে',
+    statsLiveEnquiriesSub: 'আজ তীর্থযাত্রীরা তাদের যাত্রা পরিকল্পনা করছেন',
+    statsLivePulse: 'LIVE',
+    statsHappyPilgrims: '১,২৫০+ সন্তুষ্ট ভক্ত',
+    statsHappyPilgrimsSub: 'পরিবার ও প্রবীণদের প্রথম পছন্দ',
+    statsWeeklyBookings: 'এই সপ্তাহের নিশ্চিত বুকিং',
+    statsWeeklyBookingsSub: 'সীমিত AC গাড়ি ও মন্দিরের কাছে থাকার জায়গা',
+    statsBadgeTrust: '১০০% স্থানীয় ও নির্ভরযোগ্য সেবা',
+
+    journeyBadge: 'সৌরাষ্ট্র দর্শন যাত্রা',
+    journeyTitle: '৪টি প্রধান পবিত্র ও দর্শনীয় স্থান',
+    journeySubtitle: 'নিচে স্ক্রোল করে মনোমুগ্ধকর যাত্রার অভিজ্ঞতা নিন',
+    destSomnath: 'শ্রী সোমনাথ জ্যোতির্লিঙ্গ',
+    destDwarka: 'দ্বারকাধীশ জগৎ মন্দির',
+    destDiu: 'দিউ দ্বীপ ও সমুদ্র সৈকত',
+    destGir: 'সাসন গির জাতীয় উদ্যান',
+    viewDetails: 'বিস্তারিত দেখুন',
+    planForThis: 'এর জন্য পরিকল্পনা করুন',
+
+    servicesTitle: 'আমাদের স্থানীয় সেবা',
+    servicesSubtitle: 'তীর্থযাত্রী ও পরিবারের জন্য বিশেষভাবে পরিকল্পিত',
+    bookServiceBtn: 'তথ্য জানুন',
+
+    reviewsBadge: 'যাত্রীদের অভিজ্ঞতা',
+    reviewsTitle: 'ভক্তদের গভীর বিশ্বাস',
+    reviewsSubtitle: 'গাড়ি ভাড়া ও হোটেল বুকিংয়ের বাস্তব অভিজ্ঞতা',
+    filterAll: 'সকল পর্যালোচনা (All)',
+    filterCabs: '🚗 গাড়ি ভাড়া (Cabs)',
+    filterHotels: '🏨 হোটেল বুকিং (Hotels)',
+    verifiedTraveler: 'যাচাইকৃত যাত্রী (Verified)',
+
+    conversionBadge: 'স্থানীয় সহায়তা',
+    conversionTitle: 'আপনার পবিত্র যাত্রা শুরু করুন',
+    conversionSubtitle: 'সরাসরি কল বা WhatsApp এ কথা বলুন — কোনো গোপন খরচ নেই, শুধুই খাঁটি সেবা।',
+    contactBtn: 'যোগাযোগ করুন (Contact Us)',
+    whatsappBtn: 'WhatsApp এ কথা বলুন',
+    exploreAgain: 'আবার উপরে যান',
+
+    modalTitle: 'যাত্রা অনুসন্ধান (Plan Your Yatra)',
+    submitBtn: 'বিনামূল্যে গাইডেন্স পান',
+
+    langModalTitle: 'আপনার পছন্দের ভাষা বেছে নিন',
+    langModalSub: 'আপনার মাতৃভাষায় সোমনাথ যাত্রার তথ্য পেতে ভাষা নির্বাচন করুন',
+    langConfirmBtn: 'এই ভাষায় এগিয়ে যান',
+
+    footerAbout: 'সোমনাথ, দ্বারকা, দিউ ও সাসন গিরের জন্য আপনার বিশ্বস্ত স্থানীয় হোস্ট।',
+    footerRights: 'সর্বস্বত্ব সংরক্ষিত • শ্রী সোমনাথ লোকাল হোস্ট',
+  },
+
+  te: {
+    navHome: 'హోమ్',
+    navRoute: 'యాత్ర మార్గం',
+    navServices: 'సేవలు',
+    navReviews: 'యాత్రికుల సమీక్షలు',
+    navContact: 'సంప్రదించండి',
+    callNow: 'కాల్ చేయండి',
+    planTrip: 'యాత్ర ప్లాన్ చేయండి',
+    changeLang: 'భాష మార్చండి',
+    tagline: 'మీ లోకల్ ట్రావెల్ మిత్రుడు • హర హర మహాదేవ్',
+
+    heroBadgeGreeting: '🙏 హర హర మహాదేవ్!',
+    heroBadgeWelcome: 'సౌరాష్ట్ర పుణ్యయాత్రకు స్వాగతం',
+    heroMainTitle1: 'Chalo, Somnath',
+    heroMainTitle2: 'Darshan karne Chalein!',
+    heroSubtitle: 'సోమనాథ్, ద్వారక, దివ్ లేదా సాసన్ గిర్ — మీ నమ్మకమైన లోకల్ గైడ్ ఇక్కడే ఉన్నారు!',
+    heroDescription: 'శుభ్రమైన AC కార్లు, ఆలయానికి సమీపంలో ఉత్తమ హోటళ్ళు మరియు కుటుంబానికి నమ్మకమైన స్థానిక మార్గదర్శకత్వం.',
+    heroCtaPlan: 'యాత్ర ప్లాన్ చేయండి',
+    heroCtaExplore: 'ప్రదేశాలు చూడండి',
+    heroTrustVerified: 'ధృవీకరించబడిన డ్రైవర్లు & హోటళ్ళు',
+    heroTrustRating: '4.9★ (1,250+ సంతృప్తి చెందిన భక్తులు)',
+
+    statsLiveEnquiries: 'ప్రస్తుతం లైవ్ విచారణలు జరుగుతున్నాయి',
+    statsLiveEnquiriesSub: 'ఈ రోజు భక్తులు తమ యాత్రను ప్లాన్ చేసుకుంటున్నారు',
+    statsLivePulse: 'LIVE',
+    statsHappyPilgrims: '1,250+ ఆనందకర భక్తులు',
+    statsHappyPilgrimsSub: 'కుటుంబాలు మరియు వృద్ధుల మొదటి ఎంపిక',
+    statsWeeklyBookings: 'ఈ వారం ధృవీకరించబడిన బుకింగ్స్',
+    statsWeeklyBookingsSub: 'పరిమిత AC కార్లు & ఆలయ సమీప గదులు',
+    statsBadgeTrust: '100% నమ్మకమైన స్థానిక సేవ',
+
+    journeyBadge: 'సౌరాష్ట్ర దర్శన యాత్ర',
+    journeyTitle: '4 ప్రముఖ పవిత్ర క్షేత్రాలు',
+    journeySubtitle: 'క్రిందికి స్క్రోల్ చేసి మీ యాత్రను అనుభవించండి',
+    destSomnath: 'శ్రీ సోమనాథ జ్యోతిర్లింగం',
+    destDwarka: 'ద్వారకాధీశ జగత్ మందిరం',
+    destDiu: 'దివ్ కోట & బీచ్‌లు',
+    destGir: 'సాసన్ గిర్ ఆసియా సింహాల అభయారణ్యం',
+    viewDetails: 'వివరాలు చూడండి',
+    planForThis: 'దీని కోసం ప్లాన్ చేయండి',
+
+    servicesTitle: 'మా స్థానిక సేవలు',
+    servicesSubtitle: 'భక్తులు మరియు కుటుంబాల కోసం ప్రత్యేకంగా ఏర్పాటు చేయబడినవి',
+    bookServiceBtn: 'సమాచారం పొందండి',
+
+    reviewsBadge: 'యాత్రికుల అనుభవాలు',
+    reviewsTitle: 'భక్తుల తిరుగులేని విశ్వాసం',
+    reviewsSubtitle: 'కార్ అద్దె మరియు హోటల్ బుకింగ్ వాస్తవ అనుభవాలు',
+    filterAll: 'అన్ని సమీక్షలు (All)',
+    filterCabs: '🚗 కార్ అద్దె (Cabs)',
+    filterHotels: '🏨 హోటల్ బుకింగ్ (Hotels)',
+    verifiedTraveler: 'ధృవీకరించబడిన యాత్రికుడు',
+
+    conversionBadge: 'స్థానిక సహాయం',
+    conversionTitle: 'మీ దివ్య యాత్రను ప్రారంభించండి',
+    conversionSubtitle: 'నేరుగా కాల్ లేదా WhatsApp లో మాట్లాడండి — దాచిన ఛార్జీలు ఏవీ లేవు.',
+    contactBtn: 'సంప్రదించండి (Contact Us)',
+    whatsappBtn: 'WhatsApp లో మాట్లాడండి',
+    exploreAgain: 'పైకి వెళ్ళండి',
+
+    modalTitle: 'యాత్ర విచారణ (Plan Your Yatra)',
+    submitBtn: 'ఉచిత గైడెన్స్ పొందండి',
+
+    langModalTitle: 'మీ ప్రాధాన్యత భాషను ఎంచుకోండి',
+    langModalSub: 'మీ మాతృభాషలో సోమనాథ్ యాత్ర సమాచారం పొందండి',
+    langConfirmBtn: 'ఈ భాషలో కొనసాగండి',
+
+    footerAbout: 'సోమనాథ్, ద్వారక, దివ్ మరియు సాసన్ గిర్ కోసం మీ నమ్మకమైన స్థానిక హోస్ట్.',
+    footerRights: 'సర్వహక్కులు ప్రత్యేకించబడ్డాయి • శ్రీ సోమనాథ్ లోకల్ హోస్ట్',
+  },
+
+  ta: {
+    navHome: 'முகப்பு',
+    navRoute: 'பயண வழி',
+    navServices: 'சேவைகள்',
+    navReviews: 'பயணிகள் கருத்து',
+    navContact: 'தொடர்பு',
+    callNow: 'அழைக்கவும்',
+    planTrip: 'பயணத்தை திட்டமிடுங்கள்',
+    changeLang: 'மொழி மாற்றம்',
+    tagline: 'உங்கள் உள்ளூர் பயணத் தோழன் • ஹர ஹர மஹாதேவ்',
+
+    heroBadgeGreeting: '🙏 ஹர ஹர மஹாதேவ்!',
+    heroBadgeWelcome: 'சௌராஷ்டிரா புனித யாத்திரைக்கு நல்வரவு',
+    heroMainTitle1: 'Chalo, Somnath',
+    heroMainTitle2: 'Darshan karne Chalein!',
+    heroSubtitle: 'சோம்நாத், துவாரகை, தியூ அல்லது சாசன் கிர் — உங்கள் உள்ளூர் வழிகாட்டி இங்கே!',
+    heroDescription: 'சுத்தமான AC கார்கள், கோயிலுக்கு மிக அருகில் தங்கும் விடுதிகள் மற்றும் குடும்பத்திற்கான பாதுகாப்பான உள்ளூர் வழிகாட்டல்.',
+    heroCtaPlan: 'பயணத்தை திட்டமிடுங்கள்',
+    heroCtaExplore: 'இடங்களைப் பார்க்கவும்',
+    heroTrustVerified: 'சரிபார்க்கப்பட்ட ஓட்டுநர்கள் & விடுதிகள்',
+    heroTrustRating: '4.9★ (1,250+ மகிழ்வான பக்தர்கள்)',
+
+    statsLiveEnquiries: 'தற்போது நேரடி விசாரணைகள் நடைபெறுகின்றன',
+    statsLiveEnquiriesSub: 'இன்று பக்தர்கள் தங்களின் பயணத்தை திட்டமிடுகின்றனர்',
+    statsLivePulse: 'LIVE',
+    statsHappyPilgrims: '1,250+ திருப்தியான பக்தர்கள்',
+    statsHappyPilgrimsSub: 'குடும்பங்கள் மற்றும் பெரியவர்களின் முதல் தேர்வு',
+    statsWeeklyBookings: 'இந்த வார உறுதி செய்யப்பட்ட முன்பதிவுகள்',
+    statsWeeklyBookingsSub: 'வரையறுக்கப்பட்ட AC கார்கள் & கோயில் அருகிலுள்ள அறைகள்',
+    statsBadgeTrust: '100% நம்பகமான உள்ளூர் சேவை',
+
+    journeyBadge: 'சௌராஷ்டிரா புனித சுற்றுப்பயணம்',
+    journeyTitle: '4 முக்கிய ஆன்மீகத் தலங்கள்',
+    journeySubtitle: 'கீழே உருட்டி உங்கள் பயண அனுபவத்தைப் பெறுங்கள்',
+    destSomnath: 'ஸ்ரீ சோம்நாத் ஜோதிர்லிங்கம்',
+    destDwarka: 'துவாரகாதீசர் ஜகத் கோவில்',
+    destDiu: 'தியூ கடற்கரை மற்றும் கோட்டை',
+    destGir: 'சாசன் கிர் ஆசிய சிங்க சரணாலயம்',
+    viewDetails: 'விவரங்களை காண்க',
+    planForThis: 'திட்டமிடுங்கள்',
+
+    servicesTitle: 'எங்கள் உள்ளூர் சேவைகள்',
+    servicesSubtitle: 'பக்தர்கள் மற்றும் குடும்பங்களுக்காக சிறப்பாக ஏற்பாடு செய்யப்பட்டது',
+    bookServiceBtn: 'தகவல் பெறுக',
+
+    reviewsBadge: 'பயணிகள் அனுபவம்',
+    reviewsTitle: 'பக்தர்களின் அசைக்க முடியாத நம்பிக்கை',
+    reviewsSubtitle: 'கார் வாடகை மற்றும் விடுதி முன்பதிவு குறித்த உண்மையான கருத்துக்கள்',
+    filterAll: 'அனைத்து மதிப்புரைகள்',
+    filterCabs: '🚗 கார் வாடகை (Cabs)',
+    filterHotels: '🏨 விடுதி முன்பதிவு (Hotels)',
+    verifiedTraveler: 'சரிபார்க்கப்பட்ட பயணி',
+
+    conversionBadge: 'உள்ளூர் உதவி',
+    conversionTitle: 'உங்கள் புனிதப் பயணத்தை தொடங்குங்கள்',
+    conversionSubtitle: 'நேரடியாக அழைக்கவும் அல்லது WhatsApp-ல் பேசவும் — மறைமுகக் கட்டணங்கள் இல்லை.',
+    contactBtn: 'தொடர்பு கொள்ளவும்',
+    whatsappBtn: 'WhatsApp-ல் பேசவும்',
+    exploreAgain: 'மேலே செல்லவும்',
+
+    modalTitle: 'யாத்திரை விசாரணை (Plan Your Yatra)',
+    submitBtn: 'இலவச வழிகாட்டல் பெறுக',
+
+    langModalTitle: 'உங்கள் விருப்ப மொழியைத் தேர்ந்தெடுக்கவும்',
+    langModalSub: 'உங்கள் தாய்மொழியில் சோம்நாத் யாத்திரை தகவல்களைப் பெறுங்கள்',
+    langConfirmBtn: 'இந்த மொழியில் தொடரவும்',
+
+    footerAbout: 'சோம்நாத், துவாரகை, தியூ மற்றும் சாசன் கிர் பயணத்திற்கான உங்கள் நம்பகமான வழிகாட்டி.',
+    footerRights: 'அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை • ஸ்ரீ சோம்நாத் லோக்கல் ஹோஸ்ட்',
+  },
+
+  kn: {
+    navHome: 'ಮುಖಪುಟ',
+    navRoute: 'ಯಾತ್ರಾ ಮಾರ್ಗ',
+    navServices: 'ಸೇವೆಗಳು',
+    navReviews: 'ಪ್ರಯಾಣಿಕರ ವಿಮರ್ಶೆ',
+    navContact: 'ಸಂಪರ್ಕಿಸಿ',
+    callNow: 'ಕರೆ ಮಾಡಿ',
+    planTrip: 'ಯಾತ್ರೆ ಯೋಜಿಸಿ',
+    changeLang: 'ಭಾಷೆ ಬದಲಾಯಿಸಿ',
+    tagline: 'ನಿಮ್ಮ ಸ್ಥಳೀಯ ಪ್ರವಾಸ ಮಾರ್ಗದರ್ಶಿ • ಹರ ಹರ ಮಹಾದೇವ್',
+
+    heroBadgeGreeting: '🙏 ಹರ ಹರ ಮಹಾದೇವ್!',
+    heroBadgeWelcome: 'ಸೌರಾಷ್ಟ್ರ ತೀರ್ಥಯಾತ್ರೆಗೆ ಸ್ವಾಗತ',
+    heroMainTitle1: 'Chalo, Somnath',
+    heroMainTitle2: 'Darshan karne Chalein!',
+    heroSubtitle: 'ಸೋಮನಾಥ, ದ್ವಾರಕಾ, ದಿಯು ಅಥವಾ ಸಾಸನ್ ಗಿರ್ — ನಿಮ್ಮ ವಿಶ್ವಾಸಾರ್ಹ ಸ್ಥಳೀಯ ಮಾರ್ಗದರ್ಶಿ ಇಲ್ಲಿದ್ದಾರೆ!',
+    heroDescription: 'ಸ್ವಚ್ಛವಾದ AC ಕಾರುಗಳು, ದೇವಾಲಯದ ಸಮೀಪದ ಉತ್ತಮ ಹೋಟೆಲ್‌ಗಳು ಮತ್ತು ಕುಟುಂಬಕ್ಕೆ ವಿಶ್ವಾಸಾರ್ಹ ಸ್ಥಳೀಯ ಮಾರ್ಗದರ್ಶನ.',
+    heroCtaPlan: 'ಯಾತ್ರೆ ಯೋಜಿಸಿ',
+    heroCtaExplore: 'ಸ್ಥಳಗಳನ್ನು ನೋಡಿ',
+    heroTrustVerified: 'ಪರಿಶೀಲಿಸಿದ ಚಾಲಕರು & ಹೋಟೆಲ್‌ಗಳು',
+    heroTrustRating: '4.9★ (1,250+ ಸಂತೃಪ್ತ ಭಕ್ತರು)',
+
+    statsLiveEnquiries: 'ಈಗ ಲೈವ್ ವಿಚಾರಣೆಗಳು ನಡೆಯುತ್ತಿವೆ',
+    statsLiveEnquiriesSub: 'ಇಂದು ಭಕ್ತರು ತಮ್ಮ ಯಾತ್ರೆಯನ್ನು ಯೋಜಿಸುತ್ತಿದ್ದಾರೆ',
+    statsLivePulse: 'LIVE',
+    statsHappyPilgrims: '1,250+ ತೃಪ್ತ ಭಕ್ತರು',
+    statsHappyPilgrimsSub: 'ಕುಟುಂಬಗಳು ಮತ್ತು ಹಿರಿಯರ ಮೊದಲ ಆಯ್ಕೆ',
+    statsWeeklyBookings: 'ಈ ವಾರದ ಖಚಿತ ಬುಕಿಂಗ್‌ಗಳು',
+    statsWeeklyBookingsSub: 'ಸೀಮಿತ AC ಕಾರುಗಳು ಮತ್ತು ದೇವಾಲಯ ಸಮೀಪದ ಕೊಠಡಿಗಳು',
+    statsBadgeTrust: '100% ಸ್ಥಳೀಯ ಮತ್ತು ವಿಶ್ವಾಸಾರ್ಹ ಸೇವೆ',
+
+    journeyBadge: 'ಸೌರಾಷ್ಟ್ರ ದರ್ಶನ ಯಾತ್ರೆ',
+    journeyTitle: '4 ಪ್ರಮುಖ ಪವಿತ್ರ ಕ್ಷೇತ್ರಗಳು',
+    journeySubtitle: 'ಕೆಳಗೆ ಸ್ಕ್ರೋಲ್ ಮಾಡಿ ನಿಮ್ಮ ಯಾತ್ರೆಯನ್ನು ಅನುಭವಿಸಿ',
+    destSomnath: 'ಶ್ರೀ ಸೋಮನಾಥ ಜ್ಯೋತಿರ್ಲಿಂಗ',
+    destDwarka: 'ದ್ವಾರಕಾಧೀಶ ಜಗತ್ ಮಂದಿರ',
+    destDiu: 'ದಿಯು ದ್ವೀಪ & ಕಡಲತೀರಗಳು',
+    destGir: 'ಸಾಸನ್ ಗಿರ್ ಏಷ್ಯಾಟಿಕ್ ಸಿಂಹಗಳ ಅಭಯಾರಣ್ಯ',
+    viewDetails: 'ವಿವರಗಳನ್ನು ನೋಡಿ',
+    planForThis: 'ಯೋಜಿಸಿ',
+
+    servicesTitle: 'ನಮ್ಮ ಸ್ಥಳೀಯ ಸೇವೆಗಳು',
+    servicesSubtitle: 'ಭಕ್ತರು ಮತ್ತು ಕುಟುಂಬಗಳಿಗಾಗಿ ವಿಶೇಷವಾಗಿ ಆಯೋಜಿಸಲಾಗಿದೆ',
+    bookServiceBtn: 'ಮಾಹಿತಿ ಪಡೆಯಿರಿ',
+
+    reviewsBadge: 'ಪ್ರಯಾಣಿಕರ ಅನುಭವ',
+    reviewsTitle: 'ಭಕ್ತರ ಅಚಲ ವಿಶ್ವಾಸ',
+    reviewsSubtitle: 'ಕಾರು ಬಾಡಿಗೆ ಮತ್ತು ಹೋಟೆಲ್ ಬುಕಿಂಗ್‌ನ ನೈಜ ಅನುಭವಗಳು',
+    filterAll: 'ಎಲ್ಲಾ ವಿಮರ್ಶೆಗಳು (All)',
+    filterCabs: '🚗 ಕಾರ್ ಬಾಡಿಗೆ (Cabs)',
+    filterHotels: '🏨 ಹೋಟೆಲ್ ಬುಕಿಂಗ್ (Hotels)',
+    verifiedTraveler: 'ಪರಿಶೀಲಿಸಿದ ಯಾತ್ರಿಕ',
+
+    conversionBadge: 'ಸ್ಥಳೀಯ ನೆರವು',
+    conversionTitle: 'ನಿಮ್ಮ ಪವಿತ್ರ ಯಾತ್ರೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿ',
+    conversionSubtitle: 'ನೇರವಾಗಿ ಕರೆ ಅಥವಾ WhatsApp ನಲ್ಲಿ ಮಾತನಾಡಿ — ಯಾವುದೇ ರಹಸ್ಯ ಶುಲ್ಕಗಳಿಲ್ಲ.',
+    contactBtn: 'ಸಂಪರ್ಕಿಸಿ (Contact Us)',
+    whatsappBtn: 'WhatsApp ನಲ್ಲಿ ಮಾತನಾಡಿ',
+    exploreAgain: 'ಮೇಲಕ್ಕೆ ಹೋಗಿ',
+
+    modalTitle: 'ಯಾತ್ರೆ ವಿಚಾರಣೆ (Plan Your Yatra)',
+    submitBtn: 'ಉಚಿತ ಮಾರ್ಗದರ್ಶನ ಪಡೆಯಿರಿ',
+
+    langModalTitle: 'ನಿಮ್ಮ ಆದ್ಯತೆಯ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ',
+    langModalSub: 'ನಿಮ್ಮ ಮಾತೃಭಾಷೆಯಲ್ಲಿ ಸೋಮನಾಥ ಯಾತ್ರೆಯ ಮಾಹಿತಿ ಪಡೆಯಿರಿ',
+    langConfirmBtn: 'ಈ ಭಾಷೆಯಲ್ಲಿ ಮುಂದುವರಿಯಿರಿ',
+
+    footerAbout: 'ಸೋಮನಾಥ, ದ್ವಾರಕಾ, ದಿಯು ಮತ್ತು ಸಾಸನ್ ಗಿರ್ ಯಾತ್ರೆಗೆ ನಿಮ್ಮ ವಿಶ್ವಾಸಾರ್ಹ ಸ್ಥಳೀಯ ಮಾರ್ಗದರ್ಶಿ.',
+    footerRights: 'ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ • ಶ್ರೀ ಸೋಮನಾಥ್ ಲೋಕಲ್ ಹೋಸ್ಟ್',
+  },
+
+  pa: {
+    navHome: 'ਹੋਮ',
+    navRoute: 'ਯਾਤਰਾ ਮਾਰਗ',
+    navServices: 'ਸਹੂਲਤਾਂ',
+    navReviews: 'ਯਾਤਰੀ ਸਮੀਖਿਆ',
+    navContact: 'ਸੰਪਰਕ',
+    callNow: 'ਕਾਲ ਕਰੋ',
+    planTrip: 'ਯਾਤਰਾ ਪਲਾਨ ਕਰੋ',
+    changeLang: 'ਭਾਸ਼ਾ ਬਦਲੋ',
+    tagline: 'ਤੁਹਾਡਾ ਲੋਕਲ ਟਰੈਵਲ ਸਾਥੀ • ਹਰ ਹਰ ਮਹਾਦੇਵ',
+
+    heroBadgeGreeting: '🙏 ਹਰ ਹਰ ਮਹਾਦੇਵ!',
+    heroBadgeWelcome: 'ਸੌਰਾਸ਼ਟਰ ਯਾਤਰਾ ਵਿੱਚ ਤੁਹਾਡਾ ਸੁਆਗਤ ਹੈ',
+    heroMainTitle1: 'Chalo, Somnath',
+    heroMainTitle2: 'Darshan karne Chalein!',
+    heroSubtitle: 'ਸੋਮਨਾਥ, ਦਵਾਰਕਾ, ਦੀਵ ਜਾਂ ਸਾਸਨ ਗਿਰ — ਤੁਹਾਡਾ ਭਰੋਸੇਮੰਦ ਲੋਕਲ ਸਾਥੀ ਇੱਥੇ ਹਾਜ਼ਰ ਹੈ!',
+    heroDescription: 'ਸਾਫ਼-ਸੁਥਰੀਆਂ AC ਗੱਡੀਆਂ, ਮੰਦਰ ਦੇ ਬਿਲਕੁਲ ਨੇੜੇ ਸ਼ਾਨਦਾਰ ਹੋਟਲ ਅਤੇ ਪਰਿਵਾਰ ਲਈ ਭਰੋਸੇਯੋਗ ਸਥਾਨਕ ਗਾਈਡੈਂਸ।',
+    heroCtaPlan: 'ਯਾਤਰਾ ਪਲਾਨ ਕਰੋ',
+    heroCtaExplore: 'ਥਾਵਾਂ ਵੇਖੋ (Explore)',
+    heroTrustVerified: 'ਵੈਰੀਫਾਈਡ ਲੋਕਲ ਡਰਾਈਵਰ ਤੇ ਹੋਟਲ',
+    heroTrustRating: '4.9★ (1,250+ ਖੁਸ਼ ਸ਼ਰਧਾਲੂ)',
+
+    statsLiveEnquiries: 'ਹੁਣੇ ਲਾਈਵ ਪੁੱਛਗਿੱਛ ਜਾਰੀ ਹੈ',
+    statsLiveEnquiriesSub: 'ਅੱਜ ਸ਼ਰਧਾਲੂ ਆਪਣੀ ਯਾਤਰਾ ਦੀ ਯੋਜਨਾ ਬਣਾ ਰਹੇ ਹਨ',
+    statsLivePulse: 'LIVE',
+    statsHappyPilgrims: '1,250+ ਖੁਸ਼ ਸ਼ਰਧਾਲੂ',
+    statsHappyPilgrimsSub: 'ਪਰਿਵਾਰਾਂ ਅਤੇ ਬਜ਼ੁਰਗਾਂ ਦੀ ਪਹਿਲੀ ਪਸੰਦ',
+    statsWeeklyBookings: 'ਇਸ ਹਫ਼ਤੇ ਦੀਆਂ ਪੱਕੀਆਂ ਬੁਕਿੰਗਾਂ',
+    statsWeeklyBookingsSub: 'ਸੀਮਿਤ AC ਗੱਡੀਆਂ ਅਤੇ ਮੰਦਰ ਨੇੜੇ ਕਮਰੇ',
+    statsBadgeTrust: '100% ਸਥਾਨਕ ਅਤੇ ਭਰੋਸੇਯੋਗ ਸੇਵਾ',
+
+    journeyBadge: 'ਸੌਰਾਸ਼ਟਰ ਦਰਸ਼ਨ ਯਾਤਰਾ',
+    journeyTitle: '4 ਪ੍ਰਮੁੱਖ ਪਵਿੱਤਰ ਧਾਮ',
+    journeySubtitle: 'ਹੇਠਾਂ ਸਕ੍ਰੋਲ ਕਰਕੇ ਆਪਣੀ ਯਾਤਰਾ ਦਾ ਅਨੰਦ ਲਓ',
+    destSomnath: 'ਸ਼੍ਰੀ ਸੋਮਨਾਥ ਜਯੋਤਿਰਲਿੰਗ',
+    destDwarka: 'ਦਵਾਰਕਾਧੀਸ਼ ਜਗਤ ਮੰਦਰ',
+    destDiu: 'ਦੀਵ ਟਾਪੂ ਤੇ ਸਮੁੰਦਰੀ ਕੰਢਾ',
+    destGir: 'ਸਾਸਨ ਗਿਰ ਨੈਸ਼ਨਲ ਪਾਰਕ',
+    viewDetails: 'ਵੇਰਵਾ ਵੇਖੋ',
+    planForThis: 'ਇਸ ਲਈ ਪਲਾਨ ਕਰੋ',
+
+    servicesTitle: 'ਸਾਡੀਆਂ ਸਥਾਨਕ ਸੇਵਾਵਾਂ',
+    servicesSubtitle: 'ਸ਼ਰਧਾਲੂਆਂ ਅਤੇ ਪਰਿਵਾਰਾਂ ਲਈ ਵਿਸ਼ੇਸ਼ ਪ੍ਰਬੰਧ',
+    bookServiceBtn: 'ਜਾਣਕਾਰੀ ਲਵੋ',
+
+    reviewsBadge: 'ਯਾਤਰੀਆਂ ਦੇ ਤਜਰਬੇ',
+    reviewsTitle: 'ਸ਼ਰਧਾਲੂਆਂ ਦਾ ਅਟੁੱਟ ਵਿਸ਼ਵਾਸ',
+    reviewsSubtitle: 'ਕਾਰ ਰੈਂਟਲ ਅਤੇ ਹੋਟਲ ਬੁਕਿੰਗ ਦੇ ਅਸਲ ਤਜਰਬੇ ਸਾਂਝੇ ਕਰਦੇ ਸਾਡੇ ਮਹਿਮਾਨ',
+    filterAll: 'ਸਾਰੀਆਂ ਸਮੀਖਿਆਵਾਂ (All)',
+    filterCabs: '🚗 ਕਾਰ ਰੈਂਟਲ (Cabs)',
+    filterHotels: '🏨 ਹੋਟਲ ਬੁਕਿੰਗ (Hotels)',
+    verifiedTraveler: 'ਵੈਰੀਫਾਈਡ ਯਾਤਰੀ (Verified)',
+
+    conversionBadge: 'ਸਥਾਨਕ ਸਹਾਇਤਾ',
+    conversionTitle: 'ਆਪਣੀ ਪਵਿੱਤਰ ਯਾਤਰਾ ਸ਼ੁਰੂ ਕਰੋ',
+    conversionSubtitle: 'ਸਿੱਧਾ ਕਾਲ ਜਾਂ WhatsApp ਕਰੋ — ਕੋਈ ਛੁਪਿਆ ਖਰਚਾ ਨਹੀਂ, ਸਿਰਫ਼ ਸੱਚੀ ਸੇਵਾ।',
+    contactBtn: 'ਸੰਪਰਕ ਕਰੋ (Contact Us)',
+    whatsappBtn: 'WhatsApp ਤੇ ਗੱਲ ਕਰੋ',
+    exploreAgain: 'ਮੁੜ ਉੱਪਰ ਜਾਓ',
+
+    modalTitle: 'ਯਾਤਰਾ ਪੁੱਛਗਿੱਛ (Plan Your Yatra)',
+    submitBtn: 'ਮੁਫ਼ਤ ਗਾਈਡੈਂਸ ਪ੍ਰਾਪਤ ਕਰੋ',
+
+    langModalTitle: 'ਆਪਣੀ ਪਸੰਦੀਦਾ ਭਾਸ਼ਾ ਚੁਣੋ',
+    langModalSub: 'ਆਪਣੀ ਮਾਂ-ਬੋਲੀ ਵਿੱਚ ਸੋਮਨਾਥ ਯਾਤਰਾ ਦੀ ਆਸਾਨ ਜਾਣਕਾਰੀ ਲਵੋ',
+    langConfirmBtn: 'ਇਸ ਭਾਸ਼ਾ ਵਿੱਚ ਜਾਰੀ ਰੱਖੋ',
+
+    footerAbout: 'ਸੋਮਨਾਥ, ਦਵਾਰਕਾ, ਦੀਵ ਅਤੇ ਸਾਸਨ ਗਿਰ ਲਈ ਤੁਹਾਡਾ ਆਪਣਾ ਭਰੋਸੇਮੰਦ ਲੋਕਲ ਹੋਸਟ।',
+    footerRights: 'ਸਾਰੇ ਹੱਕ ਰਾਖਵੇਂ ਹਨ • ਸ਼੍ਰੀ ਸੋਮਨਾਥ ਲੋਕਲ ਹੋਸਟ',
   }
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Globe, X } from 'lucide-react';
+import { Check, Globe, X, Volume2, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function LanguageModal() {
@@ -20,99 +20,101 @@ export default function LanguageModal() {
 
   const handleClose = () => {
     if (isFirstTime) {
-      // If first time and user closes without choosing, save default
-      setLanguage('hi');
+      // Default to Gujarati for local Saurashtra host
+      setLanguage('gu', false);
     } else {
       setIsLangModalOpen(false);
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3.5 sm:p-4 bg-slate-900/65 backdrop-blur-sm animate-fade-in">
       <div
-        className="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-scale-up"
+        className="w-full max-w-lg bg-white rounded-3xl sm:rounded-4xl shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-scale-up flex flex-col max-h-[90vh]"
         role="dialog"
         aria-modal="true"
         aria-labelledby="lang-modal-title"
       >
         {/* Header Banner */}
-        <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-amber-600 p-5 text-white relative">
-          {!isFirstTime && (
-            <button
-              type="button"
-              onClick={handleClose}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
-              aria-label="Close"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
+        <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-amber-600 p-4 sm:p-5 text-white relative flex-shrink-0">
+          <button
+            type="button"
+            onClick={handleClose}
+            className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors cursor-pointer tap-bounce"
+            aria-label="Close"
+          >
+            <X className="w-4 h-4" />
+          </button>
 
-          <div className="flex items-center gap-2.5 mb-1.5">
-            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+          <div className="flex items-center gap-2 mb-1">
+            <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
               <Globe className="w-4 h-4 text-white" />
             </div>
-            <span className="text-xs font-black tracking-wider uppercase text-amber-100">
-              {isFirstTime ? 'Welcome to Somnath Local Host' : 'Select Language'}
+            <span className="text-[11px] font-black tracking-wider uppercase text-amber-100">
+              {isFirstTime ? 'શ્રી સોમનાથ લોકલ હોસ્ટ • સ્વાગત છે' : 'ભાષા પસંદ કરો • Select Language'}
             </span>
           </div>
 
-          <h3 id="lang-modal-title" className="text-xl sm:text-2xl font-black tracking-tight leading-snug">
-            {isFirstTime ? 'अपनी भाषा चुनें • આપની ભાષા પસંદ કરો' : 'Choose Your Language'}
+          <h3 id="lang-modal-title" className="text-lg sm:text-2xl font-black tracking-tight leading-snug">
+            {isFirstTime ? 'તમારી પસંદગીની ભાષા પસંદ કરો' : 'Choose Your Preferred Language'}
           </h3>
-          <p className="text-xs text-amber-100 font-semibold mt-1">
-            Pick your language to explore Somnath, Dwarka, Diu & Gir
+          <p className="text-xs text-amber-100 font-semibold mt-0.5 flex items-center gap-1.5">
+            <Volume2 className="w-3.5 h-3.5 inline text-amber-200" />
+            <span>પસંદ કર્યા બાદ તમારી ભાષામાં પ્રેમભર્યો વૉઇસ આવકાર સંભળાશે</span>
           </p>
         </div>
 
-        {/* Language Options List */}
-        <div className="p-5 space-y-2.5">
-          {languages.map((lang) => {
-            const isSelected = language === lang.id;
-            return (
-              <button
-                key={lang.id}
-                type="button"
-                onClick={() => setLanguage(lang.id)}
-                className={`w-full p-3.5 rounded-2xl border text-left flex items-center justify-between transition-all tap-bounce ${
-                  isSelected
-                    ? 'border-orange-500 bg-orange-50/70 shadow-xs ring-2 ring-orange-400/20'
-                    : 'border-slate-200 hover:border-amber-300 hover:bg-slate-50/80 bg-white'
-                }`}
-              >
-                <div className="flex items-center gap-3.5">
-                  <span className="text-2xl">{lang.flag}</span>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-base font-black text-slate-900">
-                        {lang.label}
-                      </span>
-                      <span className="text-xs font-bold text-slate-500">
-                        ({lang.englishName})
-                      </span>
-                    </div>
-                    <p className="text-[11px] font-semibold text-slate-500 mt-0.5">
-                      {lang.subtitle}
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  className={`w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
-                    isSelected ? 'bg-orange-500 text-white' : 'border border-slate-300'
+        {/* 10 Indian Languages Scrollable List */}
+        <div className="p-3.5 sm:p-5 overflow-y-auto max-h-[62vh] space-y-2 divide-y divide-slate-100">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+            {languages.map((lang) => {
+              const isSelected = language === lang.id;
+              return (
+                <button
+                  key={lang.id}
+                  type="button"
+                  onClick={() => setLanguage(lang.id, true)}
+                  className={`w-full p-3 rounded-2xl border text-left flex items-center justify-between transition-all tap-bounce cursor-pointer group ${
+                    isSelected
+                      ? 'border-orange-500 bg-orange-50/80 shadow-xs ring-2 ring-orange-400/25'
+                      : 'border-slate-200 hover:border-amber-400 hover:bg-amber-50/40 bg-white'
                   }`}
                 >
-                  {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                </div>
-              </button>
-            );
-          })}
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span className="text-2xl flex-shrink-0">{lang.flag}</span>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="text-sm font-black text-slate-900 group-hover:text-orange-600 transition-colors">
+                          {lang.label}
+                        </span>
+                        <span className="text-[10px] font-bold text-slate-400">
+                          ({lang.englishName})
+                        </span>
+                      </div>
+                      <p className="text-[10px] font-semibold text-slate-500 truncate mt-0.5">
+                        {lang.state}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    className={`w-5 h-5 rounded-full flex items-center justify-center transition-colors flex-shrink-0 ${
+                      isSelected ? 'bg-orange-500 text-white' : 'border border-slate-300 group-hover:border-amber-400'
+                    }`}
+                  >
+                    {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Footer Note */}
-        <div className="px-5 pb-5 pt-1 text-center">
-          <p className="text-[11px] text-slate-400 font-medium">
-            💡 You can change this language anytime from the menu.
+        <div className="px-4 py-3 bg-slate-50/80 border-t border-slate-100 text-center flex-shrink-0">
+          <p className="text-[11px] text-slate-500 font-medium flex items-center justify-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+            <span>તમે વેબસાઈટમાં ઉપર આપેલા બટનથી ગમે ત્યારે ભાષા બદલી શકો છો.</span>
           </p>
         </div>
       </div>

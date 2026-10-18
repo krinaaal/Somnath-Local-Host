@@ -13,10 +13,11 @@ export default function LoadingScreen({ onFinish }) {
       return;
     }
 
-    const t1 = setTimeout(() => setStep(1), 350);
-    const t2 = setTimeout(() => setStep(2), 750);
-    const t3 = setTimeout(() => setFadeOut(true), 1300);
-    const t4 = setTimeout(() => onFinish && onFinish(), 1600);
+    // Set loading duration between 3 to 5 seconds (3.7s total)
+    const t1 = setTimeout(() => setStep(1), 900);
+    const t2 = setTimeout(() => setStep(2), 2000);
+    const t3 = setTimeout(() => setFadeOut(true), 3300);
+    const t4 = setTimeout(() => onFinish && onFinish(), 3700);
 
     return () => {
       clearTimeout(t1);

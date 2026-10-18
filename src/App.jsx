@@ -12,12 +12,21 @@ import FrontendLeadModal from './components/FrontendLeadModal';
 import StickyBottomBar from './components/StickyBottomBar';
 import Footer from './components/Footer';
 import LanguageModal from './components/LanguageModal';
+import WelcomeVoiceToast from './components/WelcomeVoiceToast';
+import { useLanguage } from './context/LanguageContext';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
   const [selectedDestination, setSelectedDestination] = useState('Somnath');
+  const { triggerFirstTimePopupAfterDelay } = useLanguage();
+
+  const handleLoadingFinish = () => {
+    setLoading(false);
+    // Comfortably open the language prompt after home screen appears (900ms delay)
+    triggerFirstTimePopupAfterDelay(900);
+  };
 
   const handleOpenLeadModal = (destination = 'Somnath') => {
     if (typeof destination === 'string') {
@@ -39,8 +48,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-800 flex flex-col relative selection:bg-amber-300 selection:text-slate-900">
-      {/* Delightful Branded Loading Animation */}
-      {loading && <LoadingScreen onFinish={() => setLoading(false)} />}
+      {/* Delightful Branded Loading Animation (3.7s duration, then reveals home screen) */}
+      {loading && <LoadingScreen onFinish={handleLoadingFinish} />}
 
       {/* Header */}
       <Header
@@ -111,8 +120,11 @@ export default function App() {
         initialDestination={selectedDestination}
       />
 
-      {/* First-Time Language Selector & Manual Switcher Modal */}
+      {/* First-Time 10-Language Selector & Manual Switcher Modal */}
       <LanguageModal />
+
+      {/* Loving Female Welcome Voice Audio Toast with Mute/Replay controls */}
+      <WelcomeVoiceToast />
     </div>
   );
 }

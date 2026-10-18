@@ -66,15 +66,15 @@ async function runTestSuite() {
       });
 
       await context.addInitScript(() => {
-        localStorage.setItem('somnath_preferred_lang', 'hi');
-        localStorage.setItem('somnath_lang_selected_v1', 'true');
+        localStorage.setItem('somnath_preferred_lang', 'gu');
+        localStorage.setItem('somnath_lang_selected_v2', 'true');
       });
 
       const page = await context.newPage();
       await page.goto('http://localhost:3001', { waitUntil: 'networkidle' });
 
-      // Wait for intro loading animation to finish and unmount
-      await page.waitForTimeout(1700);
+      // Wait for 3.7s intro loading animation to finish and reveal home screen
+      await page.waitForTimeout(4000);
 
       // Check 1: Strict Zero Horizontal Overflow
       const overflow = await page.evaluate(() => {
@@ -149,20 +149,26 @@ async function runTestSuite() {
       await context.close();
     }
 
-    // 2. Test Multi-Language Selection & Persistence
-    console.log('\n🌐 Testing Language Selection, Persistence & Switcher...');
+    // 2. Test Multi-Language Selection, 10 Languages & Delayed Popup
+    console.log('\n🌐 Testing 10-Language Selection, Delayed Popup & Female Welcome Voice...');
     const langContext = await browser.newContext({
       viewport: { width: 390, height: 844 },
       isMobile: true
     });
     const langPage = await langContext.newPage();
     await langPage.goto('http://localhost:3001', { waitUntil: 'networkidle' });
-    await langPage.waitForTimeout(1700);
+
+    // Loading is 3.7s, followed by home screen appearance and 900ms comfortable delay for popup
+    await langPage.waitForTimeout(5000);
 
     // Verify first-time language modal opened
-    const firstTimeModal = langPage.locator('text=अपनी भाषा चुनें, text=Choose Your Language').first();
+    const firstTimeModal = langPage.locator('[role="dialog"]').first();
     const isLangModalVisible = await firstTimeModal.isVisible();
-    console.log(`  ✓ First-time language selection prompt displayed: ${isLangModalVisible}`);
+    console.log(`  ✓ Delayed first-time language popup comfortably displayed after home screen: ${isLangModalVisible}`);
+
+    // Verify 10 Indian languages are present
+    const langButtonCount = await langPage.locator('[role="dialog"] button').count();
+    console.log(`  ✓ 10 Indian pilgrimage languages rendered: ${langButtonCount >= 10}`);
 
     // Select Gujarati from the dialog
     const gujBtn = langPage.locator('[role="dialog"] button:has-text("ગુજરાતી")').first();
@@ -183,7 +189,7 @@ async function runTestSuite() {
     console.log('\n⭐ Testing Customer Reviews (Cab & Hotel Stays)...');
     const reviewsRendered = await langPage.evaluate(() => {
       const text = document.body.innerText;
-      const hasReviewsTitle = text.includes('સમીક્ષા') || text.includes('રિવ્યૂ') || text.includes('Reviews') || text.includes('विश्वास');
+      const hasReviewsTitle = text.includes('સમીક્ષા') || text.includes('રિવ્યૂ') || text.includes('Reviews') || text.includes('વિશ્વાસ') || text.includes('विश्वास');
       const hasRamesh = text.includes('Ramesh Patel');
       const hasSunita = text.includes('Sunita');
       return hasReviewsTitle && (hasRamesh || hasSunita);
@@ -202,13 +208,13 @@ async function runTestSuite() {
     const page = await mobileContext.newPage();
     // Pre-set language to avoid first-time modal blocking enquiry test
     await page.addInitScript(() => {
-      localStorage.setItem('somnath_preferred_lang', 'hi');
-      localStorage.setItem('somnath_lang_selected_v1', 'true');
+      localStorage.setItem('somnath_preferred_lang', 'gu');
+      localStorage.setItem('somnath_lang_selected_v2', 'true');
     });
     await page.goto('http://localhost:3001', { waitUntil: 'networkidle' });
 
-    // Wait for intro loading animation to finish and unmount
-    await page.waitForTimeout(1700);
+    // Wait for 3.7s intro loading animation to finish and unmount
+    await page.waitForTimeout(4000);
 
     // Open modal via Plan My Trip or Yatra Plan Karein (only visible element)
     const planTripBtn = page.locator('button:has-text("Yatra Plan Karein"):visible, button:has-text("यात्रा प्लान करें"):visible, button:has-text("Plan My Trip"):visible').first();
