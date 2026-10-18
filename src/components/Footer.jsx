@@ -16,6 +16,10 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
                 src="/images/logo.webp"
                 alt="Somnath Local Host"
                 className="w-10 h-10 rounded-full border border-amber-300"
+                loading="lazy"
+                decoding="async"
+                width="40"
+                height="40"
               />
               <div>
                 <div className="text-base font-black text-slate-900">Somnath Local Host</div>

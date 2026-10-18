@@ -7,7 +7,7 @@ const SERVICES_CONTENT = {
     icon: Bed,
     badgeColor: 'bg-amber-100 text-amber-800 border-amber-300',
     iconColor: 'bg-amber-500 text-white',
-    image: '/images/services/hotel-luxury.jpg',
+    image: '/images/services/hotel-luxury.webp',
     title: {
       hi: 'होटल व धर्मशाला स्टे',
       gu: 'હોટેલ અને ધર્મશાળા રોકાણ',
@@ -37,7 +37,7 @@ const SERVICES_CONTENT = {
     icon: Car,
     badgeColor: 'bg-sky-100 text-sky-800 border-sky-300',
     iconColor: 'bg-sky-500 text-white',
-    image: '/images/services/cab-luxury.jpg',
+    image: '/images/services/cab-luxury.webp',
     title: {
       hi: 'कार रेंटल व प्राइवेट AC टैक्सी',
       gu: 'કાર રેન્ટલ અને પ્રાઇવેટ AC કેબ',
@@ -178,7 +178,10 @@ export default function ServicesGrid({ onBookService }) {
                           src={serv.image}
                           alt={title}
                           className="w-full h-full object-cover"
-                          loading="eager"
+                          loading="lazy"
+                          decoding="async"
+                          width="48"
+                          height="48"
                         />
                       </div>
                     )}

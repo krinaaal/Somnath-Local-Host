@@ -31,6 +31,10 @@ export default function Header({ onOpenMobileMenu, onOpenLeadModal, onScrollToJo
               src="/images/logo.webp"
               alt="Somnath Local Host Logo"
               className="w-full h-full object-cover"
+              width="44"
+              height="44"
+              loading="eager"
+              decoding="async"
             />
           </div>
           <div className="flex flex-col">

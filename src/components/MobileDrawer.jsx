@@ -22,7 +22,15 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
           {/* Brand Header */}
           <div className="flex items-center justify-between pb-4 border-b border-slate-100">
             <div className="flex items-center gap-2">
-              <img src="/images/logo.webp" alt="Logo" className="w-8 h-8 rounded-full border border-amber-300" />
+              <img
+                src="/images/logo.webp"
+                alt="Logo"
+                className="w-8 h-8 rounded-full border border-amber-300"
+                width="32"
+                height="32"
+                loading="lazy"
+                decoding="async"
+              />
               <div>
                 <div className="font-black text-sm text-slate-900">Somnath Local Host</div>
                 <div className="text-[10px] text-emerald-600 font-extrabold">{t('tagline')}</div>

@@ -223,6 +223,10 @@ export default function LoadingScreen({ onFinish }) {
               src="/images/logo.webp"
               alt="Logo"
               className="w-8 h-8 rounded-full border border-amber-300 shadow-xs"
+              width="32"
+              height="32"
+              loading="eager"
+              decoding="async"
             />
             <h2 className="text-xl font-black text-slate-900 tracking-tight">
               Shree Somnath Local Host

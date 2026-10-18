@@ -242,6 +242,9 @@ export default function RoadTripJourney({ onSelectDestination }) {
                         alt={chapter.name}
                         className="w-16 h-16 rounded-xl object-cover border border-slate-200 flex-shrink-0"
                         loading="lazy"
+                        decoding="async"
+                        width="64"
+                        height="64"
                       />
                       <div className="flex-1 min-w-0">
                         <div className="text-[11px] font-bold text-amber-600 uppercase tracking-wider">

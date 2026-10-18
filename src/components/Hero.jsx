@@ -136,6 +136,11 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
                 src="/images/destinations/somnath-cinematic.webp"
                 alt="Realistic Shree Somnath Temple beside the Arabian Sea at sunset"
                 className="w-full h-full object-cover object-[center_35%]"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width="1200"
+                height="514"
               />
             </picture>
 
