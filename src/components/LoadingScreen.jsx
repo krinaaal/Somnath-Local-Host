@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import StylizedCar3D from './cinematic/StylizedCar3D';
-import { Compass, Sparkles } from 'lucide-react';
+import { Sparkles, Sun } from 'lucide-react';
 
 export default function LoadingScreen({ onFinish }) {
   const [progress, setProgress] = useState(15);
   const [step, setStep] = useState(0);
-  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     // Check reduced motion preference
@@ -26,85 +24,173 @@ export default function LoadingScreen({ onFinish }) {
       });
     }, 70);
 
-    const t1 = setTimeout(() => setStep(1), 900);
-    const t2 = setTimeout(() => setStep(2), 2000);
-    const t3 = setTimeout(() => setFadeOut(true), 3300);
-    const t4 = setTimeout(() => onFinish && onFinish(), 3700);
+    const t1 = setTimeout(() => setStep(1), 1000);
+    const t2 = setTimeout(() => setStep(2), 2200);
+    const t3 = setTimeout(() => {
+      onFinish && onFinish();
+    }, 3700);
 
     return () => {
       clearInterval(interval);
       clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(t3);
-      clearTimeout(t4);
     };
   }, [onFinish]);
 
   return (
     <div
-      className={`fixed inset-0 z-50 bg-gradient-to-b from-white via-amber-50/40 to-white flex flex-col items-center justify-center p-4 transition-opacity duration-400 ${
-        fadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
-      }`}
+      className="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center p-4 select-none"
     >
       <div className="relative w-full max-w-md flex flex-col items-center text-center">
-        {/* Soft Ambient Glow in Background */}
-        <div className="absolute -top-12 w-64 h-64 rounded-full bg-amber-200/30 blur-3xl pointer-events-none" />
+        {/* Soft Golden Spiritual Halo Glow (Pure White Background Stays Steady) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-amber-100/60 blur-3xl pointer-events-none" />
 
-        {/* Top Badging */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100/80 border border-amber-300 text-amber-900 text-[11px] font-black mb-4 shadow-2xs">
-          <Sparkles className="w-3.5 h-3.5 text-orange-500 animate-spin-slow" />
-          <span>સૌરાષ્ટ્ર તીર્થ યાત્રા શરૂ થઈ રહી છે...</span>
+        {/* Sacred Badging */}
+        <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-black mb-5 shadow-2xs">
+          <Sparkles className="w-4 h-4 text-orange-500 animate-spin-slow" />
+          <span>ॐ नमः शिवाय • प्रथम ज्योतिर्लिंग</span>
         </div>
 
-        {/* Professional Highway Stage with Continuous Moving Road */}
-        <div className="relative w-full max-w-sm h-36 flex flex-col items-center justify-end overflow-hidden rounded-2xl bg-gradient-to-b from-transparent via-slate-50/50 to-slate-100/80 border border-slate-200/60 p-2 shadow-inner">
-          
-          {/* Milestone Indicator on Highway */}
-          <div className="absolute top-2 left-3 flex items-center gap-1.5 text-[10px] font-bold text-slate-500 bg-white/90 backdrop-blur-xs px-2 py-0.5 rounded-md border border-slate-200 shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>
-              {step === 0 ? '📍 સોમનાથ હાઇવે • 0 KM' : step === 1 ? '🚗 દ્વારકા-પોરબંદર કોસ્ટલ રૂટ' : '✨ પવિત્ર દર્શન યાત્રા'}
-            </span>
-          </div>
+        {/* UNIQUE SACRED AKHAND JYOT & DIVINE AURA (Replaces Car Animation) */}
+        <div className="relative w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center my-2">
+          {/* Concentric Divine Aura Rings */}
+          <div className="absolute inset-2 rounded-full border border-amber-300/40 animate-ping opacity-40 pointer-events-none" style={{ animationDuration: '3s' }} />
+          <div className="absolute inset-8 rounded-full border-2 border-amber-400/30 animate-pulse pointer-events-none" />
+          <div className="absolute inset-14 rounded-full bg-radial from-amber-200/40 via-orange-100/20 to-transparent blur-sm pointer-events-none" />
 
-          {/* Luxury Executive Car firmly cruising on the tarmac */}
-          <div className="relative z-10 mb-[-6px]">
-            <StylizedCar3D className="w-48 sm:w-56 h-24 sm:h-28" moving={true} />
-          </div>
+          {/* Majestic Sacred Temple Diya & Trishul SVG */}
+          <svg
+            viewBox="0 0 200 200"
+            className="w-full h-full drop-shadow-lg relative z-10 overflow-visible"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              {/* Flame Radial Gradient */}
+              <radialGradient id="flameInner" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#ffffff" />
+                <stop offset="35%" stopColor="#fef08a" />
+                <stop offset="70%" stopColor="#f59e0b" />
+                <stop offset="100%" stopColor="#dc2626" />
+              </radialGradient>
 
-          {/* Realistic Highway Tarmac Strip with Smooth Scrolling Centerline */}
-          <div className="relative w-full h-8 bg-gradient-to-b from-slate-700 to-slate-900 rounded-lg overflow-hidden border-t-2 border-slate-600 shadow-md flex items-center">
-            {/* Smooth Scrolling Dashed Yellow & White Highway Centerline */}
-            <svg viewBox="0 0 360 16" className="w-full h-full" preserveAspectRatio="none">
-              {/* Outer Shoulder Guides */}
-              <line x1="0" y1="2" x2="360" y2="2" stroke="#64748b" strokeWidth="1" />
-              <line x1="0" y1="14" x2="360" y2="14" stroke="#64748b" strokeWidth="1" />
-              {/* Animated Continuous Center Divider */}
-              <line
-                x1="0"
-                y1="8"
-                x2="360"
-                y2="8"
-                stroke="#fbbf24"
-                strokeWidth="2.5"
-                strokeDasharray="20 16"
-                className="animate-highway-scroll"
+              {/* Brass Temple Lamp Gradient */}
+              <linearGradient id="brassLamp" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#fef08a" />
+                <stop offset="30%" stopColor="#f59e0b" />
+                <stop offset="70%" stopColor="#d97706" />
+                <stop offset="100%" stopColor="#78350f" />
+              </linearGradient>
+
+              {/* Golden Trishul Gradient */}
+              <linearGradient id="goldTrishul" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#fef3c7" />
+                <stop offset="50%" stopColor="#fbbf24" />
+                <stop offset="100%" stopColor="#b45309" />
+              </linearGradient>
+            </defs>
+
+            {/* Sacred Trishul Behind Flame */}
+            <g opacity="0.85">
+              {/* Central Trishul Spear */}
+              <line x1="100" y1="30" x2="100" y2="115" stroke="url(#goldTrishul)" strokeWidth="3.5" strokeLinecap="round" />
+              {/* Trishul Prongs */}
+              <path
+                d="M78 45 Q82 75, 100 80 Q118 75, 122 45"
+                stroke="url(#goldTrishul)"
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
               />
-            </svg>
-          </div>
+              <path
+                d="M74 46 L78 38 L82 46 Z"
+                fill="url(#goldTrishul)"
+              />
+              <path
+                d="M118 46 L122 38 L126 46 Z"
+                fill="url(#goldTrishul)"
+              />
+              <path
+                d="M96 32 L100 20 L104 32 Z"
+                fill="url(#goldTrishul)"
+              />
+              {/* Sacred Damru at center */}
+              <polygon points="90,72 110,72 94,86 106,86" fill="url(#goldTrishul)" stroke="#78350f" strokeWidth="0.8" />
+            </g>
+
+            {/* Sacred Om Symbol in subtle golden light */}
+            <text
+              x="100"
+              y="68"
+              textAnchor="middle"
+              fill="#d97706"
+              fontSize="14"
+              fontWeight="bold"
+              fontFamily="serif"
+              opacity="0.9"
+            >
+              ॐ
+            </text>
+
+            {/* Ornate Brass Lamp Stand (Akhand Jyot Diya) */}
+            {/* Base Pedestal */}
+            <ellipse cx="100" cy="165" rx="36" ry="7" fill="url(#brassLamp)" stroke="#78350f" strokeWidth="1" />
+            <path d="M90 163 L95 142 H105 L110 163 Z" fill="url(#brassLamp)" stroke="#78350f" strokeWidth="0.8" />
+            {/* Middle decorative ring */}
+            <ellipse cx="100" cy="142" rx="14" ry="3.5" fill="url(#brassLamp)" stroke="#78350f" strokeWidth="0.8" />
+            
+            {/* Main Oil Bowl of Diya */}
+            <path
+              d="M60 135 C60 152, 140 152, 140 135 C140 128, 60 128, 60 135 Z"
+              fill="url(#brassLamp)"
+              stroke="#78350f"
+              strokeWidth="1.2"
+            />
+            {/* Liquid Ghee Surface */}
+            <ellipse cx="100" cy="133" rx="34" ry="5" fill="#f59e0b" opacity="0.85" />
+
+            {/* Dancing Sacred Flame (Akhand Jyot) */}
+            <g className="animate-pulse origin-[100px_130px]" style={{ animationDuration: '1.2s' }}>
+              {/* Outer Amber Flame Aura */}
+              <path
+                d="M100 85 
+                   C110 102, 118 116, 114 130 
+                   C110 138, 90 138, 86 130 
+                   C82 116, 90 102, 100 85 Z"
+                fill="url(#flameInner)"
+                opacity="0.95"
+              />
+              {/* Inner Bright Golden Core */}
+              <path
+                d="M100 96 
+                   C106 108, 110 118, 108 127 
+                   C105 133, 95 133, 92 127 
+                   C90 118, 94 108, 100 96 Z"
+                fill="#ffffff"
+                opacity="0.9"
+              />
+              {/* Blue Base of Flame */}
+              <ellipse cx="100" cy="129" rx="6" ry="2.5" fill="#38bdf8" opacity="0.85" />
+            </g>
+          </svg>
         </div>
 
-        {/* Dynamic Progress Percentage & Odometer */}
-        <div className="w-full max-w-xs mt-5">
+        {/* Sacred Sanskrit Shloka */}
+        <p className="text-xs sm:text-sm font-bold text-amber-900 tracking-wide mt-1 mb-2 font-serif">
+          सौराष्ट्रदेशे विशदेऽतिरम्ये ज्योतिर्मयं सोमनाथम्
+        </p>
+
+        {/* Dynamic Journey Loading Progress Bar */}
+        <div className="w-full max-w-xs mt-3">
           <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1.5 px-0.5">
-            <span className="flex items-center gap-1">
-              <Compass className="w-3.5 h-3.5 text-amber-500 animate-spin-slow" />
-              <span>યાત્રા લોડિંગ...</span>
+            <span className="flex items-center gap-1 text-slate-600">
+              <Sun className="w-3.5 h-3.5 text-amber-500 animate-spin-slow" />
+              <span>Somnath Darshan Guide</span>
             </span>
             <span className="font-mono text-amber-800 font-black">{progress}%</span>
           </div>
 
-          {/* Clean Rounded Progress Bar */}
           <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
             <div
               className="h-full bg-gradient-to-r from-amber-400 via-orange-500 to-amber-500 rounded-full transition-all duration-100 ease-out shadow-xs"
@@ -113,7 +199,7 @@ export default function LoadingScreen({ onFinish }) {
           </div>
         </div>
 
-        {/* Destination Route Markers pop in seamlessly */}
+        {/* Destination Route Markers */}
         <div className="flex flex-wrap items-center justify-center gap-1.5 my-3.5">
           {['Somnath', 'Dwarka', 'Diu', 'Sasan Gir'].map((dest, i) => (
             <span
@@ -139,15 +225,15 @@ export default function LoadingScreen({ onFinish }) {
               className="w-8 h-8 rounded-full border border-amber-300 shadow-xs"
             />
             <h2 className="text-xl font-black text-slate-900 tracking-tight">
-              Somnath Local Host
+              Shree Somnath Local Host
             </h2>
           </div>
           <p className="text-xs text-amber-700 font-bold">
-            Chalo, Somnath Darshan karne Chalein! ✨
+            Har Har Mahadev • સૌરાષ્ટ્ર દર્શન યાત્રા ✨
           </p>
         </div>
 
-        {/* Quick Skip button */}
+        {/* Skip button */}
         <button
           type="button"
           onClick={() => onFinish && onFinish()}

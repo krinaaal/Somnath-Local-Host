@@ -40,14 +40,14 @@ export default function WelcomeVoiceToast() {
           <div>
             <div className="flex items-center gap-1.5">
               <span className="text-xs font-black text-slate-900">
-                {isVoicePlaying ? 'સ્વાગત સંદેશ (Audio Playing)' : 'સ્વાગત સંદેશ (Welcome Note)'}
+                {isVoicePlaying ? 'Audio Playing' : 'Welcome Note'}
               </span>
               <span className="text-[10px] px-1.5 py-0.2 rounded-md bg-amber-100 text-amber-800 font-bold">
                 {currentLangObj.flag} {currentLangObj.label}
               </span>
             </div>
             <span className="text-[10px] text-emerald-600 font-bold block">
-              Google AI Studio (Achernar) • Somnath Local Host
+              Somnath Local Host • યાત્રા સહાયક વાણી
             </span>
           </div>
         </div>

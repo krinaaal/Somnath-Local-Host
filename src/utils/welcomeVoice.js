@@ -63,7 +63,7 @@ export function playWelcomeVoice(langCode, callbacks = {}) {
       audio.volume = 1.0;
 
       audio.onplay = () => {
-        onStart && onStart({ script, langCode, engine: 'Google AI Studio / Studio Neural Voice' });
+        onStart && onStart({ script, langCode, engine: 'Studio Voice' });
       };
 
       audio.onended = () => {

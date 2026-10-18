@@ -12,6 +12,14 @@ export default function RouteStations({ onSelectStation }) {
     return station.hub === activeFilter;
   });
 
+  const getLocalized = (obj, def = '') => {
+    if (!obj) return def;
+    if (language === 'gu') return obj.gu || obj.hi || def;
+    if (language === 'en') return obj.en || obj.hi || def;
+    if (language === 'mr') return obj.mr || obj.hi || def;
+    return obj[language] || obj.hi || obj.en || def;
+  };
+
   return (
     <section id="stations" className="py-14 sm:py-20 bg-white relative overflow-hidden border-t border-slate-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
@@ -22,10 +30,10 @@ export default function RouteStations({ onSelectStation }) {
             <span>
               {language === 'gu'
                 ? 'પવિત્ર તીર્થ પરિભ્રમણ • રૂટમાં આવતા મુખ્ય સ્થળો'
-                : language === 'mr'
-                ? 'पवित्र तीर्थ परिक्रमा • मार्गावरील मुख्य स्थाने'
                 : language === 'en'
                 ? 'Sacred Circuit • Iconic En-Route Pilgrimage Stations'
+                : language === 'mr'
+                ? 'पवित्र तीर्थ परिक्रमा • मार्गावरील मुख्य स्थाने'
                 : 'पवित्र तीर्थ परिक्रमा • मार्ग में पड़ने वाले प्रमुख स्थल'}
             </span>
           </div>
@@ -33,20 +41,20 @@ export default function RouteStations({ onSelectStation }) {
           <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             {language === 'gu'
               ? 'ભાલકા તીર્થ, બેટ દ્વારકા, નાગેશ્વર અને શિવરાજપુર બીચ'
-              : language === 'mr'
-              ? 'भालका तीर्थ, बेट द्वारका, नागेश्वर व शिवराजपूर बीच'
               : language === 'en'
               ? 'Bhalka Tirth, Bet Dwarka, Nageshwar & Shivrajpur'
+              : language === 'mr'
+              ? 'भालका तीर्थ, बेट द्वारका, नागेश्वर व शिवराजपूर बीच'
               : 'भालका तीर्थ, बेट द्वारका, नागेश्वर व शिवराजपुर बीच'}
           </h2>
 
           <p className="mt-3 text-xs sm:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
             {language === 'gu'
               ? 'સોમનાથથી દ્વારકાના આ પવિત્ર માર્ગમાં આવતા બાણગંગા, ગીતા મંદિર, ત્રિવેણી સંગમ અને માધવપુરના દિવ્ય દર્શનનો સંપૂર્ણ રૂટ'
-              : language === 'mr'
-              ? 'सोमनाथ ते द्वारका मार्गावरील बाणगंगा, गीता मंदिर, त्रिवेणी संगम आणि माधवपूरचे संपूर्ण दर्शन'
               : language === 'en'
               ? 'Complete itinerary covering Ban Ganga, Gita Mandir, Triveni Sangam, and scenic coastal stops along Saurashtra'
+              : language === 'mr'
+              ? 'सोमनाथ ते द्वारका मार्गावरील बाणगंगा, गीता मंदिर, त्रिवेणी संगम आणि माधवपूरचे संपूर्ण दर्शन'
               : 'सोमनाथ से द्वारका के इस पावन मार्ग पर पड़ने वाले बाणगंगा, गीता मंदिर, त्रिवेणी संगम और माधवपुर का संपूर्ण दर्शन'}
           </p>
 
@@ -61,7 +69,13 @@ export default function RouteStations({ onSelectStation }) {
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               }`}
             >
-              {language === 'gu' ? 'બધા મુખ્ય સ્થળો (All)' : 'सभी प्रमुख स्थल (All)'}
+              {language === 'gu'
+                ? 'બધા મુખ્ય સ્થળો (All)'
+                : language === 'en'
+                ? 'All Stations (All)'
+                : language === 'mr'
+                ? 'सर्व प्रमुख स्थाने (All)'
+                : 'सभी प्रमुख स्थल (All)'}
             </button>
 
             <button
@@ -73,7 +87,13 @@ export default function RouteStations({ onSelectStation }) {
                   : 'bg-orange-50 text-orange-900 border border-orange-200 hover:bg-orange-100'
               }`}
             >
-              {language === 'gu' ? '📍 સોમનાથ સર્કિટ (ભાલકા તીર્થ, બાણગંગા, ગીતા મંદિર)' : '📍 सोमनाथ सर्किट (भालका, बाणगंगा, गीता मंदिर)'}
+              {language === 'gu'
+                ? '📍 સોમનાથ સર્કિટ (ભાલકા તીર્થ, બાણગંગા, ગીતા મંદિર)'
+                : language === 'en'
+                ? '📍 Somnath Circuit (Bhalka, Ban Ganga, Gita Mandir)'
+                : language === 'mr'
+                ? '📍 सोमनाथ सर्किट (भालका, बाणगंगा, गीता मंदिर)'
+                : '📍 सोमनाथ सर्किट (भालका, बाणगंगा, गीता मंदिर)'}
             </button>
 
             <button
@@ -85,7 +105,13 @@ export default function RouteStations({ onSelectStation }) {
                   : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
               }`}
             >
-              {language === 'gu' ? '🚗 કોસ્ટલ હાઇવે (માધવપુર ઘેડ, પોરબંદર)' : '🚗 कोस्टल हाईवे (माधवपुर घेड, पोरबंदर)'}
+              {language === 'gu'
+                ? '🚗 કોસ્ટલ હાઇવે (માધવપુર ઘેડ, પોરબંદર)'
+                : language === 'en'
+                ? '🚗 Coastal Highway (Madhavpur, Porbandar)'
+                : language === 'mr'
+                ? '🚗 कोस्टल हायवे (माधवपूर, पोरबंदर)'
+                : '🚗 कोस्टल हाईवे (माधवपुर घेड, पोरबंदर)'}
             </button>
 
             <button
@@ -97,7 +123,13 @@ export default function RouteStations({ onSelectStation }) {
                   : 'bg-sky-50 text-sky-900 border border-sky-200 hover:bg-sky-100'
               }`}
             >
-              {language === 'gu' ? '🚩 દ્વારકા સર્કિટ (બેટ દ્વારકા, નાગેશ્વર, શિવરાજપુર)' : '🚩 द्वारका सर्किट (बेट द्वारका, नागेश्वर, शिवराजपुर)'}
+              {language === 'gu'
+                ? '🚩 દ્વારકા સર્કિટ (બેટ દ્વારકા, નાગેશ્વર, શિવરાજપુર)'
+                : language === 'en'
+                ? '🚩 Dwarka Circuit (Bet Dwarka, Nageshwar, Shivrajpur)'
+                : language === 'mr'
+                ? '🚩 द्वारका सर्किट (बेट द्वारका, नागेश्वर, शिवराजपूर)'
+                : '🚩 द्वारका सर्किट (बेट द्वारका, नागेश्वर, शिवराजपुर)'}
             </button>
           </div>
         </div>
@@ -105,11 +137,11 @@ export default function RouteStations({ onSelectStation }) {
         {/* Stations Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {filteredStations.map((station) => {
-            const name = station.name[language] || station.name.gu || station.name.hi;
-            const hubLabel = station.hubLabel[language] || station.hubLabel.gu || station.hubLabel.hi;
-            const tag = station.tag[language] || station.tag.gu || station.tag.hi;
-            const desc = station.description[language] || station.description.gu || station.description.hi;
-            const highlights = station.highlights[language] || station.highlights.gu || station.highlights.hi || [];
+            const name = getLocalized(station.name);
+            const hubLabel = getLocalized(station.hubLabel);
+            const tag = getLocalized(station.tag);
+            const desc = getLocalized(station.description);
+            const highlights = (language === 'gu' ? station.highlights.gu : (station.highlights[language] || station.highlights.en || station.highlights.hi)) || [];
 
             return (
               <div
@@ -176,10 +208,10 @@ export default function RouteStations({ onSelectStation }) {
                   <span>
                     {language === 'gu'
                       ? 'આ સ્થળ યાત્રામાં ઉમેરો'
-                      : language === 'mr'
-                      ? 'हे ठिकाण यात्रेत जोडा'
                       : language === 'en'
                       ? 'Add to My Yatra Plan'
+                      : language === 'mr'
+                      ? 'हे ठिकाण यात्रेत जोडा'
                       : 'इस स्थल को यात्रा में जोड़ें'}
                   </span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -199,11 +231,19 @@ export default function RouteStations({ onSelectStation }) {
               <h4 className="font-black text-slate-900 text-sm sm:text-base">
                 {language === 'gu'
                   ? 'સોમનાથથી દ્વારકા રૂટના તમામ સ્થળો એક જ ગાડીમાં કવર કરો'
+                  : language === 'en'
+                  ? 'Cover all sacred route stations from Somnath to Dwarka in one trip'
+                  : language === 'mr'
+                  ? 'सोमनाथ ते द्वारका मार्गावरील सर्व स्थाने एकाच गाडीत करा'
                   : 'सोमनाथ से द्वारका मार्ग के सभी पवित्र स्थल एक ही गाड़ी में कवर करें'}
               </h4>
               <p className="text-xs text-slate-600 font-medium mt-0.5">
                 {language === 'gu'
                   ? 'ભાલકા તીર્થ, બાણગંગા, ત્રિવેણી, માધવપુર, સુદામા મંદિર, બેટ દ્વારકા, નાગેશ્વર અને શિવરાજપુર બીચ — સંપૂર્ણ સ્થાનિક માર્ગદર્શન'
+                  : language === 'en'
+                  ? 'Bhalka Tirth, Ban Ganga, Triveni, Madhavpur, Sudama Temple, Bet Dwarka, Nageshwar & Shivrajpur Beach'
+                  : language === 'mr'
+                  ? 'भालका तीर्थ, बाणगंगा, त्रिवेणी, माधवपूर, सुदामा मंदिर, बेट द्वारका, नागेश्वर व शिवराजपूर बीच'
                   : 'भालका तीर्थ, बाणगंगा, त्रिवेणी, माधवपुर, सुदामा मंदिर, बेट द्वारका, नागेश्वर व शिवराजपुर बीच — संपूर्ण स्थानीय मार्गदर्शन'}
               </p>
             </div>
@@ -214,7 +254,13 @@ export default function RouteStations({ onSelectStation }) {
             onClick={() => onSelectStation && onSelectStation('Somnath - Dwarka Complete Circuit')}
             className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-xs sm:text-sm shadow-xs transition-transform active:scale-95 tap-bounce flex-shrink-0 cursor-pointer"
           >
-            {language === 'gu' ? 'સંપૂર્ણ રૂટ પ્લાન કરો' : 'संपूर्ण रूट प्लान करें'}
+            {language === 'gu'
+              ? 'સંપૂર્ણ રૂટ પ્લાન કરો'
+              : language === 'en'
+              ? 'Plan Complete Route'
+              : language === 'mr'
+              ? 'संपूर्ण रूट प्लान करा'
+              : 'संपूर्ण रूट प्लान करें'}
           </button>
         </div>
       </div>

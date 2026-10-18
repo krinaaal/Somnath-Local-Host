@@ -230,7 +230,7 @@ async function runTestSuite() {
     await page.waitForTimeout(4000);
 
     // Open modal via Plan My Trip or Yatra Plan Karein (only visible element)
-    const planTripBtn = page.locator('button:has-text("Yatra Plan Karein"):visible, button:has-text("यात्रा प्लान करें"):visible, button:has-text("Plan My Trip"):visible').first();
+    const planTripBtn = page.locator('button:has-text("Yatra Plan Karein"):visible, button:has-text("यात्रा प्लान करें"):visible, button:has-text("Plan My Trip"):visible, button:has-text("યાત્રા પ્લાન કરો"):visible').first();
     await planTripBtn.click();
     await page.waitForTimeout(400);
 

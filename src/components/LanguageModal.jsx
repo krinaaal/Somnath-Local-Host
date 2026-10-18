@@ -20,8 +20,8 @@ export default function LanguageModal() {
 
   const handleClose = () => {
     if (isFirstTime) {
-      // Default to Gujarati for local Saurashtra host
-      setLanguage('gu', false);
+      // Default to Hindi for pan-India visitors until chosen
+      setLanguage('hi', false);
     } else {
       setIsLangModalOpen(false);
     }
@@ -51,16 +51,16 @@ export default function LanguageModal() {
               <Globe className="w-4 h-4 text-white" />
             </div>
             <span className="text-[11px] font-black tracking-wider uppercase text-amber-100">
-              {isFirstTime ? 'શ્રી સોમનાથ લોકલ હોસ્ટ • સ્વાગત છે' : 'ભાષા પસંદ કરો • Select Language'}
+              SHREE SOMNATH LOCAL HOST • YATRA GUIDE
             </span>
           </div>
 
           <h3 id="lang-modal-title" className="text-lg sm:text-2xl font-black tracking-tight leading-snug">
-            {isFirstTime ? 'તમારી પસંદગીની ભાષા પસંદ કરો' : 'Choose Your Preferred Language'}
+            Select Your Preferred Language
           </h3>
           <p className="text-xs text-amber-100 font-semibold mt-0.5 flex items-center gap-1.5">
             <Volume2 className="w-3.5 h-3.5 inline text-amber-200" />
-            <span>પસંદ કર્યા બાદ તમારી ભાષામાં પ્રેમભર્યો વૉઇસ આવકાર સંભળાશે</span>
+            <span>Gentle audio welcome will greet you in your chosen language</span>
           </p>
         </div>
 

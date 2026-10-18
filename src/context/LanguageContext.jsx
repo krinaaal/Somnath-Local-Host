@@ -9,14 +9,14 @@ const FIRST_VISIT_KEY = 'somnath_lang_selected_v2';
 const VALID_LANGS = LANGUAGES.map((l) => l.id);
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguageState] = useState('gu'); // default warm Saurashtra mother tongue
+  const [language, setLanguageState] = useState('hi'); // Default Hindi for pan-India pilgrims; Gujarati shown only if chosen
   const [isFirstTimeModalOpen, setIsFirstTimeModalOpen] = useState(false);
   const [isLangModalOpen, setIsLangModalOpen] = useState(false);
   
   // Voice state
   const [isVoicePlaying, setIsVoicePlaying] = useState(false);
   const [currentVoiceScript, setCurrentVoiceScript] = useState('');
-  const [currentVoiceLang, setCurrentVoiceLang] = useState('gu');
+  const [currentVoiceLang, setCurrentVoiceLang] = useState('hi');
   const timerRef = useRef(null);
 
   // Initialize saved state on startup
