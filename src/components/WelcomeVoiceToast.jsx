@@ -47,7 +47,7 @@ export default function WelcomeVoiceToast() {
               </span>
             </div>
             <span className="text-[10px] text-emerald-600 font-bold block">
-              પ્રેમભર્યો ફીમેલ અવાજ • Somnath Local Host
+              Google AI Studio (Achernar) • Somnath Local Host
             </span>
           </div>
         </div>

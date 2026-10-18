@@ -245,6 +245,33 @@
   animation: flagWave 1.4s infinite ease-in-out;
 }
 
+/* Highway Tarmac & Lane Scroll Animations */
+@keyframes highwayLaneScroll {
+  from {
+    stroke-dashoffset: 48;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes roadLightFlicker {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-highway-scroll {
+  animation: highwayLaneScroll 0.75s infinite linear;
+}
+
+.animate-headlight-beam {
+  animation: roadLightFlicker 2s infinite ease-in-out;
+}
+
 /* Respect user preferences for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
