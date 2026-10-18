@@ -26,6 +26,8 @@ export function stopWelcomeVoice() {
     try {
       currentAudioElement.pause();
       currentAudioElement.currentTime = 0;
+      currentAudioElement.src = '';
+      currentAudioElement.load();
       currentAudioElement = null;
     } catch {
       // ignore pause error

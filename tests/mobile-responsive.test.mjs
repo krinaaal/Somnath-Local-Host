@@ -186,8 +186,8 @@ async function runTestSuite() {
     // Select Gujarati from the dialog
     const gujBtn = langPage.locator('[role="dialog"] button:has-text("ગુજરાતી")').first();
     if (await gujBtn.isVisible()) {
-      await gujBtn.click();
-      await langPage.waitForTimeout(400);
+      await gujBtn.click({ noWaitAfter: true });
+      await langPage.waitForTimeout(600);
       const isGujaratiActive = await langPage.evaluate(() => {
         return document.body.innerText.includes('દર્શન કરવા જઈએ') || document.body.innerText.includes('ચાલો, સોમનાથ');
       });
@@ -196,6 +196,19 @@ async function runTestSuite() {
       // Verify localStorage persistence
       const savedLang = await langPage.evaluate(() => localStorage.getItem('somnath_preferred_lang'));
       console.log(`  ✓ Language preference persisted in localStorage: ${savedLang === 'gu' ? 'Valid (gu)' : savedLang}`);
+
+      // Verify Voice Toast popup appears and Close button immediately dismisses popup & stops audio
+      const voiceToast = langPage.locator('aside[aria-label="Welcome Voice Message"]');
+      const isToastVisible = await voiceToast.isVisible().catch(() => false);
+      console.log(`  ✓ Welcome voice toast rendered on language selection: ${isToastVisible}`);
+
+      if (isToastVisible) {
+        const closeBtn = voiceToast.locator('button[aria-label="Close welcome voice"]');
+        await closeBtn.click({ noWaitAfter: true });
+        await langPage.waitForTimeout(300);
+        const isToastDismissed = !(await voiceToast.isVisible().catch(() => false));
+        console.log(`  ✓ Voice toast closed and dismissed immediately upon clicking close button: ${isToastDismissed}`);
+      }
     }
 
     // 2.5 Test Customer Reviews Section

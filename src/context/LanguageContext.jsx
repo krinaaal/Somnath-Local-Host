@@ -93,6 +93,7 @@ export function LanguageProvider({ children }) {
   const handleStopVoice = () => {
     stopWelcomeVoice();
     setIsVoicePlaying(false);
+    setCurrentVoiceScript('');
   };
 
   const handleReplayVoice = () => {

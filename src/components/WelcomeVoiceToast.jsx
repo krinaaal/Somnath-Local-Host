@@ -1,5 +1,5 @@
-import React from 'react';
-import { Volume2, VolumeX, RotateCcw, X, PhoneCall, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Volume2, VolumeX, RotateCcw, X, PhoneCall } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function WelcomeVoiceToast() {
@@ -9,9 +9,25 @@ export default function WelcomeVoiceToast() {
     stopVoice,
     replayVoice,
     currentLangObj,
+    language,
   } = useLanguage();
 
-  if (!isVoicePlaying && !currentVoiceScript) return null;
+  const [isDismissed, setIsDismissed] = useState(false);
+
+  // When a new voice playback starts, allow toast to display
+  useEffect(() => {
+    if (isVoicePlaying) {
+      setIsDismissed(false);
+    }
+  }, [isVoicePlaying]);
+
+  // Instantly closes the toast popup AND immediately stops audio playback
+  const handleClose = () => {
+    setIsDismissed(true);
+    stopVoice();
+  };
+
+  if (isDismissed || (!isVoicePlaying && !currentVoiceScript)) return null;
 
   return (
     <aside
@@ -47,22 +63,25 @@ export default function WelcomeVoiceToast() {
               </span>
             </div>
             <span className="text-[10px] text-emerald-600 font-bold block">
-              Somnath Local Host • યાત્રા સહાયક વાણી
+              {language === 'gu'
+                ? 'Somnath Local Host • યાત્રા સહાયક વાણી'
+                : 'Somnath Local Host • यात्रा सहायता संदेश'}
             </span>
           </div>
         </div>
 
+        {/* Close Button: Instantly closes toast AND stops voice */}
         <button
           type="button"
-          onClick={stopVoice}
-          className="text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100 transition-colors"
-          aria-label="Dismiss voice alert"
+          onClick={handleClose}
+          className="text-slate-400 hover:text-slate-700 p-1.5 rounded-full hover:bg-slate-100 transition-colors cursor-pointer tap-bounce"
+          aria-label="Close welcome voice"
         >
           <X className="w-4 h-4" />
         </button>
       </div>
 
-      {/* Loving Transcript snippet */}
+      {/* Transcript snippet */}
       <p className="text-xs text-slate-700 leading-relaxed italic bg-amber-50/70 p-2.5 rounded-2xl border border-amber-200/60 mb-3">
         "{currentVoiceScript}"
       </p>
@@ -73,20 +92,24 @@ export default function WelcomeVoiceToast() {
           {isVoicePlaying ? (
             <button
               type="button"
-              onClick={stopVoice}
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-[11px] font-black transition-all tap-bounce"
+              onClick={handleClose}
+              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-[11px] font-black transition-all tap-bounce cursor-pointer"
             >
               <VolumeX className="w-3.5 h-3.5 text-rose-500" />
-              <span>અવાજ બંધ કરો (Mute)</span>
+              <span>
+                {language === 'gu' ? 'અવાજ બંધ કરો (Close)' : 'आवाज बंद करें (Close)'}
+              </span>
             </button>
           ) : (
             <button
               type="button"
               onClick={replayVoice}
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-[11px] font-black transition-all tap-bounce"
+              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-[11px] font-black transition-all tap-bounce cursor-pointer"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>ફરી સાંભળો (Replay)</span>
+              <span>
+                {language === 'gu' ? 'ફરી સાંભળો (Replay)' : 'फिर से सुनें (Replay)'}
+              </span>
             </button>
           )}
         </div>
@@ -96,7 +119,7 @@ export default function WelcomeVoiceToast() {
           className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-[11px] font-black transition-all tap-bounce"
         >
           <PhoneCall className="w-3 h-3" />
-          <span>કૉલ કરો</span>
+          <span>{language === 'gu' ? 'કૉલ કરો' : 'कॉल करें'}</span>
         </a>
       </div>
     </aside>
