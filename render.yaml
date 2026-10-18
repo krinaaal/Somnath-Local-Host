@@ -1,12 +1,9 @@
-# Render Blueprint Specification for 100% Free, Permanently Active Static Site
-# Static sites on Render NEVER sleep, NEVER spin down, and have zero cold starts.
-
 services:
   - type: web
     name: somnath-local-host
     runtime: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    buildCommand: npm run build
+    staticPublishPath: dist
     pullRequestPreviewsEnabled: true
     routes:
       - type: rewrite
