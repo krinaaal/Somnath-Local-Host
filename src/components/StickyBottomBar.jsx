@@ -1,7 +1,10 @@
 import React from 'react';
 import { PhoneCall, Sparkles, MessageCircle } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function StickyBottomBar({ onOpenLeadModal, isModalOpen }) {
+  const { t } = useLanguage();
+
   if (isModalOpen) return null;
 
   return (
@@ -14,7 +17,7 @@ export default function StickyBottomBar({ onOpenLeadModal, isModalOpen }) {
           aria-label="Call Host directly"
         >
           <PhoneCall className="w-3.5 h-3.5 text-orange-500" />
-          <span>कॉल करें</span>
+          <span>{t('callNow')}</span>
         </a>
 
         {/* WhatsApp Direct */}
@@ -32,10 +35,10 @@ export default function StickyBottomBar({ onOpenLeadModal, isModalOpen }) {
         <button
           type="button"
           onClick={onOpenLeadModal}
-          className="flex-[1.5] min-h-[46px] px-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-xs flex items-center justify-center gap-1.5 shadow-xs transition-transform active:scale-95"
+          className="flex-[1.5] min-h-[46px] px-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-xs flex items-center justify-center gap-1.5 shadow-xs transition-transform active:scale-95 cursor-pointer"
         >
           <Sparkles className="w-3.5 h-3.5 text-amber-200" />
-          <span>यात्रा प्लान करें</span>
+          <span>{t('planTrip')}</span>
         </button>
       </div>
     </div>

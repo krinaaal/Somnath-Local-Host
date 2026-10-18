@@ -3,34 +3,37 @@ import StylizedCar3D from './cinematic/StylizedCar3D';
 import StylizedRickshaw3D from './cinematic/StylizedRickshaw3D';
 import StylizedBus3D from './cinematic/StylizedBus3D';
 import { Sparkles, Compass, ArrowDown, MapPin, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
+  const { t, language } = useLanguage();
+
   return (
     <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 bg-gradient-to-b from-sky-50/70 via-white to-amber-50/30 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* TEXT CONTENT (Centered, Cheerful, Hindi Audience Welcoming) */}
+        {/* TEXT CONTENT (Centered, Cheerful, Hindi/Gujarati/English/Marathi Friendly) */}
         <div className="text-center max-w-3xl mx-auto">
           {/* Welcome Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs sm:text-sm font-extrabold mb-3 shadow-2xs">
-            <span>🙏 Har Har Mahadev!</span>
+            <span>{t('heroBadgeGreeting')}</span>
             <span className="text-amber-500">•</span>
-            <span>सौराष्ट्र यात्रा में आपका स्वागत है</span>
+            <span>{t('heroBadgeWelcome')}</span>
           </div>
 
-          {/* Signature Heading tuned for Hindi Audience */}
+          {/* Signature Heading */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
-            Chalo, Somnath <br className="hidden xs:inline" />
+            {t('heroMainTitle1')} <br className="hidden xs:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-emerald-600">
-              Darshan karne Chalein!
+              {t('heroMainTitle2')}
             </span>
           </h1>
 
-          {/* Supporting Text in Natural Hindi-Friendly Tone */}
+          {/* Supporting Text */}
           <p className="mt-3 text-base sm:text-xl font-bold text-slate-700 leading-snug">
-            Somnath, Dwarka, Diu ya Sasan Gir — aapka friendly local travel buddy yahan hai!
+            {t('heroSubtitle')}
           </p>
           <p className="mt-2 text-xs sm:text-sm text-slate-500 font-medium max-w-xl mx-auto leading-relaxed">
-            साफ-सुथरी AC गाड़ियां, मंदिर के पास बढ़िया होटल्स और परिवार के लिए भरोसेमंद लोकल मार्गदर्शन — बिना किसी परेशानी के आनंदमय दर्शन यात्रा।
+            {t('heroDescription')}
           </p>
 
           {/* CTA Buttons */}
@@ -39,20 +42,20 @@ export default function Hero({ onOpenLeadModal, onScrollToJourney }) {
             <button
               type="button"
               onClick={onOpenLeadModal}
-              className="w-full xs:w-auto min-h-[48px] px-7 py-3 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-md shadow-orange-500/25 active:scale-95 transition-all tap-bounce border border-orange-400"
+              className="w-full xs:w-auto min-h-[48px] px-7 py-3 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-md shadow-orange-500/25 active:scale-95 transition-all tap-bounce border border-orange-400 cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-amber-200" />
-              <span>Yatra Plan Karein</span>
+              <span>{t('heroCtaPlan')}</span>
             </button>
 
             {/* Secondary CTA: Explore Places */}
             <button
               type="button"
               onClick={onScrollToJourney}
-              className="w-full xs:w-auto min-h-[48px] px-7 py-3 rounded-2xl bg-white hover:bg-sky-50 border-2 border-sky-300 hover:border-sky-400 text-sky-800 font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-xs active:scale-95 transition-all tap-bounce"
+              className="w-full xs:w-auto min-h-[48px] px-7 py-3 rounded-2xl bg-white hover:bg-sky-50 border-2 border-sky-300 hover:border-sky-400 text-sky-800 font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-xs active:scale-95 transition-all tap-bounce cursor-pointer"
             >
               <Compass className="w-4 h-4 text-sky-600" />
-              <span>Yatra Route Dekhein</span>
+              <span>{t('heroCtaExplore')}</span>
             </button>
           </div>
 

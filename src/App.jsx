@@ -3,12 +3,15 @@ import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
 import MobileDrawer from './components/MobileDrawer';
 import Hero from './components/Hero';
+import LiveTrustStats from './components/LiveTrustStats';
 import CinematicScrollJourney from './components/cinematic/CinematicScrollJourney';
 import ServicesGrid from './components/ServicesGrid';
+import CustomerReviews from './components/CustomerReviews';
 import ConversionSection from './components/ConversionSection';
 import FrontendLeadModal from './components/FrontendLeadModal';
 import StickyBottomBar from './components/StickyBottomBar';
 import Footer from './components/Footer';
+import LanguageModal from './components/LanguageModal';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -62,6 +65,11 @@ export default function App() {
           onScrollToJourney={handleScrollToJourney}
         />
 
+        {/* 3 Prominent Real-Time Indicators: Live Enquiries (0-150 by IST), 1000+ Happy Pilgrims, Weekly Bookings */}
+        <LiveTrustStats
+          onOpenLeadModal={() => handleOpenLeadModal('Somnath')}
+        />
+
         {/* The Real-World Cinematic Scroll Journey (Somnath, Dwarka, Diu, Sasan Gir) */}
         <CinematicScrollJourney
           onSelectDestination={(dest) => handleOpenLeadModal(dest)}
@@ -70,6 +78,11 @@ export default function App() {
         {/* Services Section (Hotel & Stay, Car Rental, Sightseeing, Desi Gujarati Food) */}
         <ServicesGrid
           onBookService={(service) => handleOpenLeadModal(service)}
+        />
+
+        {/* Customer Reviews for Car Rentals & Hotel Stays */}
+        <CustomerReviews
+          onOpenLeadModal={() => handleOpenLeadModal('Somnath')}
         />
 
         {/* Minimal Contact-First Conversion Section */}
@@ -97,6 +110,9 @@ export default function App() {
         onClose={() => setIsLeadModalOpen(false)}
         initialDestination={selectedDestination}
       />
+
+      {/* First-Time Language Selector & Manual Switcher Modal */}
+      <LanguageModal />
     </div>
   );
 }

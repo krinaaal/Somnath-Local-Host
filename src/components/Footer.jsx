@@ -1,7 +1,10 @@
 import React from 'react';
 import { PhoneCall, MessageCircle, MapPin, Heart } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
+  const { t, language } = useLanguage();
+
   return (
     <footer className="bg-slate-50 border-t border-slate-200 pt-12 pb-24 sm:pb-12 text-slate-600 text-xs sm:text-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -16,11 +19,11 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
               />
               <div>
                 <div className="text-base font-black text-slate-900">Somnath Local Host</div>
-                <div className="text-[10px] text-emerald-600 font-extrabold font-mono">Aapka Local Travel Buddy • Har Har Mahadev</div>
+                <div className="text-[10px] text-emerald-600 font-extrabold font-mono">{t('tagline')}</div>
               </div>
             </div>
             <p className="text-xs text-slate-500 leading-relaxed font-medium">
-              सोमनाथ, द्वारका, दीव और सासन गिर के लिए आपका अपना विश्वसनीय लोकल होस्ट। साफ AC गाड़ियां, मंदिर के पास बढ़िया होटल्स और 24 घंटे पारिवारिक मार्गदर्शन।
+              {t('footerAbout')}
             </p>
             <div className="pt-1 flex items-center gap-1.5 text-xs text-amber-700 font-black">
               <span>🙏 Chalo, Somnath Darshan karne Chalein!</span>
@@ -113,7 +116,7 @@ export default function Footer({ onOpenLeadModal, onScrollToJourney }) {
               onClick={onOpenLeadModal}
               className="w-full py-2.5 px-3 rounded-2xl bg-amber-400 hover:bg-amber-500 text-slate-950 font-black text-xs transition-colors shadow-2xs tap-bounce"
             >
-              होस्ट के साथ यात्रा प्लान करें
+              {t('planTrip')}
             </button>
           </div>
         </div>
