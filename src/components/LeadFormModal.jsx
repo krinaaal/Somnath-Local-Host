@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Phone, User, MapPin, Calendar, Users, Send, CheckCircle2, AlertCircle, MessageCircle, PhoneCall, Sparkles } from 'lucide-react';
+import { getStructuredLeadWhatsAppUrl } from '../utils/whatsappMessages';
 
 export default function LeadFormModal({ isOpen, onClose, initialDestination = 'Somnath Circuit' }) {
   const [fullName, setFullName] = useState('');
@@ -147,7 +148,7 @@ export default function LeadFormModal({ isOpen, onClose, initialDestination = 'S
               {/* Direct Instant Action Buttons */}
               <div className="pt-2 space-y-2.5">
                 <a
-                  href={`https://wa.me/916359798896?text=${encodeURIComponent(`Namaskar Somnath Local Host! I just requested a plan on your website. My name is ${fullName}, Phone: ${phone}. Destination: ${destination}. Please share details!`)}`}
+                  href={getStructuredLeadWhatsAppUrl({ fullName, phone, destination, travelGroup: `${travelersCount} (Date: ${travelDate})`, vehiclePref: cabType })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg tap-bounce"

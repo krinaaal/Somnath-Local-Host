@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, AlertCircle, Sparkles, MessageCircle, PhoneCall, ShieldCheck, User } from 'lucide-react';
+import { getStructuredLeadWhatsAppUrl } from '../utils/whatsappMessages';
 
 export default function InlineLeadForm({ selectedDestination = 'Somnath Circuit' }) {
   const [fullName, setFullName] = useState('');
@@ -101,7 +102,7 @@ export default function InlineLeadForm({ selectedDestination = 'Somnath Circuit'
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
                 <a
-                  href={`https://wa.me/916359798896?text=${encodeURIComponent(`Namaskar Somnath Local Host! I requested a plan on your website for ${fullName} (${phone}). Destination: ${destination}. Please share details!`)}`}
+                  href={getStructuredLeadWhatsAppUrl({ fullName, phone, destination, travelGroup: `${travelersCount} (Date: ${travelDate})`, vehiclePref: 'AC Innova / Ertiga' })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg tap-bounce"

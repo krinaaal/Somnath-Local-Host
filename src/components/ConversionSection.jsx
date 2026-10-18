@@ -3,9 +3,10 @@ import StylizedCar3D from './cinematic/StylizedCar3D';
 import StylizedLion3D from './cinematic/StylizedLion3D';
 import { PhoneCall, MessageCircle, Sparkles, RotateCcw, MapPin, HeartHandshake, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { getStructuredGeneralWhatsAppUrl } from '../utils/whatsappMessages';
 
 export default function ConversionSection({ onOpenContact, onExploreAgain }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="contact" className="py-16 sm:py-24 bg-white relative overflow-hidden">
@@ -53,7 +54,7 @@ export default function ConversionSection({ onOpenContact, onExploreAgain }) {
 
             {/* Direct WhatsApp Call */}
             <a
-              href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Darshan%20karne%20Chalein!"
+              href={getStructuredGeneralWhatsAppUrl(language)}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full xs:w-auto min-h-[50px] px-7 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-xs active:scale-95 transition-all tap-bounce border border-emerald-700"

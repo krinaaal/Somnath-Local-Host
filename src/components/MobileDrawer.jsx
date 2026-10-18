@@ -2,9 +2,10 @@ import React from 'react';
 import { X, Home, MapPin, Compass, Briefcase, PhoneCall, Sparkles, MessageCircle, ChevronRight, MessageSquareHeart } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '../context/LanguageContext';
+import { getStructuredGeneralWhatsAppUrl } from '../utils/whatsappMessages';
 
 export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrollToJourney }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   if (!isOpen) return null;
 
@@ -153,7 +154,7 @@ export default function MobileDrawer({ isOpen, onClose, onOpenLeadModal, onScrol
           </a>
 
           <a
-            href="https://wa.me/916359798896?text=Namaskar%20Somnath%20Local%20Host!%20Chalo%20Somnath%20Darshan%20karne%20Chalein!"
+            href={getStructuredGeneralWhatsAppUrl(language)}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-2 px-4 rounded-2xl bg-emerald-50 text-emerald-800 font-extrabold text-xs flex items-center justify-center gap-2 tap-bounce"

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { X, User, Phone, CheckCircle2, AlertCircle, MessageCircle, PhoneCall, Sparkles, ArrowRight, ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { getStructuredLeadWhatsAppUrl } from '../utils/whatsappMessages';
 
 export default function FrontendLeadModal({ isOpen, onClose, initialDestination = 'Somnath' }) {
+  const { language } = useLanguage();
   const [step, setStep] = useState(1);
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
@@ -122,7 +125,7 @@ export default function FrontendLeadModal({ isOpen, onClose, initialDestination 
               {/* Direct WhatsApp Action */}
               <div className="pt-2 space-y-2.5">
                 <a
-                  href={`https://wa.me/916359798896?text=${encodeURIComponent(`Namaskar Somnath Local Host! Mera naam ${fullName} hai (Ph: ${phone}). Main ${destination} yatra ke liye jaankari chahta hoon (${travelGroup}, Cab: ${vehiclePref}). Kripya margdarshan karein.`)}`}
+                  href={getStructuredLeadWhatsAppUrl({ fullName, phone, destination, travelGroup, vehiclePref, language })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3.5 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-sm tap-bounce"
